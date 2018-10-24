@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://https://ridickle7.github.io/"/>
+  <link href="https://ridickle7.github.io/"/>
   <updated>2018-10-12T04:47:34.649Z</updated>
-  <id>http://https://ridickle7.github.io/</id>
+  <id>https://ridickle7.github.io/</id>
   
   <author>
     <name>ridickle</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://https://ridickle7.github.io/2018/10/12/hello-world/"/>
-    <id>http://https://ridickle7.github.io/2018/10/12/hello-world/</id>
+    <link href="https://ridickle7.github.io/2018/10/12/hello-world/"/>
+    <id>https://ridickle7.github.io/2018/10/12/hello-world/</id>
     <published>2018-10-12T04:47:34.649Z</published>
     <updated>2018-10-12T04:47:34.649Z</updated>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>2018 프론트앤드 스터디 1주차</title>
-    <link href="http://https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%201%EC%A3%BC%EC%B0%A8/"/>
-    <id>http://https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 1주차/</id>
+    <link href="https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%201%EC%A3%BC%EC%B0%A8/"/>
+    <id>https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 1주차/</id>
     <published>2018-09-15T11:24:25.000Z</published>
     <updated>2018-10-15T02:36:03.949Z</updated>
     
@@ -52,17 +52,17 @@
     
     </summary>
     
-      <category term="web" scheme="http://https://ridickle7.github.io/categories/web/"/>
+      <category term="web" scheme="https://ridickle7.github.io/categories/web/"/>
     
     
-      <category term="javascript" scheme="http://https://ridickle7.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://ridickle7.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>2018 프론트앤드 스터디 2주차</title>
-    <link href="http://https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%203%EC%A3%BC%EC%B0%A8/"/>
-    <id>http://https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 3주차/</id>
+    <link href="https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%203%EC%A3%BC%EC%B0%A8/"/>
+    <id>https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 3주차/</id>
     <published>2018-09-15T11:24:25.000Z</published>
     <updated>2018-10-18T09:35:55.328Z</updated>
     
@@ -70,33 +70,33 @@
     
     </summary>
     
-      <category term="web" scheme="http://https://ridickle7.github.io/categories/web/"/>
+      <category term="web" scheme="https://ridickle7.github.io/categories/web/"/>
     
     
-      <category term="javascript" scheme="http://https://ridickle7.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://ridickle7.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>2018 프론트앤드 스터디 2주차</title>
-    <link href="http://https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8/"/>
-    <id>http://https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 2주차/</id>
+    <link href="https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8/"/>
+    <id>https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 2주차/</id>
     <published>2018-09-15T11:24:25.000Z</published>
-    <updated>2018-10-16T11:21:33.228Z</updated>
+    <updated>2018-10-24T12:05:59.357Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;2주차&quot;&gt;&lt;a href=&quot;#2주차&quot; class=&quot;headerlink&quot; title=&quot;2주차&quot;&gt;&lt;/a&gt;2주차&lt;/h2&gt;&lt;p&gt;일시 : 2018.09.22 (토)&lt;br&gt;장소 : 할리스커피 신논현역점&lt;br&gt;시간 : 10:00 ~ 12:00&lt;br&gt;참
+        &lt;h1 id=&quot;2주차&quot;&gt;&lt;a href=&quot;#2주차&quot; class=&quot;headerlink&quot; title=&quot;2주차&quot;&gt;&lt;/a&gt;2주차&lt;/h1&gt;&lt;p&gt;일시 : 2018.09.22 (토)&lt;br&gt;장소 : 할리스커피 신논현역점&lt;br&gt;시간 : 10:00 ~ 12:00&lt;br&gt;참
       
     
     </summary>
     
-      <category term="web" scheme="http://https://ridickle7.github.io/categories/web/"/>
+      <category term="web" scheme="https://ridickle7.github.io/categories/web/"/>
     
     
-      <category term="javascript" scheme="http://https://ridickle7.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://ridickle7.github.io/tags/javascript/"/>
     
   </entry>
   
