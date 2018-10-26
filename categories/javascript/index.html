@@ -178,13 +178,13 @@
 <p><strong>하!! 지!! 만!!</strong>  </p>
 <p>위의 ‘V8 Engine’ 만으로는 Node.js 또는 브라우저의 이벤트 동시 처리를 설명할 수 없다.<br>V8 Engine 개념만으로 생각하면 여러개의 작업이 순차적으로 하나씩 처리될 것이기 때문이다.<br>그러면 자연스럽게 동시에 여러 작업은 할 수 없게 된다.  </p>
 <p>위 개념대로라면 <strong>파일 다운로드를 실행하면, 요청을 받기전까지 웹페이지가 먹통이 되어야</strong> 하는데 웹은 절대 그러지 않는다.<br>그럼 이벤트 동시 처리는 어떻게 설명할 수 있을까?<br>정답을 먼저 이야기하면  </p>
-<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에 있는 장치는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
+<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
 <ul>
-<li><p><strong>1. Web API</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout)</p>
+<li><p><strong>1. Web API (Background)</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout) 보유 및 실행</p>
 </li>
-<li><p><strong>2. Callback Queue</strong><br> 이벤트 콜백함수(ex&gt; setTimeout), I/O 작업 이벤트를 순차적으로 쌓아놓는 Queue</p>
+<li><p><strong>2. Callback Queue</strong><br> 이벤트 콜백함수(ex&gt; setTimeout), I/O 작업 이벤트를 순차적으로 쌓아놓는 Queue<br> Web API 에서 순차적으로 작업된 결과를 받아옴<br> Event Loop를 통해 javascript 엔진 (call stack) 전달</p>
 </li>
-<li><p><strong>3. Event Loop</strong><br> (javascript를 사용하는 환경에서) javascript 엔진과 상호연동하기 위해 사용하는 장치<br> Callback Queue 내 작업들을 순차적으로 처리하고 결과를 javascript 내 전달<br> 동시성(비동기 처리) 지원</p>
+<li><p><strong>3. Event Loop</strong><br> Callback Queue 의 작업들을 javascript 엔진(call stack) 으로 보내기 위해 사용하는 장치<br> 동시성(비동기 처리) 지원</p>
 <blockquote>
 <p>ex&gt; Node.js의 <strong>libuv</strong>, 브라우저의 <strong>웹 워커</strong> 등</p>
 </blockquote>
@@ -219,6 +219,7 @@
 <li>자바스크립트와 이벤트 루프<br><a href="https://meetup.toast.com/posts/89" target="_blank" rel="noopener">https://meetup.toast.com/posts/89</a></li>
 <li>[자바스크립트] js엔진은 어떻게 동시처리를 하는가? 이벤트루프<br><a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a></li>
 <li>호출 스택과 이벤트 루프<br><a href="https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2" target="_blank" rel="noopener">https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2</a></li>
+<li>loupe<br><a href="https://youtu.be/8aGhZQkoFbQ" target="_blank" rel="noopener">https://youtu.be/8aGhZQkoFbQ</a><br><a href="https://bit.ly/1Btu0Iy" target="_blank" rel="noopener">https://bit.ly/1Btu0Iy</a>  </li>
 <li>개인 github / github 내 참조 링크   <ul>
 <li>Node.js의 내부 아키텍쳐 이해 (<a href="http://sjh836.tistory.com/79" target="_blank" rel="noopener">http://sjh836.tistory.com/79</a>)</li>
 <li>Node.js의 이벤트 루프 이해 (<a href="http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html" target="_blank" rel="noopener">http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html</a>)</li>

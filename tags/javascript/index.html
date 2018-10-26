@@ -144,111 +144,6 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2018/09/15/[1] javascript 이해/">
-        1. javascript 이해
-      </a>
-    </h2>
-    
-    <time>
-      9월 15, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/javascript/">javascript</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="javascript의-이해"><a href="#javascript의-이해" class="headerlink" title="javascript의 이해"></a>javascript의 이해</h1><h2 id="javascript의-특징"><a href="#javascript의-특징" class="headerlink" title="javascript의 특징"></a>javascript의 특징</h2><ul>
-<li>단일 Thread 기반</li>
-<li>Callback Queue 사용</li>
-</ul>
-<h2 id="javascript의-Engine-Google-V8-Engine"><a href="#javascript의-Engine-Google-V8-Engine" class="headerlink" title="javascript의 Engine (Google V8 Engine)"></a>javascript의 Engine (Google V8 Engine)</h2><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true" alt="image"></p>
-<h3 id="Google-V8-Engine-구조"><a href="#Google-V8-Engine-구조" class="headerlink" title="Google V8 Engine 구조"></a>Google V8 Engine 구조</h3><ul>
-<li>Memory Heap : 메모리 할당 진행</li>
-<li>Call Stack : 코드 실행에 따른 (CPU 작업 단위) 호출 스택이 쌓이는 곳<div style="color:#CCCCCC"><span style="">(밑줄친 단어에 대한 상세 설명은 참고에서 확인)</span></div>
-
-</li>
-</ul>
-<p>위의 Engine을 통해 javascript는 <strong>단일 쓰레드처럼(!!)</strong> 작업을 처리할 수 있다.</p>
-<blockquote>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true" alt="image"><br>위와 같이… 말이다. 이렇게 짜면 서버는 죽겠…지</p>
-</blockquote>
-<p><strong>하!! 지!! 만!!</strong>  </p>
-<p>위의 ‘V8 Engine’ 만으로는 Node.js 또는 브라우저의 이벤트 동시 처리를 설명할 수 없다.<br>V8 Engine 개념만으로 생각하면 여러개의 작업이 순차적으로 하나씩 처리될 것이기 때문이다.<br>그러면 자연스럽게 동시에 여러 작업은 할 수 없게 된다.  </p>
-<p>위 개념대로라면 <strong>파일 다운로드를 실행하면, 요청을 받기전까지 웹페이지가 먹통이 되어야</strong> 하는데 웹은 절대 그러지 않는다.<br>그럼 이벤트 동시 처리는 어떻게 설명할 수 있을까?<br>정답을 먼저 이야기하면  </p>
-<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에 있는 장치는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
-<ul>
-<li><p><strong>1. Web API</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout)</p>
-</li>
-<li><p><strong>2. Callback Queue</strong><br> 이벤트 콜백함수(ex&gt; setTimeout), I/O 작업 이벤트를 순차적으로 쌓아놓는 Queue</p>
-</li>
-<li><p><strong>3. Event Loop</strong><br> (javascript를 사용하는 환경에서) javascript 엔진과 상호연동하기 위해 사용하는 장치<br> Callback Queue 내 작업들을 순차적으로 처리하고 결과를 javascript 내 전달<br> 동시성(비동기 처리) 지원</p>
-<blockquote>
-<p>ex&gt; Node.js의 <strong>libuv</strong>, 브라우저의 <strong>웹 워커</strong> 등</p>
-</blockquote>
-</li>
-</ul>
-<p>위 3개의 부속 + javascript Engine이 어우러져 비동기처리가 가능해진 것이다.</p>
-<blockquote>
-<div style="font-size:24px;">참고</div>  
-
-<p>CPU 작업(Bound)</p>
-<ul>
-<li>CPU 자원을 사용하는 Task</li>
-<li>Javascript V8 Engine에서 처리</li>
-<li>작업 속도가 빠른 편</li>
-<li>I/O Bound를 제외한 대부분의 javascript 코드와 연산들이 이에 해당한다.</li>
-</ul>
-<p>I/O 작업(Bound)</p>
-<ul>
-<li>Disk, Network, Database와 관련된 Task (입 출력 작업)</li>
-<li>Event Queue에 Message 형식으로 쌓임</li>
-<li>Event Loop에서 처리</li>
-<li>작업 속도가 느린 편</li>
-</ul>
-</blockquote>
-<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><ul>
-<li>V8 Engine이 단일 호출스택을 사용하기 때문에 javascript 내 처리는 단일 쓰레드 방식이라 할 수 있다.</li>
-<li>javascript 기반 환경 (Node.js 등) 에서는 V8 Engine과 상호작용하기 위한 부가장치들이 존재한다.</li>
-</ul>
-<p><strong>그러므로</strong> javascript 기반 환경 자체가 단일 쓰레드 기반이라고 생각하는 건 심히 위태롭다.</p>
-<h2 id="참고링크"><a href="#참고링크" class="headerlink" title="참고링크"></a>참고링크</h2><ul>
-<li>자바스크립트의 동작원리: 엔진, 런타임, 호출 스택<br><a href="https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/" target="_blank" rel="noopener">https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/</a></li>
-<li>자바스크립트와 이벤트 루프<br><a href="https://meetup.toast.com/posts/89" target="_blank" rel="noopener">https://meetup.toast.com/posts/89</a></li>
-<li>[자바스크립트] js엔진은 어떻게 동시처리를 하는가? 이벤트루프<br><a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a></li>
-<li>호출 스택과 이벤트 루프<br><a href="https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2" target="_blank" rel="noopener">https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2</a></li>
-<li>개인 github / github 내 참조 링크   <ul>
-<li>Node.js의 내부 아키텍쳐 이해 (<a href="http://sjh836.tistory.com/79" target="_blank" rel="noopener">http://sjh836.tistory.com/79</a>)</li>
-<li>Node.js의 이벤트 루프 이해 (<a href="http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html" target="_blank" rel="noopener">http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html</a>)</li>
-<li>Node.js의 이벤트 처리 과정 (<a href="https://goo.gl/YJX9pM" target="_blank" rel="noopener">https://goo.gl/YJX9pM</a>)</li>
-<li>Blocking과 NonBlocking의 이해 (<a href="http://ozt88.tistory.com/20" target="_blank" rel="noopener">http://ozt88.tistory.com/20</a>)</li>
-<li>Node.js의 비동기적 특성 (<a href="https://qkraudghgh.github.io/node/2016/10/23/node-async.html" target="_blank" rel="noopener">https://qkraudghgh.github.io/node/2016/10/23/node-async.html</a>)</li>
-<li>Javascript 엔진에 대한 이해 (<a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a>)</li>
-</ul>
-</li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/javascript/">javascript</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
       <a href="/2018/09/15/2018 프론트앤드 스터디 1주차/">
         2018 프론트앤드 스터디 1주차
       </a>
@@ -552,6 +447,112 @@
 <li><p>zeroCho 함수의 범위 (scope)<br><a href="https://www.zerocho.com/category/Javascript/post/5740531574288ebc5f2ba97e" target="_blank" rel="noopener">https://www.zerocho.com/category/Javascript/post/5740531574288ebc5f2ba97e</a></p>
 </li>
 <li><p>zeroCho 실행 컨텍스트<br><a href="https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0" target="_blank" rel="noopener">https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0</a></p>
+</li>
+</ul>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/javascript/">javascript</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2018/09/15/[1] javascript 이해/">
+        1. javascript 이해
+      </a>
+    </h2>
+    
+    <time>
+      9월 15, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/javascript/">javascript</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h1 id="javascript의-이해"><a href="#javascript의-이해" class="headerlink" title="javascript의 이해"></a>javascript의 이해</h1><h2 id="javascript의-특징"><a href="#javascript의-특징" class="headerlink" title="javascript의 특징"></a>javascript의 특징</h2><ul>
+<li>단일 Thread 기반</li>
+<li>Callback Queue 사용</li>
+</ul>
+<h2 id="javascript의-Engine-Google-V8-Engine"><a href="#javascript의-Engine-Google-V8-Engine" class="headerlink" title="javascript의 Engine (Google V8 Engine)"></a>javascript의 Engine (Google V8 Engine)</h2><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true" alt="image"></p>
+<h3 id="Google-V8-Engine-구조"><a href="#Google-V8-Engine-구조" class="headerlink" title="Google V8 Engine 구조"></a>Google V8 Engine 구조</h3><ul>
+<li>Memory Heap : 메모리 할당 진행</li>
+<li>Call Stack : 코드 실행에 따른 (CPU 작업 단위) 호출 스택이 쌓이는 곳<div style="color:#CCCCCC"><span style="">(밑줄친 단어에 대한 상세 설명은 참고에서 확인)</span></div>
+
+</li>
+</ul>
+<p>위의 Engine을 통해 javascript는 <strong>단일 쓰레드처럼(!!)</strong> 작업을 처리할 수 있다.</p>
+<blockquote>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true" alt="image"><br>위와 같이… 말이다. 이렇게 짜면 서버는 죽겠…지</p>
+</blockquote>
+<p><strong>하!! 지!! 만!!</strong>  </p>
+<p>위의 ‘V8 Engine’ 만으로는 Node.js 또는 브라우저의 이벤트 동시 처리를 설명할 수 없다.<br>V8 Engine 개념만으로 생각하면 여러개의 작업이 순차적으로 하나씩 처리될 것이기 때문이다.<br>그러면 자연스럽게 동시에 여러 작업은 할 수 없게 된다.  </p>
+<p>위 개념대로라면 <strong>파일 다운로드를 실행하면, 요청을 받기전까지 웹페이지가 먹통이 되어야</strong> 하는데 웹은 절대 그러지 않는다.<br>그럼 이벤트 동시 처리는 어떻게 설명할 수 있을까?<br>정답을 먼저 이야기하면  </p>
+<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
+<ul>
+<li><p><strong>1. Web API (Background)</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout) 보유 및 실행</p>
+</li>
+<li><p><strong>2. Callback Queue</strong><br> 이벤트 콜백함수(ex&gt; setTimeout), I/O 작업 이벤트를 순차적으로 쌓아놓는 Queue<br> Web API 에서 순차적으로 작업된 결과를 받아옴<br> Event Loop를 통해 javascript 엔진 (call stack) 전달</p>
+</li>
+<li><p><strong>3. Event Loop</strong><br> Callback Queue 의 작업들을 javascript 엔진(call stack) 으로 보내기 위해 사용하는 장치<br> 동시성(비동기 처리) 지원</p>
+<blockquote>
+<p>ex&gt; Node.js의 <strong>libuv</strong>, 브라우저의 <strong>웹 워커</strong> 등</p>
+</blockquote>
+</li>
+</ul>
+<p>위 3개의 부속 + javascript Engine이 어우러져 비동기처리가 가능해진 것이다.</p>
+<blockquote>
+<div style="font-size:24px;">참고</div>  
+
+<p>CPU 작업(Bound)</p>
+<ul>
+<li>CPU 자원을 사용하는 Task</li>
+<li>Javascript V8 Engine에서 처리</li>
+<li>작업 속도가 빠른 편</li>
+<li>I/O Bound를 제외한 대부분의 javascript 코드와 연산들이 이에 해당한다.</li>
+</ul>
+<p>I/O 작업(Bound)</p>
+<ul>
+<li>Disk, Network, Database와 관련된 Task (입 출력 작업)</li>
+<li>Event Queue에 Message 형식으로 쌓임</li>
+<li>Event Loop에서 처리</li>
+<li>작업 속도가 느린 편</li>
+</ul>
+</blockquote>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><ul>
+<li>V8 Engine이 단일 호출스택을 사용하기 때문에 javascript 내 처리는 단일 쓰레드 방식이라 할 수 있다.</li>
+<li>javascript 기반 환경 (Node.js 등) 에서는 V8 Engine과 상호작용하기 위한 부가장치들이 존재한다.</li>
+</ul>
+<p><strong>그러므로</strong> javascript 기반 환경 자체가 단일 쓰레드 기반이라고 생각하는 건 심히 위태롭다.</p>
+<h2 id="참고링크"><a href="#참고링크" class="headerlink" title="참고링크"></a>참고링크</h2><ul>
+<li>자바스크립트의 동작원리: 엔진, 런타임, 호출 스택<br><a href="https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/" target="_blank" rel="noopener">https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/</a></li>
+<li>자바스크립트와 이벤트 루프<br><a href="https://meetup.toast.com/posts/89" target="_blank" rel="noopener">https://meetup.toast.com/posts/89</a></li>
+<li>[자바스크립트] js엔진은 어떻게 동시처리를 하는가? 이벤트루프<br><a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a></li>
+<li>호출 스택과 이벤트 루프<br><a href="https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2" target="_blank" rel="noopener">https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2</a></li>
+<li>loupe<br><a href="https://youtu.be/8aGhZQkoFbQ" target="_blank" rel="noopener">https://youtu.be/8aGhZQkoFbQ</a><br><a href="https://bit.ly/1Btu0Iy" target="_blank" rel="noopener">https://bit.ly/1Btu0Iy</a>  </li>
+<li>개인 github / github 내 참조 링크   <ul>
+<li>Node.js의 내부 아키텍쳐 이해 (<a href="http://sjh836.tistory.com/79" target="_blank" rel="noopener">http://sjh836.tistory.com/79</a>)</li>
+<li>Node.js의 이벤트 루프 이해 (<a href="http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html" target="_blank" rel="noopener">http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html</a>)</li>
+<li>Node.js의 이벤트 처리 과정 (<a href="https://goo.gl/YJX9pM" target="_blank" rel="noopener">https://goo.gl/YJX9pM</a>)</li>
+<li>Blocking과 NonBlocking의 이해 (<a href="http://ozt88.tistory.com/20" target="_blank" rel="noopener">http://ozt88.tistory.com/20</a>)</li>
+<li>Node.js의 비동기적 특성 (<a href="https://qkraudghgh.github.io/node/2016/10/23/node-async.html" target="_blank" rel="noopener">https://qkraudghgh.github.io/node/2016/10/23/node-async.html</a>)</li>
+<li>Javascript 엔진에 대한 이해 (<a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a>)</li>
+</ul>
 </li>
 </ul>
 
