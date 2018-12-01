@@ -145,109 +145,6 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2018/09/15/2018 프론트앤드 스터디 1주차/">
-        2018 프론트앤드 스터디 1주차
-      </a>
-    </h2>
-    
-    <time>
-      9월 15, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-프론트앤드-스터디/">2018 프론트앤드 스터디</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>웹을 정말 돌같이 생각했던 내가 프론트앤드 스터디 참여한 주 이유는 이렇다.</p>
-<p><strong>1. 웹송합니다를 벗어나기 위한 노력</strong><br>나는 웹 프론트앤드 지식이 부족하다..<br>회사에서 맡은 주력 업무는 모바일과 백앤드 개발이지만, 회사는 웹 프론트앤드 또한 관리하고 있다.<br>그래서 웹 프론트와 관련하여 피드백을 줄 수 있어야 하기 때문에.. 웹알못 탈피가 필수가 되었다.<br>이게 프론트앤드 스터디에 참여한 첫번째 이유이다.</p>
-<p><strong>2. javascript 복습</strong><br>비교적 간단하다. 최근 서버 개발자로 프로젝트를 진행하면서 javascript 기초의 부족함을 느껴 개념을 다시 다뤄보고 싶었다.<br>프론트앤드 스터디에 참여한 두 번째 이유!</p>
-<p><strong>3. 동반자겸 사수</strong><br>공부는 물론 스스로 하는거지만, 익숙치 않은 분야를 다루는 만큼 방향성을 잡아주고 사수와 같은 동료들이 있으면 좋겠다고 생각했다.<br>마침 관련 스타트업에서 활동하고 있는 아는 형님의 연락이 있었고, 웹 프론트앤드 경험이 많은 친구도 (꼬셔서) 같이 하게 되었다.<br>웹 프론트앤드 경험자(이자 나를 다잡아줄 사수)와 함께하면 시너지가 확실할 것 같았다.</p>
-<p>이런 이유와 마음가짐을 가지고 프론트앤드 스터디에 참여하게 되었다.</p>
-<hr>
-<h1 id="1주차"><a href="#1주차" class="headerlink" title="1주차"></a>1주차</h1><p>일시 : 2018.09.08 (토)<br>장소 : 할리스커피 신논현역점<br>시간 : 10:00 ~ 14:30<br>참석자 : 동현, 상우, 원호  </p>
-<p>진행 내용  </p>
-<ul>
-<li>초기 방향 정하기</li>
-<li>javascript 개념 talk</li>
-</ul>
-<h2 id="1-javascript의-this"><a href="#1-javascript의-this" class="headerlink" title="1. javascript의 this"></a>1. javascript의 this</h2><p>java에서의 this는 클래스로부터 생성되는 독립적인 인스턴스 객체를 의미한다. (그래서 클래스 밖에서는 this사용이 불가능하다.)<br>하지만 javascript는 함수의 현재 실행 문맥이다. 실행문맥 종류만 4가지가 있다.</p>
-<ul>
-<li>함수 실행 : alert(‘Hello World!’)</li>
-<li>메소드 실행 : console.log(‘Hello World!’)</li>
-<li>생성자 실행 : new RegExp(‘\d’)</li>
-<li>간접 실행 : alert.call(undefined, ‘Hello World!’)</li>
-</ul>
-<p>참고로 위 4가지는 각각의 다른 실행 문맥을 가진다. 사례를 통해 확인해보자.</p>
-<p><br></p>
-<h3 id="1-1-‘함수-실행’-에서의-this"><a href="#1-1-‘함수-실행’-에서의-this" class="headerlink" title="1-1. ‘함수 실행’ 에서의 this"></a>1-1. ‘함수 실행’ 에서의 this</h3><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_1_function_execute.png?raw=true" alt="텍스트"> </p>
-<p>A : 전역 객체이다.  </p>
-<p>이는 실행환경에 따라 전역 객체가 다른데<br>나는 node 상에서 실행시켰으므로 ‘global’ 이 this가 된다.<br>(웹 브라우저상에서는 ‘window’ 가 this가 될 것이다.)    </p>
-<p><br></p>
-<h3 id="1-2-‘메소드-실행’-에서의-this"><a href="#1-2-‘메소드-실행’-에서의-this" class="headerlink" title="1-2. ‘메소드 실행’ 에서의 this"></a>1-2. ‘메소드 실행’ 에서의 this</h3><p>먼저 메소드의 의미를 알아야 될 것 같다. 메소드는 객체 내부의 함수 property 를 말한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var myObject = &#123;   </span><br><span class="line">    helloFunction: <span class="function"><span class="title">function</span></span>() &#123;     // helloFunction is a method </span><br><span class="line">        <span class="built_in">return</span> <span class="string">'Hello World!'</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var message = myObject.helloFunction()</span><br></pre></td></tr></table></figure>
-<p>이 위의 코드에서 helloFunction이 <strong>메소드</strong>라 할 수 있다.<br>속성 접근방식을 통해 호출할 수 있다.<br>그러면 메소드 내에서의 this는 무엇일까?</p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute.png?raw=true" alt="텍스트"> </p>
-<p>A : 해당 메소드를 소유하고 있는 객체이다.</p>
-<p>그래서 this.value를 선언해도, 문제없이 obj 내부의 value를 호출해줄 수 있다. </p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_class.png?raw=true" alt="텍스트"> </p>
-<p>class의 경우, class를 통해 만들어진 인스턴스를 this에 바인딩한다.</p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_caution.png?raw=true" alt="텍스트"> </p>
-<p>단 메소드를 파라미터 형식으로 사용 시, this는 피호출 함수가 된다.<br>여기서 helper 뒤에 bind(‘any data’) 를 덧붙이면, any data 자체가 this에 바인딩된다.</p>
-<p><br></p>
-<h3 id="1-3-‘생성자-실행’-에서의-this"><a href="#1-3-‘생성자-실행’-에서의-this" class="headerlink" title="1-3. ‘생성자 실행’ 에서의 this"></a>1-3. ‘생성자 실행’ 에서의 this</h3><p>생성자 실행은 앞에 new 라는 키워드가 붙었을 때, 함수 객체로 계산되어 수행된다. 생성자 실행 시 this는 무슨 값을 가리키게 될까? </p>
-<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute.png?raw=true"></p>
-<p>A : 새롭게 생성된 객체(인스턴스) 이다.<br>위 캡처를 참고하여 정확한 생성자 내의 로직을 설명하면 아래와 같다.</p>
-<blockquote>
-<ol>
-<li>빈 객체 생성 후, this와 연결(바인딩)</li>
-<li>생성자 내의 로직 실행</li>
-<li>로직이 반영된 인스턴스를 반환</li>
-</ol>
-</blockquote>
-<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute_class.png?raw=true"></p>
-<p>이는 ES6의 class 개념에서도 동일하게 활용된다!</p>
-<p><br></p>
-<h3 id="1-4-‘간접-실행’-에서의-this"><a href="#1-4-‘간접-실행’-에서의-this" class="headerlink" title="1-4. ‘간접 실행’ 에서의 this"></a>1-4. ‘간접 실행’ 에서의 this</h3><p>간접실행은 함수가 .call()이나 .apply(), bind() 메소드와 함께 호출될 때 수행된다.<br>지금까지의 방식이 this에 대해 별다른 언급이 없는 암묵적 this 바인딩이라고 한다면 이 방식은 this를 <strong><em>특정 객체에 명시적으로 바인딩</em></strong>하는 방식이라고 볼 수 있다.  </p>
-<p>첫번째 파라미터에 함수 내부의 this에 바인딩될 객체 인스턴스가 들어가고<br>두번째 파라미터에 함수에 전달할 argument 정보가 들어간다</p>
-<div><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_4_indirect_execute.png?raw=true" alt="텍스트"><br></div>
-
-<p>A : 이미 정답은 예정되어 있었지만 언급하면 첫번째 파라미터 (객체) 이다.<br>8, 9번째 줄을 보면 이해가 될 것이다! 첫번째 파라미터에 따라 this가 달라지는 모습을 볼 수 있다.</p>
-<p>참조</p>
-<ol>
-<li><p>javascript this<br><a href="https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this" target="_blank" rel="noopener">https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this</a></p>
-</li>
-<li><p>poiemaWeb<br><a href="https://poiemaweb.com/js-this" target="_blank" rel="noopener">https://poiemaweb.com/js-this</a></p>
-</li>
-<li><p>javascript this 정리<br><a href="https://hyunseob.github.io/2016/03/10/javascript-this/" target="_blank" rel="noopener">https://hyunseob.github.io/2016/03/10/javascript-this/</a></p>
-</li>
-<li><p>자바스크립트에서 사용되는 this에 대한 설명 1<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11</a></p>
-</li>
-<li><p>자바스크립트에서 사용되는 this에 대한 설명 2<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/</a></p>
-</li>
-</ol>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/javascript/">javascript</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
       <a href="/2018/09/15/[1] javascript 이해/">
         1. javascript 이해
       </a>
@@ -354,8 +251,8 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2018/09/15/2018 kotlin in Action 스터디 1주차/">
-        2018 Kotlin in Action study 1st
+      <a href="/2018/09/15/2018 프론트앤드 스터디 1주차/">
+        2018 프론트앤드 스터디 1주차
       </a>
     </h2>
     
@@ -365,161 +262,78 @@
 		
     
     <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+        <a href="/categories/2018-프론트앤드-스터디/">2018 프론트앤드 스터디</a>
     </div>
 
   </section>
   <section class="article typo">
-	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>6~8월에 진행했던 Android 스터디의 연장선으로, Android 실무자들과 함께 Kotlin 스터디를 듣게 되었다.<br>전체적인 커리큘럼은 1장부터 11장까지 1장씩 진행하고 각 주마다 2명씩 발표를 진행한다.<br>(난 2, 5, 7주차..) 그리고 남는 시간엔 코틀린 언어로 알고리즘을…뜨악….<br>발표와 알고리즘이 두렵긴 하지만 코틀린 책을 떼겠다는 마음으로 열정적으로 진행해야겠다 -0-  </p>
-<p>그렇게 1장의 내용을 정리해본다.</p>
-<h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 되 찾아야겠다.</p>
-<p><br></p>
-<h2 id="1장-코틀린이란-무엇이며-왜-필요한가"><a href="#1장-코틀린이란-무엇이며-왜-필요한가" class="headerlink" title="1장. 코틀린이란 무엇이며 왜 필요한가?"></a>1장. 코틀린이란 무엇이며 왜 필요한가?</h2><ul>
-<li>간결하고 실용적</li>
-<li>자바 코드와의 상호운용성 중시</li>
-<li>성능은 자바와 같은 수준</li>
-</ul>
-<p><br></p>
-<h3 id="1-1-코틀린-맛보기"><a href="#1-1-코틀린-맛보기" class="headerlink" title="1.1. 코틀린 맛보기"></a>1.1. 코틀린 맛보기</h3><ul>
-<li>코틀린 코드 간편 실행 : <a href="https://try.kotlinlang.org/" target="_blank" rel="noopener">https://try.kotlinlang.org/</a><blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class `1_1_ATasteOfKotlin` &#123;            // 1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</span><br><span class="line">    data class Person(                  // 2. data 클래스</span><br><span class="line">            val name: String,</span><br><span class="line">            val age: Int = 0,           // 3. default 값을 넣어줄 수 있다.</span><br><span class="line">            val phoneNum: Int? = null)  // 4. nullable 값 설정이 가능하다.</span><br><span class="line"></span><br><span class="line">    companion object &#123;</span><br><span class="line">        @JvmStatic</span><br><span class="line">        fun main(args: Array&lt;String&gt;) &#123;</span><br><span class="line">            val persons = listOf(</span><br><span class="line">                    Person(<span class="string">"Alice"</span>),</span><br><span class="line">                    Person(<span class="string">"Bob"</span>, age = 29),           // 5. 파라미터를 명시하여 넣어줄 수 있다.</span><br><span class="line">                    Person(<span class="string">"ridickle"</span>, phoneNum = 10)) // 6. 파라미터 순서에 종속적이지 않다.</span><br><span class="line"></span><br><span class="line">            // maxBy : Collection 내장 함수</span><br><span class="line">            val oldest = persons.maxBy &#123; it.age ?: 0 &#125; // 7. 람다 식 &amp; 엘비스 연산자</span><br><span class="line">            println(<span class="string">"The oldest person is <span class="variable">$oldest</span>"</span>)    // 8. 문자열 템플릿</span><br><span class="line"></span><br><span class="line">            // 결과 : The oldest person is Person(name=Bob, age=29)  // 9. toString 내장</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<p><span style="color:#CCCCCC"><del>주관적으로</del></span> 코틀린만의 특성을 위와 같이 찾아볼 수 있다.</p>
-<p><strong>1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</strong></p>
-<ul>
-<li>위와 같이 앞에 숫자를 넣을 수도 있다.</li>
-<li>하지만 dot(.) 이 안되는 등 일부 exception 이 있다.</li>
-</ul>
-<p><strong>2. data 클래스</strong></p>
-<ul>
-<li>데이터 저장에 특화된 클래스를 생성 가능하다.</li>
-<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
-<li>interface 이외 상속은 불가능하다 (여러가지 잠재적 문제가 있다. 이 <a href="https://blog.jetbrains.com/kotlin/2015/09/feedback-request-limitations-on-data-classes/" target="_blank" rel="noopener">링크</a>에서 자세한 내용 확인 가능)</li>
-</ul>
-<p><strong>3. default 값을 넣어줄 수 있다.</strong></p>
-<ul>
-<li>값이 안 들어갈 경우에 대한 기본값 설정이 가능하다.</li>
-</ul>
-<p><strong>4. nullable 값 설정이 가능하다.</strong></p>
-<ul>
-<li>?를 통해 null 값을 넣어줄 수 있다.</li>
-</ul>
-<p><strong>5. 파라미터를 명시하여 넣어줄 수 있다.</strong></p>
-<ul>
-<li>파라미터를 직접 명시하여 값을 넣어줄 수 있다.</li>
-<li>builder 패턴이 울고 있는 모습이 보인다(?)</li>
-</ul>
-<p><strong>6. 파라미터 순서에 종속적이지 않다.</strong></p>
-<ul>
-<li>5번의 연장선상 내용이다.</li>
-<li>기존이라면 에러가 나거나, age에 값이 들어가 이상한 결과가 나와야한다.<br>하지만 kotlin에는 파라미터 직접 명시 및 데이터 주입으로 유연한 처리가 가능하다.</li>
-</ul>
-<p><strong>7. 람다 식 &amp; 엘비스 연산자</strong></p>
-<ul>
-<li><p>람다 식</p>
-<ul>
-<li>function에 function을 전달하고, 이를 콜 하게 하는 것</li>
-<li><p>SAM (Single Abstract Method) 에 대해서는 {} 식을 직접 만들수 있다.</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// ex (setOnClickListener)</span><br><span class="line">FloatingActionButton fab = findViewById(R.id.fab);</span><br><span class="line"></span><br><span class="line">fab.setOnClickListener(new View.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        // Something</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fab.setOnClickListener &#123; /* Something */ &#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>collection (Array, List 등) 에서 효율적으로 활용 가능</p>
-</li>
-<li>closure </li>
-<li>할많다하… (할말이 많으므로 다음에 하겠습니다…)</li>
-</ul>
-</li>
-<li>엘비스 연산자<ul>
-<li>만약 왼쪽의 값이 비어있을 시, 오른쪽 값을 대입한다.</li>
-<li>null 체크 및 null safety</li>
-</ul>
-</li>
-</ul>
-<p><strong>8. 문자열 템플릿</strong></p>
-<ul>
-<li>+ 로 string을 처리하는 방식 -&gt; $ 키워드를 활용해 “” 안에 한 번에 처리</li>
-</ul>
-<p><strong>9. toString 내장</strong></p>
-<ul>
-<li>2번의 연장선상 내용</li>
-<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
-</ul>
-<p><br></p>
-<h3 id="1-2-코틀린의-주요-특성"><a href="#1-2-코틀린의-주요-특성" class="headerlink" title="1.2. 코틀린의 주요 특성"></a>1.2. 코틀린의 주요 특성</h3><h4 id="1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것"><a href="#1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것" class="headerlink" title="1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것"></a>1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것</h4><ul>
-<li>코틀린의 주 목적 : Java보다 <strong>간결</strong>하고 <strong>생산적</strong>이며 <strong>안전한</strong> 대체 언어 제공</li>
-<li>코틀린 활용 영역<blockquote>
-<ul>
-<li>서버상의 코드 (JSP/Servlet)</li>
-<li>안드로이드</li>
-<li>+ <a href="https://github.com/moe-java-samples" target="_blank" rel="noopener">인텔의 OS 엔진</a> : IOS</li>
-<li>+ <a href="https://github.com/edvin/tornadofx" target="_blank" rel="noopener">토네이도FX</a> / 자바FX : 데스크톱 서비스</li>
-<li>+ javascript 지원 (kotlin 1.1+)</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h4 id="1-2-2-정적-타입-지정-언어"><a href="#1-2-2-정적-타입-지정-언어" class="headerlink" title="1.2.2 정적 타입 지정 언어"></a>1.2.2 정적 타입 지정 언어</h4><ul>
-<li>Kotlin은 정적 타입 지정 언어 (하지만 <strong>타입 추론</strong>을 지원)</li>
-<li>class, interface, generics</li>
-<li>null safety</li>
-<li>함수형 타입 지원<blockquote>
-<p><span style="font-size:24px">참고</span> (다른 글에 옮길 예정)<br><div><span style="font-size:18px">Q : <strong>정적 타입 지정</strong>이라 함은</span>  (ex&gt; Java)</div><br>-&gt; 모든 프로그램 구성 요소 타입을 <strong>컴파일 시점</strong>에 알 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>컴파일러가 타입을 검증</strong>한다.</p>
-<p><strong>장점</strong> </p>
-<ul>
-<li>컴파일 단에서 검증하므로 메소드 호출이 더 빠름</li>
-<li>컴파일 시점에서 오류 미리 catch</li>
-<li>어떤 타입인지 바로 확인 가능</li>
-<li>안전하게 리펙토링 가능 / 다른 지원 기능도 효과적으로 만들 수 있음 =&gt; 크게 체감을 못하겠음…</li>
-</ul>
-<p><strong>단점</strong> </p>
-<ul>
-<li>일일히 명시 필요</li>
-<li>코드길이 up</li>
-<li>데이터 구조 복잡<br><br></li>
-</ul>
+	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>웹을 정말 돌같이 생각했던 내가 프론트앤드 스터디 참여한 주 이유는 이렇다.</p>
+<p><strong>1. 웹송합니다를 벗어나기 위한 노력</strong><br>나는 웹 프론트앤드 지식이 부족하다..<br>회사에서 맡은 주력 업무는 모바일과 백앤드 개발이지만, 회사는 웹 프론트앤드 또한 관리하고 있다.<br>그래서 웹 프론트와 관련하여 피드백을 줄 수 있어야 하기 때문에.. 웹알못 탈피가 필수가 되었다.<br>이게 프론트앤드 스터디에 참여한 첫번째 이유이다.</p>
+<p><strong>2. javascript 복습</strong><br>비교적 간단하다. 최근 서버 개발자로 프로젝트를 진행하면서 javascript 기초의 부족함을 느껴 개념을 다시 다뤄보고 싶었다.<br>프론트앤드 스터디에 참여한 두 번째 이유!</p>
+<p><strong>3. 동반자겸 사수</strong><br>공부는 물론 스스로 하는거지만, 익숙치 않은 분야를 다루는 만큼 방향성을 잡아주고 사수와 같은 동료들이 있으면 좋겠다고 생각했다.<br>마침 관련 스타트업에서 활동하고 있는 아는 형님의 연락이 있었고, 웹 프론트앤드 경험이 많은 친구도 (꼬셔서) 같이 하게 되었다.<br>웹 프론트앤드 경험자(이자 나를 다잡아줄 사수)와 함께하면 시너지가 확실할 것 같았다.</p>
+<p>이런 이유와 마음가짐을 가지고 프론트앤드 스터디에 참여하게 되었다.</p>
 <hr>
-<p><div><span style="font-size:18px">Q : <strong>동적 타입 지정</strong>이라 함은</span>  (ex&gt; Groovy, JRuby)</div><br>-&gt; 타입과 관계없이 모든 값을 변수에 넣을 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>실행 시점에서 타입을 검증</strong>한다.</p>
-<p><strong>장점</strong></p>
+<h1 id="1주차"><a href="#1주차" class="headerlink" title="1주차"></a>1주차</h1><p>일시 : 2018.09.08 (토)<br>장소 : 할리스커피 신논현역점<br>시간 : 10:00 ~ 14:30<br>참석자 : 동현, 상우, 원호  </p>
+<p>진행 내용  </p>
 <ul>
-<li>타입 추론</li>
-<li>코드길이 down</li>
-<li>데이터 구조 유연</li>
+<li>초기 방향 정하기</li>
+<li>javascript 개념 talk</li>
 </ul>
-<p><strong>단점</strong> </p>
+<h2 id="1-javascript의-this"><a href="#1-javascript의-this" class="headerlink" title="1. javascript의 this"></a>1. javascript의 this</h2><p>java에서의 this는 클래스로부터 생성되는 독립적인 인스턴스 객체를 의미한다. (그래서 클래스 밖에서는 this사용이 불가능하다.)<br>하지만 javascript는 함수의 현재 실행 문맥이다. 실행문맥 종류만 4가지가 있다.</p>
 <ul>
-<li>실행 시점에서 모든 것을 확인하므로 성능적 이슈 발생 가능</li>
-<li>실행 시점 오류 발생률이 높아짐</li>
+<li>함수 실행 : alert(‘Hello World!’)</li>
+<li>메소드 실행 : console.log(‘Hello World!’)</li>
+<li>생성자 실행 : new RegExp(‘\d’)</li>
+<li>간접 실행 : alert.call(undefined, ‘Hello World!’)</li>
 </ul>
+<p>참고로 위 4가지는 각각의 다른 실행 문맥을 가진다. 사례를 통해 확인해보자.</p>
+<p><br></p>
+<h3 id="1-1-‘함수-실행’-에서의-this"><a href="#1-1-‘함수-실행’-에서의-this" class="headerlink" title="1-1. ‘함수 실행’ 에서의 this"></a>1-1. ‘함수 실행’ 에서의 this</h3><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_1_function_execute.png?raw=true" alt="텍스트"> </p>
+<p>A : 전역 객체이다.  </p>
+<p>이는 실행환경에 따라 전역 객체가 다른데<br>나는 node 상에서 실행시켰으므로 ‘global’ 이 this가 된다.<br>(웹 브라우저상에서는 ‘window’ 가 this가 될 것이다.)    </p>
+<p><br></p>
+<h3 id="1-2-‘메소드-실행’-에서의-this"><a href="#1-2-‘메소드-실행’-에서의-this" class="headerlink" title="1-2. ‘메소드 실행’ 에서의 this"></a>1-2. ‘메소드 실행’ 에서의 this</h3><p>먼저 메소드의 의미를 알아야 될 것 같다. 메소드는 객체 내부의 함수 property 를 말한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var myObject = &#123;   </span><br><span class="line">    helloFunction: <span class="function"><span class="title">function</span></span>() &#123;     // helloFunction is a method </span><br><span class="line">        <span class="built_in">return</span> <span class="string">'Hello World!'</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var message = myObject.helloFunction()</span><br></pre></td></tr></table></figure>
+<p>이 위의 코드에서 helloFunction이 <strong>메소드</strong>라 할 수 있다.<br>속성 접근방식을 통해 호출할 수 있다.<br>그러면 메소드 내에서의 this는 무엇일까?</p>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute.png?raw=true" alt="텍스트"> </p>
+<p>A : 해당 메소드를 소유하고 있는 객체이다.</p>
+<p>그래서 this.value를 선언해도, 문제없이 obj 내부의 value를 호출해줄 수 있다. </p>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_class.png?raw=true" alt="텍스트"> </p>
+<p>class의 경우, class를 통해 만들어진 인스턴스를 this에 바인딩한다.</p>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_caution.png?raw=true" alt="텍스트"> </p>
+<p>단 메소드를 파라미터 형식으로 사용 시, this는 피호출 함수가 된다.<br>여기서 helper 뒤에 bind(‘any data’) 를 덧붙이면, any data 자체가 this에 바인딩된다.</p>
+<p><br></p>
+<h3 id="1-3-‘생성자-실행’-에서의-this"><a href="#1-3-‘생성자-실행’-에서의-this" class="headerlink" title="1-3. ‘생성자 실행’ 에서의 this"></a>1-3. ‘생성자 실행’ 에서의 this</h3><p>생성자 실행은 앞에 new 라는 키워드가 붙었을 때, 함수 객체로 계산되어 수행된다. 생성자 실행 시 this는 무슨 값을 가리키게 될까? </p>
+<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute.png?raw=true"></p>
+<p>A : 새롭게 생성된 객체(인스턴스) 이다.<br>위 캡처를 참고하여 정확한 생성자 내의 로직을 설명하면 아래와 같다.</p>
+<blockquote>
+<ol>
+<li>빈 객체 생성 후, this와 연결(바인딩)</li>
+<li>생성자 내의 로직 실행</li>
+<li>로직이 반영된 인스턴스를 반환</li>
+</ol>
 </blockquote>
+<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute_class.png?raw=true"></p>
+<p>이는 ES6의 class 개념에서도 동일하게 활용된다!</p>
+<p><br></p>
+<h3 id="1-4-‘간접-실행’-에서의-this"><a href="#1-4-‘간접-실행’-에서의-this" class="headerlink" title="1-4. ‘간접 실행’ 에서의 this"></a>1-4. ‘간접 실행’ 에서의 this</h3><p>간접실행은 함수가 .call()이나 .apply(), bind() 메소드와 함께 호출될 때 수행된다.<br>지금까지의 방식이 this에 대해 별다른 언급이 없는 암묵적 this 바인딩이라고 한다면 이 방식은 this를 <strong><em>특정 객체에 명시적으로 바인딩</em></strong>하는 방식이라고 볼 수 있다.  </p>
+<p>첫번째 파라미터에 함수 내부의 this에 바인딩될 객체 인스턴스가 들어가고<br>두번째 파라미터에 함수에 전달할 argument 정보가 들어간다</p>
+<div><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_4_indirect_execute.png?raw=true" alt="텍스트"><br></div>
+
+<p>A : 이미 정답은 예정되어 있었지만 언급하면 첫번째 파라미터 (객체) 이다.<br>8, 9번째 줄을 보면 이해가 될 것이다! 첫번째 파라미터에 따라 this가 달라지는 모습을 볼 수 있다.</p>
+<p>참조</p>
+<ol>
+<li><p>javascript this<br><a href="https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this" target="_blank" rel="noopener">https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this</a></p>
 </li>
-</ul>
-<h4 id="1-2-3-함수형-프로그래밍과-객체지향-프로그래밍"><a href="#1-2-3-함수형-프로그래밍과-객체지향-프로그래밍" class="headerlink" title="1.2.3 함수형 프로그래밍과 객체지향 프로그래밍"></a>1.2.3 함수형 프로그래밍과 객체지향 프로그래밍</h4><ul>
-<li>코틀린 = 함수형 프로그래밍 + 명령형 프로그래밍<blockquote>
-<p><span style="font-size:24px">참고</span><br><div><span style="font-size:18px">Q : <strong>함수형 프로그래밍</strong>이라 함은</span></div><br>-&gt; 함수를 일반 값처럼 다룬다. (first-class)<br>-&gt; 만들어지고 나면 내부상태가 바뀌지 않는 <strong>불변 객체</strong>를 사용<br>-&gt; 부수 효과 없음<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(함수 외부나 다른 바깥 환경과 상호작용하지 않음)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(입력 같을 시 항상 같은 출력)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(다른 객체 상태 변경하지 않음)  </p>
-<p><strong>장점</strong> </p>
-<ul>
-<li>간결함</li>
-<li>다중 스레드를 사용해도 안전함 (&lt;- 불변 데이터 구조 사용 + 순수 함수)</li>
-<li>테스트 용이</li>
-</ul>
-</blockquote>
+<li><p>poiemaWeb<br><a href="https://poiemaweb.com/js-this" target="_blank" rel="noopener">https://poiemaweb.com/js-this</a></p>
 </li>
-</ul>
-<h4 id="1-2-4-무료-오픈소스"><a href="#1-2-4-무료-오픈소스" class="headerlink" title="1.2.4 무료 오픈소스"></a>1.2.4 무료 오픈소스</h4><ul>
-<li>모두 오픈소스이며 아파치2 라이선스하에 무료 제공 (<a href="https://github.com/jetbrains/kotlin" target="_blank" rel="noopener">개발 링크</a>)</li>
-</ul>
-<h3 id="1-3-코틀린-응용"><a href="#1-3-코틀린-응용" class="headerlink" title="1.3. 코틀린 응용"></a>1.3. 코틀린 응용</h3><ul>
-<li>서버 사이드, 안드로이드에서 많이 쓰임</li>
-</ul>
-<h4 id="1-3-1-코틀린-서버-프로그래밍"><a href="#1-3-1-코틀린-서버-프로그래밍" class="headerlink" title="1.3.1 코틀린 서버 프로그래밍"></a>1.3.1 코틀린 서버 프로그래밍</h4><h4 id="1-3-2-코틀린-안드로이드-프로그래밍"><a href="#1-3-2-코틀린-안드로이드-프로그래밍" class="headerlink" title="1.3.2 코틀린 안드로이드 프로그래밍"></a>1.3.2 코틀린 안드로이드 프로그래밍</h4><h3 id="1-4-코틀린의-철학"><a href="#1-4-코틀린의-철학" class="headerlink" title="1.4. 코틀린의 철학"></a>1.4. 코틀린의 철학</h3><h4 id="1-4-1-실용성"><a href="#1-4-1-실용성" class="headerlink" title="1.4.1 실용성"></a>1.4.1 실용성</h4><h4 id="1-4-2-간결성"><a href="#1-4-2-간결성" class="headerlink" title="1.4.2 간결성"></a>1.4.2 간결성</h4><h4 id="1-4-3-안전성"><a href="#1-4-3-안전성" class="headerlink" title="1.4.3 안전성"></a>1.4.3 안전성</h4><h4 id="1-4-4-상호운용성"><a href="#1-4-4-상호운용성" class="headerlink" title="1.4.4 상호운용성"></a>1.4.4 상호운용성</h4><h3 id="1-5-코틀린-도구-사용"><a href="#1-5-코틀린-도구-사용" class="headerlink" title="1.5. 코틀린 도구 사용"></a>1.5. 코틀린 도구 사용</h3><h4 id="1-5-1-코틀린-코드-컴파일"><a href="#1-5-1-코틀린-코드-컴파일" class="headerlink" title="1.5.1 코틀린 코드 컴파일"></a>1.5.1 코틀린 코드 컴파일</h4><h4 id="1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인"><a href="#1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인" class="headerlink" title="1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인"></a>1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인</h4><h4 id="1-5-3-대화형-셀"><a href="#1-5-3-대화형-셀" class="headerlink" title="1.5.3 대화형 셀"></a>1.5.3 대화형 셀</h4><h4 id="1-5-4-이클립스-플러그인"><a href="#1-5-4-이클립스-플러그인" class="headerlink" title="1.5.4 이클립스 플러그인"></a>1.5.4 이클립스 플러그인</h4><h4 id="1-5-5-온라인-놀이터"><a href="#1-5-5-온라인-놀이터" class="headerlink" title="1.5.5 온라인 놀이터"></a>1.5.5 온라인 놀이터</h4><h4 id="1-5-6-자바-코틀린-변환기"><a href="#1-5-6-자바-코틀린-변환기" class="headerlink" title="1.5.6 자바-코틀린 변환기"></a>1.5.6 자바-코틀린 변환기</h4><h3 id="1-6-요약"><a href="#1-6-요약" class="headerlink" title="1.6. 요약"></a>1.6. 요약</h3><p>코틀린</p>
-<p>자바 플랫폼에서 돌아가는 새로운 프로그래밍 언어</p>
-<p>자바 코드와의 상호운용성 중시 (Android / Server Side) </p>
-<p>성능은 Java와 같은 수준</p>
-<p>간결하고 실용적</p>
-<p>언어가 말 그대로 언어라면 프레임워크는 패러다임!</p>
+<li><p>javascript this 정리<br><a href="https://hyunseob.github.io/2016/03/10/javascript-this/" target="_blank" rel="noopener">https://hyunseob.github.io/2016/03/10/javascript-this/</a></p>
+</li>
+<li><p>자바스크립트에서 사용되는 this에 대한 설명 1<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11</a></p>
+</li>
+<li><p>자바스크립트에서 사용되는 this에 대한 설명 2<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/</a></p>
+</li>
+</ol>
 
 
     
@@ -527,7 +341,7 @@
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/kotlin/">kotlin</a>
+        <a href="/tags/javascript/">javascript</a>
       
 	  </div>
     
@@ -750,6 +564,230 @@
 	  <div class="full-width auto-padding tags">
       
         <a href="/tags/javascript/">javascript</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2018/09/15/2018 kotlin in Action 스터디 1주차/">
+        2018 Kotlin in Action study 1st
+      </a>
+    </h2>
+    
+    <time>
+      9월 15, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>6~8월에 진행했던 Android 스터디의 연장선으로, Android 실무자들과 함께 Kotlin 스터디를 듣게 되었다.<br>전체적인 커리큘럼은 1장부터 11장까지 1장씩 진행하고 각 주마다 2명씩 발표를 진행한다.<br>(난 2, 5, 7주차..) 그리고 남는 시간엔 코틀린 언어로 알고리즘을…뜨악….<br>발표와 알고리즘이 두렵긴 하지만 코틀린 책을 떼겠다는 마음으로 열정적으로 진행해야겠다 -0-  </p>
+<p>그렇게 1장의 내용을 정리해본다.</p>
+<h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 되 찾아야겠다.</p>
+<p><br></p>
+<h2 id="1장-코틀린이란-무엇이며-왜-필요한가"><a href="#1장-코틀린이란-무엇이며-왜-필요한가" class="headerlink" title="1장. 코틀린이란 무엇이며 왜 필요한가?"></a>1장. 코틀린이란 무엇이며 왜 필요한가?</h2><ul>
+<li>간결하고 실용적</li>
+<li>자바 코드와의 상호운용성 중시</li>
+<li>성능은 자바와 같은 수준</li>
+</ul>
+<p><br></p>
+<h3 id="1-1-코틀린-맛보기"><a href="#1-1-코틀린-맛보기" class="headerlink" title="1.1. 코틀린 맛보기"></a>1.1. 코틀린 맛보기</h3><ul>
+<li>코틀린 코드 간편 실행 : <a href="https://try.kotlinlang.org/" target="_blank" rel="noopener">https://try.kotlinlang.org/</a><blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_1_1_ATasteOfKotlin</span> </span>&#123;             <span class="comment">// 1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</span></span><br><span class="line">    <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>(                  <span class="comment">// 2. data 클래스</span></span><br><span class="line">            <span class="keyword">val</span> name: String,</span><br><span class="line">            <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">0</span>,           <span class="comment">// 3. default 값을 넣어줄 수 있다.</span></span><br><span class="line">            <span class="keyword">val</span> phoneNum: <span class="built_in">Int</span>? = <span class="literal">null</span>)  <span class="comment">// 4. nullable 값 설정이 가능하다.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="meta">@JvmStatic</span></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">            <span class="keyword">val</span> persons = listOf(</span><br><span class="line">                    Person(<span class="string">"Alice"</span>),</span><br><span class="line">                    Person(<span class="string">"Bob"</span>, age = <span class="number">29</span>),           <span class="comment">// 5. 파라미터를 명시하여 넣어줄 수 있다.</span></span><br><span class="line">                    Person(<span class="string">"ridickle"</span>, phoneNum = <span class="number">10</span>)) <span class="comment">// 6. 파라미터 순서에 종속적이지 않다.</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// maxBy : Collection 내장 함수</span></span><br><span class="line">            <span class="keyword">val</span> oldest = persons.maxBy &#123; it.age ?: <span class="number">0</span> &#125; <span class="comment">// 7. 람다 식 &amp; 엘비스 연산자</span></span><br><span class="line">            println(<span class="string">"The oldest person is <span class="variable">$oldest</span>"</span>)    <span class="comment">// 8. 문자열 템플릿</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 결과 : The oldest person is Person(name=Bob, age=29)  // 9. toString 내장</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><span style="color:#CCCCCC"><del>주관적으로</del></span> 코틀린만의 특성을 위와 같이 찾아볼 수 있다.</p>
+<p><strong>1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</strong></p>
+<ul>
+<li>위와 같이 앞에 숫자를 넣을 수도 있다.</li>
+<li>하지만 dot(.) 이 안되는 등 일부 exception 이 있다.</li>
+</ul>
+<p><strong>2. data 클래스</strong></p>
+<ul>
+<li>데이터 저장에 특화된 클래스를 생성 가능하다.</li>
+<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
+<li>interface 이외 상속은 불가능하다 (여러가지 잠재적 문제가 있다. 이 <a href="https://blog.jetbrains.com/kotlin/2015/09/feedback-request-limitations-on-data-classes/" target="_blank" rel="noopener">링크</a>에서 자세한 내용 확인 가능)</li>
+</ul>
+<p><strong>3. default 값을 넣어줄 수 있다.</strong></p>
+<ul>
+<li>값이 안 들어갈 경우에 대한 기본값 설정이 가능하다.</li>
+</ul>
+<p><strong>4. nullable 값 설정이 가능하다.</strong></p>
+<ul>
+<li>?를 통해 null 값을 넣어줄 수 있다.</li>
+</ul>
+<p><strong>5. 파라미터를 명시하여 넣어줄 수 있다.</strong></p>
+<ul>
+<li>파라미터를 직접 명시하여 값을 넣어줄 수 있다.</li>
+<li>builder 패턴이 울고 있는 모습이 보인다(?)</li>
+</ul>
+<p><strong>6. 파라미터 순서에 종속적이지 않다.</strong></p>
+<ul>
+<li>5번의 연장선상 내용이다.</li>
+<li>기존이라면 에러가 나거나, age에 값이 들어가 이상한 결과가 나와야한다.<br>하지만 kotlin에는 파라미터 직접 명시 및 데이터 주입으로 유연한 처리가 가능하다.</li>
+</ul>
+<p><strong>7. 람다 식 &amp; 엘비스 연산자</strong></p>
+<ul>
+<li><p>람다 식</p>
+<ul>
+<li>function에 function을 전달하고, 이를 콜 하게 하는 것</li>
+<li>SAM (Single Abstract Method) 에 대해서는 {} 식을 직접 만들수 있다.</li>
+</ul>
+<blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppcompatActivity &#123;</span></span></span><br><span class="line">    <span class="comment">// ex (setOnClickListener)</span></span><br><span class="line">    FloatingActionButton fab = findViewById(R.id.fab);</span><br><span class="line">    </span><br><span class="line">    fab.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> void onClick(View v) &#123;</span><br><span class="line">          <span class="comment">// Something</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    fab.setOnClickListener &#123; <span class="comment">/* Something */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>collection (Array, List 등) 에서 효율적으로 활용 가능</li>
+<li>closure </li>
+<li>할많다하… (할말이 많으므로 다음에 하겠습니다…)</li>
+</ul>
+</li>
+<li><p>엘비스 연산자</p>
+<ul>
+<li>만약 왼쪽의 값이 비어있을 시, 오른쪽 값을 대입한다.</li>
+<li>null 체크 및 null safety</li>
+</ul>
+</li>
+</ul>
+<p><strong>8. 문자열 템플릿</strong></p>
+<ul>
+<li>+ 로 string을 처리하는 방식 -&gt; $ 키워드를 활용해 “” 안에 한 번에 처리</li>
+</ul>
+<p><strong>9. toString 내장</strong></p>
+<ul>
+<li>2번의 연장선상 내용</li>
+<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
+</ul>
+<p><br></p>
+<h3 id="1-2-코틀린의-주요-특성"><a href="#1-2-코틀린의-주요-특성" class="headerlink" title="1.2. 코틀린의 주요 특성"></a>1.2. 코틀린의 주요 특성</h3><h4 id="1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것"><a href="#1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것" class="headerlink" title="1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것"></a>1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것</h4><ul>
+<li>코틀린의 주 목적 : Java보다 <strong>간결</strong>하고 <strong>생산적</strong>이며 <strong>안전한</strong> 대체 언어 제공</li>
+<li>코틀린 활용 영역<blockquote>
+<ul>
+<li>서버상의 코드 (JSP/Servlet)</li>
+<li>안드로이드</li>
+<li>+ <a href="https://github.com/moe-java-samples" target="_blank" rel="noopener">인텔의 OS 엔진</a> : IOS</li>
+<li>+ <a href="https://github.com/edvin/tornadofx" target="_blank" rel="noopener">토네이도FX</a> / 자바FX : 데스크톱 서비스</li>
+<li>+ javascript 지원 (kotlin 1.1+)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="1-2-2-정적-타입-지정-언어"><a href="#1-2-2-정적-타입-지정-언어" class="headerlink" title="1.2.2 정적 타입 지정 언어"></a>1.2.2 정적 타입 지정 언어</h4><ul>
+<li>Kotlin은 정적 타입 지정 언어 (하지만 <strong>타입 추론</strong>을 지원)</li>
+<li>class, interface, generics</li>
+<li>null safety</li>
+<li>함수형 타입 지원<blockquote>
+<p><span style="font-size:24px">참고</span> (다른 글에 옮길 예정)<br><div><span style="font-size:18px">Q : <strong>정적 타입 지정</strong>이라 함은</span>  (ex&gt; Java)</div><br>-&gt; 모든 프로그램 구성 요소 타입을 <strong>컴파일 시점</strong>에 알 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>컴파일러가 타입을 검증</strong>한다.</p>
+<p><strong>장점</strong> </p>
+<ul>
+<li>컴파일 단에서 검증하므로 메소드 호출이 더 빠름</li>
+<li>컴파일 시점에서 오류 미리 catch</li>
+<li>어떤 타입인지 바로 확인 가능</li>
+<li>안전하게 리펙토링 가능 / 다른 지원 기능도 효과적으로 만들 수 있음 =&gt; 크게 체감을 못하겠음…</li>
+</ul>
+<p><strong>단점</strong> </p>
+<ul>
+<li>일일히 명시 필요</li>
+<li>코드길이 up</li>
+<li>데이터 구조 복잡<br><br></li>
+</ul>
+<hr>
+<p><div><span style="font-size:18px">Q : <strong>동적 타입 지정</strong>이라 함은</span>  (ex&gt; Groovy, JRuby)</div><br>-&gt; 타입과 관계없이 모든 값을 변수에 넣을 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>실행 시점에서 타입을 검증</strong>한다.</p>
+<p><strong>장점</strong></p>
+<ul>
+<li>타입 추론</li>
+<li>코드길이 down</li>
+<li>데이터 구조 유연</li>
+</ul>
+<p><strong>단점</strong> </p>
+<ul>
+<li>실행 시점에서 모든 것을 확인하므로 성능적 이슈 발생 가능</li>
+<li>실행 시점 오류 발생률이 높아짐</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="1-2-3-함수형-프로그래밍과-객체지향-프로그래밍"><a href="#1-2-3-함수형-프로그래밍과-객체지향-프로그래밍" class="headerlink" title="1.2.3 함수형 프로그래밍과 객체지향 프로그래밍"></a>1.2.3 함수형 프로그래밍과 객체지향 프로그래밍</h4><ul>
+<li>코틀린 = 함수형 프로그래밍 + 명령형 프로그래밍<blockquote>
+<p><span style="font-size:24px">참고</span><br><div><span style="font-size:18px">Q : <strong>함수형 프로그래밍</strong>이라 함은</span></div><br>-&gt; 함수를 일반 값처럼 다룬다. (first-class)<br>-&gt; 만들어지고 나면 내부상태가 바뀌지 않는 <strong>불변 객체</strong>를 사용<br>-&gt; 부수 효과 없음<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(함수 외부나 다른 바깥 환경과 상호작용하지 않음)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(입력 같을 시 항상 같은 출력)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(다른 객체 상태 변경하지 않음)  </p>
+<p><strong>장점</strong> </p>
+<ul>
+<li>간결함</li>
+<li>다중 스레드를 사용해도 안전함 (&lt;- 불변 데이터 구조 사용 + 순수 함수)</li>
+<li>테스트 용이</li>
+</ul>
+<hr>
+<p><div><span style="font-size:18px">Q : <strong>명령형 프로그래밍</strong>이라 함은</span></div><br>-&gt; 프로그래밍의 상태, 상태를 변경시키는 구문의 관점에서 연산을 설명<br>-&gt; 수행하는 절차를 자세하게 설명하는 데 중점을 둠 (절차지향)</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="1-2-4-무료-오픈소스"><a href="#1-2-4-무료-오픈소스" class="headerlink" title="1.2.4 무료 오픈소스"></a>1.2.4 무료 오픈소스</h4><ul>
+<li>모두 오픈소스이며 아파치2 라이선스하에 무료 제공 (<a href="https://github.com/jetbrains/kotlin" target="_blank" rel="noopener">개발 링크</a>)</li>
+</ul>
+<h3 id="1-3-코틀린-응용"><a href="#1-3-코틀린-응용" class="headerlink" title="1.3. 코틀린 응용"></a>1.3. 코틀린 응용</h3><ul>
+<li>서버 사이드, 안드로이드에서 많이 쓰임</li>
+</ul>
+<h4 id="1-3-1-코틀린-서버-프로그래밍"><a href="#1-3-1-코틀린-서버-프로그래밍" class="headerlink" title="1.3.1 코틀린 서버 프로그래밍"></a>1.3.1 코틀린 서버 프로그래밍</h4><ul>
+<li>기존의 코드와 호환성이 좋으며 상호운용도 가능함 (Java)</li>
+<li>코틀린만의 새로운 기술 제공 (Builder Pattern, DSL 기능)<blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewTechnology</span></span>&#123;</span><br><span class="line">  <span class="comment">// ex&gt; HTML 생성 라이브러리</span></span><br><span class="line">  <span class="function"><span class="keyword">fun</span> <span class="title">renderPersonList</span><span class="params">(persons: <span class="type">Collection</span>&lt;<span class="type">Person</span>&gt;)</span></span> = </span><br><span class="line">  createHTML().table&#123;</span><br><span class="line">      <span class="keyword">for</span>(person <span class="keyword">in</span> persons)&#123;</span><br><span class="line">          tr&#123;</span><br><span class="line">            td &#123; +person.name &#125;</span><br><span class="line">            td &#123; +person.age &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ex&gt; 영속성 프레임워크 (exposed 프레임워크)</span></span><br><span class="line">  <span class="keyword">object</span> CountryTable : IdTable() &#123;</span><br><span class="line">      <span class="keyword">val</span> name = varchar(<span class="string">"name"</span>, <span class="number">250</span>).uniqueIndex()</span><br><span class="line">      <span class="keyword">val</span> iso = varchar(<span class="string">"iso"</span>, <span class="number">2</span>).uniqueIndex()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Country</span></span>(id : EntityID) : Entity(id) &#123;</span><br><span class="line">      <span class="keyword">var</span> name = String <span class="keyword">by</span> CountryTable.name</span><br><span class="line">      <span class="keyword">var</span> iso = String <span class="keyword">by</span> CountryTable.iso</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> russia = Country.find &#123;</span><br><span class="line">      CountryTable.iso.eq(<span class="string">"ru"</span>)</span><br><span class="line">  &#125;.first()</span><br><span class="line"></span><br><span class="line">  println(russia.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h4 id="1-3-2-코틀린-안드로이드-프로그래밍"><a href="#1-3-2-코틀린-안드로이드-프로그래밍" class="headerlink" title="1.3.2 코틀린 안드로이드 프로그래밍"></a>1.3.2 코틀린 안드로이드 프로그래밍</h4><ul>
+<li><p>android에 적합한 kotlin과 anko 라이브러리 활용 가능</p>
+<blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">verticalLayout &#123;</span><br><span class="line">    nal name = editText()</span><br><span class="line">    button(<span class="string">"say Hello"</span>)&#123;</span><br><span class="line">        onClick &#123; toast (<span class="string">"Hello, %&#123;name.text&#125;!"</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>Null Safety 처리를 통한 ANR 확률 줄임</p>
+</li>
+<li>인라인 등을 활용한 성능상의 차이를 없앰</li>
+</ul>
+<h3 id="1-4-코틀린의-철학"><a href="#1-4-코틀린의-철학" class="headerlink" title="1.4. 코틀린의 철학"></a>1.4. 코틀린의 철학</h3><ul>
+<li>코틀린은 자바와의 상호 운용성에 초점을 맞춘 실용적이고 간결하며 안전한 언어이다.</li>
+</ul>
+<h4 id="1-4-1-실용성"><a href="#1-4-1-실용성" class="headerlink" title="1.4.1 실용성"></a>1.4.1 실용성</h4><ul>
+<li>개발자의 니즈를 최대한 반영한 언어</li>
+</ul>
+<h4 id="1-4-2-간결성"><a href="#1-4-2-간결성" class="headerlink" title="1.4.2 간결성"></a>1.4.2 간결성</h4><ul>
+<li>작성이 번거로운 코드를 묵시적으로 제공, 람다를 통한 코드 라인 줄이기를 최대한 반영한 언어</li>
+</ul>
+<h4 id="1-4-3-안전성"><a href="#1-4-3-안전성" class="headerlink" title="1.4.3 안전성"></a>1.4.3 안전성</h4><ul>
+<li>Null Safety &amp; 타입 추론 등을 통한 안전성을 추구한 언어</li>
+</ul>
+<h4 id="1-4-4-상호운용성"><a href="#1-4-4-상호운용성" class="headerlink" title="1.4.4 상호운용성"></a>1.4.4 상호운용성</h4><ul>
+<li>자바의 기존 라이브러리를 계승할 수 있고, 상호운용성에 힘을 실은 언어</li>
+</ul>
+<h3 id="1-5-코틀린-도구-사용"><a href="#1-5-코틀린-도구-사용" class="headerlink" title="1.5. 코틀린 도구 사용"></a>1.5. 코틀린 도구 사용</h3><p>자신의 컴파일러 설정 방법을 확인하고 싶을 시 <a href="http://kotlinlang.org/docs/tutorials" target="_blank" rel="noopener">http://kotlinlang.org/docs/tutorials</a> 참고</p>
+<h4 id="1-5-1-코틀린-코드-컴파일"><a href="#1-5-1-코틀린-코드-컴파일" class="headerlink" title="1.5.1 코틀린 코드 컴파일"></a>1.5.1 코틀린 코드 컴파일</h4><p><img src="" alt="image"></p>
+<h4 id="1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인"><a href="#1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인" class="headerlink" title="1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인"></a>1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인</h4><ul>
+<li>안드로이드 스튜디오, IntelliJ에서 코틀린 사용 가능<h4 id="1-5-3-대화형-셀"><a href="#1-5-3-대화형-셀" class="headerlink" title="1.5.3 대화형 셀"></a>1.5.3 대화형 셀</h4></li>
+<li>REPL을 통해 간단한 코틀린 코드 테스트 가능 (정규식 등)<h4 id="1-5-4-이클립스-플러그인"><a href="#1-5-4-이클립스-플러그인" class="headerlink" title="1.5.4 이클립스 플러그인"></a>1.5.4 이클립스 플러그인</h4></li>
+<li>이클립스 마켓플레이스에서 선택 가능<h4 id="1-5-5-온라인-놀이터"><a href="#1-5-5-온라인-놀이터" class="headerlink" title="1.5.5 온라인 놀이터"></a>1.5.5 온라인 놀이터</h4></li>
+<li><a href="http://try.kotl.in/" target="_blank" rel="noopener">http://try.kotl.in/</a> 을 통한 진행 가능<h4 id="1-5-6-자바-코틀린-변환기"><a href="#1-5-6-자바-코틀린-변환기" class="headerlink" title="1.5.6 자바-코틀린 변환기"></a>1.5.6 자바-코틀린 변환기</h4></li>
+<li>Code -&gt; Convert Java File to Kotlin File 을 통해 JAVA와의 100%(를 자랑하지만 99%) 호환 가능</li>
+</ul>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/kotlin/">kotlin</a>
       
 	  </div>
     
