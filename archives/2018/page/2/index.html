@@ -145,8 +145,8 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2018/09/15/2018-kotlin-in-Action-스터디-1st/">
-        2018 Kotlin in Action study 1st
+      <a href="/2018/09/15/[1] javascript 이해/">
+        1. javascript 이해
       </a>
     </h2>
     
@@ -156,198 +156,80 @@
 		
     
     <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+        <a href="/categories/javascript/">javascript</a>
     </div>
 
   </section>
   <section class="article typo">
-	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>6~8월에 진행했던 Android 스터디의 연장선으로, Android 실무자들과 함께 Kotlin 스터디를 듣게 되었다.<br>전체적인 커리큘럼은 1장부터 11장까지 1장씩 진행하고 각 주마다 2명씩 발표를 진행한다.<br>(난 2, 5, 7주차..) 그리고 남는 시간엔 코틀린 언어로 알고리즘을…뜨악….<br>발표와 알고리즘이 두렵긴 하지만 코틀린 책을 떼겠다는 마음으로 열정적으로 진행해야겠다 -0-  </p>
-<p>그렇게 1장의 내용을 정리해본다.</p>
-<h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 되 찾아야겠다.</p>
-<p><br></p>
-<h2 id="1장-코틀린이란-무엇이며-왜-필요한가"><a href="#1장-코틀린이란-무엇이며-왜-필요한가" class="headerlink" title="1장. 코틀린이란 무엇이며 왜 필요한가?"></a>1장. 코틀린이란 무엇이며 왜 필요한가?</h2><ul>
-<li>간결하고 실용적</li>
-<li>자바 코드와의 상호운용성 중시</li>
-<li>성능은 자바와 같은 수준</li>
+	  <h1 id="javascript의-이해"><a href="#javascript의-이해" class="headerlink" title="javascript의 이해"></a>javascript의 이해</h1><h2 id="javascript의-특징"><a href="#javascript의-특징" class="headerlink" title="javascript의 특징"></a>javascript의 특징</h2><ul>
+<li>단일 Thread 기반</li>
+<li>Callback Queue 사용</li>
 </ul>
-<p><br></p>
-<h3 id="1-1-코틀린-맛보기"><a href="#1-1-코틀린-맛보기" class="headerlink" title="1.1. 코틀린 맛보기"></a>1.1. 코틀린 맛보기</h3><ul>
-<li>코틀린 코드 간편 실행 : <a href="https://try.kotlinlang.org/" target="_blank" rel="noopener">https://try.kotlinlang.org/</a><blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_1_1_ATasteOfKotlin</span> </span>&#123;             <span class="comment">// 1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</span></span><br><span class="line">    <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>(                  <span class="comment">// 2. data 클래스</span></span><br><span class="line">            <span class="keyword">val</span> name: String,</span><br><span class="line">            <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">0</span>,           <span class="comment">// 3. default 값을 넣어줄 수 있다.</span></span><br><span class="line">            <span class="keyword">val</span> phoneNum: <span class="built_in">Int</span>? = <span class="literal">null</span>)  <span class="comment">// 4. nullable 값 설정이 가능하다.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="meta">@JvmStatic</span></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">            <span class="keyword">val</span> persons = listOf(</span><br><span class="line">                    Person(<span class="string">"Alice"</span>),</span><br><span class="line">                    Person(<span class="string">"Bob"</span>, age = <span class="number">29</span>),           <span class="comment">// 5. 파라미터를 명시하여 넣어줄 수 있다.</span></span><br><span class="line">                    Person(<span class="string">"ridickle"</span>, phoneNum = <span class="number">10</span>)) <span class="comment">// 6. 파라미터 순서에 종속적이지 않다.</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// maxBy : Collection 내장 함수</span></span><br><span class="line">            <span class="keyword">val</span> oldest = persons.maxBy &#123; it.age ?: <span class="number">0</span> &#125; <span class="comment">// 7. 람다 식 &amp; 엘비스 연산자</span></span><br><span class="line">            println(<span class="string">"The oldest person is <span class="variable">$oldest</span>"</span>)    <span class="comment">// 8. 문자열 템플릿</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 결과 : The oldest person is Person(name=Bob, age=29)  // 9. toString 내장</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<h2 id="javascript의-Engine-Google-V8-Engine"><a href="#javascript의-Engine-Google-V8-Engine" class="headerlink" title="javascript의 Engine (Google V8 Engine)"></a>javascript의 Engine (Google V8 Engine)</h2><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true" alt="image"></p>
+<h3 id="Google-V8-Engine-구조"><a href="#Google-V8-Engine-구조" class="headerlink" title="Google V8 Engine 구조"></a>Google V8 Engine 구조</h3><ul>
+<li>Memory Heap : 메모리 할당 진행</li>
+<li>Call Stack : 코드 실행에 따른 (CPU 작업 단위) 호출 스택이 쌓이는 곳<div style="color:#CCCCCC"><span style="">(밑줄친 단어에 대한 상세 설명은 참고에서 확인)</span></div>
+
 </li>
 </ul>
-<p><span style="color:#CCCCCC"><del>주관적으로</del></span> 코틀린만의 특성을 위와 같이 찾아볼 수 있다.</p>
-<p><strong>1. quote 기호를 통해 새로운 이름 설정을 할 수 있다.</strong></p>
-<ul>
-<li>위와 같이 앞에 숫자를 넣을 수도 있다.</li>
-<li>하지만 dot(.) 이 안되는 등 일부 exception 이 있다.</li>
-</ul>
-<p><strong>2. data 클래스</strong></p>
-<ul>
-<li>데이터 저장에 특화된 클래스를 생성 가능하다.</li>
-<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
-<li>interface 이외 상속은 불가능하다 (여러가지 잠재적 문제가 있다. 이 <a href="https://blog.jetbrains.com/kotlin/2015/09/feedback-request-limitations-on-data-classes/" target="_blank" rel="noopener">링크</a>에서 자세한 내용 확인 가능)</li>
-</ul>
-<p><strong>3. default 값을 넣어줄 수 있다.</strong></p>
-<ul>
-<li>값이 안 들어갈 경우에 대한 기본값 설정이 가능하다.</li>
-</ul>
-<p><strong>4. nullable 값 설정이 가능하다.</strong></p>
-<ul>
-<li>?를 통해 null 값을 넣어줄 수 있다.</li>
-</ul>
-<p><strong>5. 파라미터를 명시하여 넣어줄 수 있다.</strong></p>
-<ul>
-<li>파라미터를 직접 명시하여 값을 넣어줄 수 있다.</li>
-<li>builder 패턴이 울고 있는 모습이 보인다(?)</li>
-</ul>
-<p><strong>6. 파라미터 순서에 종속적이지 않다.</strong></p>
-<ul>
-<li>5번의 연장선상 내용이다.</li>
-<li>기존이라면 에러가 나거나, age에 값이 들어가 이상한 결과가 나와야한다.<br>하지만 kotlin에는 파라미터 직접 명시 및 데이터 주입으로 유연한 처리가 가능하다.</li>
-</ul>
-<p><strong>7. 람다 식 &amp; 엘비스 연산자</strong></p>
-<ul>
-<li><p>람다 식</p>
-<ul>
-<li>function에 function을 전달하고, 이를 콜 하게 하는 것</li>
-<li>SAM (Single Abstract Method) 에 대해서는 {} 식을 직접 만들수 있다.</li>
-</ul>
+<p>위의 Engine을 통해 javascript는 <strong>단일 쓰레드처럼(!!)</strong> 작업을 처리할 수 있다.</p>
 <blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppcompatActivity &#123;</span></span></span><br><span class="line">    <span class="comment">// ex (setOnClickListener)</span></span><br><span class="line">    FloatingActionButton fab = findViewById(R.id.fab);</span><br><span class="line">    </span><br><span class="line">    fab.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> void onClick(View v) &#123;</span><br><span class="line">          <span class="comment">// Something</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    fab.setOnClickListener &#123; <span class="comment">/* Something */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true" alt="image"><br>위와 같이… 말이다. 이렇게 짜면 서버는 죽겠…지</p>
 </blockquote>
+<p><strong>하!! 지!! 만!!</strong>  </p>
+<p>위의 ‘V8 Engine’ 만으로는 Node.js 또는 브라우저의 이벤트 동시 처리를 설명할 수 없다.<br>V8 Engine 개념만으로 생각하면 여러개의 작업이 순차적으로 하나씩 처리될 것이기 때문이다.<br>그러면 자연스럽게 동시에 여러 작업은 할 수 없게 된다.  </p>
+<p>위 개념대로라면 <strong>파일 다운로드를 실행하면, 요청을 받기전까지 웹페이지가 먹통이 되어야</strong> 하는데 웹은 절대 그러지 않는다.<br>그럼 이벤트 동시 처리는 어떻게 설명할 수 있을까?<br>정답을 먼저 이야기하면  </p>
+<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
 <ul>
-<li>collection (Array, List 등) 에서 효율적으로 활용 가능</li>
-<li>closure </li>
-<li>할많다하… (할말이 많으므로 다음에 하겠습니다…)</li>
-</ul>
+<li><p><strong>1. Web API (Background)</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout) 보유 및 실행</p>
 </li>
-<li><p>엘비스 연산자</p>
-<ul>
-<li>만약 왼쪽의 값이 비어있을 시, 오른쪽 값을 대입한다.</li>
-<li>null 체크 및 null safety</li>
-</ul>
+<li><p><strong>2. Callback Queue</strong><br> 이벤트 콜백함수(ex&gt; setTimeout), I/O 작업 이벤트를 순차적으로 쌓아놓는 Queue<br> Web API 에서 순차적으로 작업된 결과를 받아옴<br> Event Loop를 통해 javascript 엔진 (call stack) 전달</p>
 </li>
-</ul>
-<p><strong>8. 문자열 템플릿</strong></p>
-<ul>
-<li>+ 로 string을 처리하는 방식 -&gt; $ 키워드를 활용해 “” 안에 한 번에 처리</li>
-</ul>
-<p><strong>9. toString 내장</strong></p>
-<ul>
-<li>2번의 연장선상 내용</li>
-<li>편리한 함수를 제공한다. (equals(), hashCode(), toString(), componentN() 등)</li>
-</ul>
-<p><br></p>
-<h3 id="1-2-코틀린의-주요-특성"><a href="#1-2-코틀린의-주요-특성" class="headerlink" title="1.2. 코틀린의 주요 특성"></a>1.2. 코틀린의 주요 특성</h3><h4 id="1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것"><a href="#1-2-1-대상-플랫폼-서버-안드로이드-등-자바가-실행되는-모든-것" class="headerlink" title="1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것"></a>1.2.1 대상 플랫폼 :  서버 안드로이드 등 자바가 실행되는 모든 것</h4><ul>
-<li>코틀린의 주 목적 : Java보다 <strong>간결</strong>하고 <strong>생산적</strong>이며 <strong>안전한</strong> 대체 언어 제공</li>
-<li>코틀린 활용 영역<blockquote>
-<ul>
-<li>서버상의 코드 (JSP/Servlet)</li>
-<li>안드로이드</li>
-<li>+ <a href="https://github.com/moe-java-samples" target="_blank" rel="noopener">인텔의 OS 엔진</a> : IOS</li>
-<li>+ <a href="https://github.com/edvin/tornadofx" target="_blank" rel="noopener">토네이도FX</a> / 자바FX : 데스크톱 서비스</li>
-<li>+ javascript 지원 (kotlin 1.1+)</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h4 id="1-2-2-정적-타입-지정-언어"><a href="#1-2-2-정적-타입-지정-언어" class="headerlink" title="1.2.2 정적 타입 지정 언어"></a>1.2.2 정적 타입 지정 언어</h4><ul>
-<li>Kotlin은 정적 타입 지정 언어 (하지만 <strong>타입 추론</strong>을 지원)</li>
-<li>class, interface, generics</li>
-<li>null safety</li>
-<li>함수형 타입 지원<blockquote>
-<p><span style="font-size:24px">참고</span> (다른 글에 옮길 예정)<br><div><span style="font-size:18px">Q : <strong>정적 타입 지정</strong>이라 함은</span>  (ex&gt; Java)</div><br>-&gt; 모든 프로그램 구성 요소 타입을 <strong>컴파일 시점</strong>에 알 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>컴파일러가 타입을 검증</strong>한다.</p>
-<p><strong>장점</strong> </p>
-<ul>
-<li>컴파일 단에서 검증하므로 메소드 호출이 더 빠름</li>
-<li>컴파일 시점에서 오류 미리 catch</li>
-<li>어떤 타입인지 바로 확인 가능</li>
-<li>안전하게 리펙토링 가능 / 다른 지원 기능도 효과적으로 만들 수 있음 =&gt; 크게 체감을 못하겠음…</li>
-</ul>
-<p><strong>단점</strong> </p>
-<ul>
-<li>일일히 명시 필요</li>
-<li>코드길이 up</li>
-<li>데이터 구조 복잡<br><br></li>
-</ul>
-<hr>
-<p><div><span style="font-size:18px">Q : <strong>동적 타입 지정</strong>이라 함은</span>  (ex&gt; Groovy, JRuby)</div><br>-&gt; 타입과 관계없이 모든 값을 변수에 넣을 수 있다.<br>-&gt; 프로그램 안에서 객체의 필드나 메소드를 사용할 때마다 <strong>실행 시점에서 타입을 검증</strong>한다.</p>
-<p><strong>장점</strong></p>
-<ul>
-<li>타입 추론</li>
-<li>코드길이 down</li>
-<li>데이터 구조 유연</li>
-</ul>
-<p><strong>단점</strong> </p>
-<ul>
-<li>실행 시점에서 모든 것을 확인하므로 성능적 이슈 발생 가능</li>
-<li>실행 시점 오류 발생률이 높아짐</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h4 id="1-2-3-함수형-프로그래밍과-객체지향-프로그래밍"><a href="#1-2-3-함수형-프로그래밍과-객체지향-프로그래밍" class="headerlink" title="1.2.3 함수형 프로그래밍과 객체지향 프로그래밍"></a>1.2.3 함수형 프로그래밍과 객체지향 프로그래밍</h4><ul>
-<li>코틀린 = 함수형 프로그래밍 + 명령형 프로그래밍<blockquote>
-<p><span style="font-size:24px">참고</span><br><div><span style="font-size:18px">Q : <strong>함수형 프로그래밍</strong>이라 함은</span></div><br>-&gt; 함수를 일반 값처럼 다룬다. (first-class)<br>-&gt; 만들어지고 나면 내부상태가 바뀌지 않는 <strong>불변 객체</strong>를 사용<br>-&gt; 부수 효과 없음<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(함수 외부나 다른 바깥 환경과 상호작용하지 않음)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(입력 같을 시 항상 같은 출력)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(다른 객체 상태 변경하지 않음)  </p>
-<p><strong>장점</strong> </p>
-<ul>
-<li>간결함</li>
-<li>다중 스레드를 사용해도 안전함 (&lt;- 불변 데이터 구조 사용 + 순수 함수)</li>
-<li>테스트 용이</li>
-</ul>
-<hr>
-<p><div><span style="font-size:18px">Q : <strong>명령형 프로그래밍</strong>이라 함은</span></div><br>-&gt; 프로그래밍의 상태, 상태를 변경시키는 구문의 관점에서 연산을 설명<br>-&gt; 수행하는 절차를 자세하게 설명하는 데 중점을 둠 (절차지향)</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="1-2-4-무료-오픈소스"><a href="#1-2-4-무료-오픈소스" class="headerlink" title="1.2.4 무료 오픈소스"></a>1.2.4 무료 오픈소스</h4><ul>
-<li>모두 오픈소스이며 아파치2 라이선스하에 무료 제공 (<a href="https://github.com/jetbrains/kotlin" target="_blank" rel="noopener">개발 링크</a>)</li>
-</ul>
-<h3 id="1-3-코틀린-응용"><a href="#1-3-코틀린-응용" class="headerlink" title="1.3. 코틀린 응용"></a>1.3. 코틀린 응용</h3><ul>
-<li>서버 사이드, 안드로이드에서 많이 쓰임</li>
-</ul>
-<h4 id="1-3-1-코틀린-서버-프로그래밍"><a href="#1-3-1-코틀린-서버-프로그래밍" class="headerlink" title="1.3.1 코틀린 서버 프로그래밍"></a>1.3.1 코틀린 서버 프로그래밍</h4><ul>
-<li>기존의 코드와 호환성이 좋으며 상호운용도 가능함 (Java)</li>
-<li>코틀린만의 새로운 기술 제공 (Builder Pattern, DSL 기능)<blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewTechnology</span></span>&#123;</span><br><span class="line">  <span class="comment">// ex&gt; HTML 생성 라이브러리</span></span><br><span class="line">  <span class="function"><span class="keyword">fun</span> <span class="title">renderPersonList</span><span class="params">(persons: <span class="type">Collection</span>&lt;<span class="type">Person</span>&gt;)</span></span> = </span><br><span class="line">  createHTML().table&#123;</span><br><span class="line">      <span class="keyword">for</span>(person <span class="keyword">in</span> persons)&#123;</span><br><span class="line">          tr&#123;</span><br><span class="line">            td &#123; +person.name &#125;</span><br><span class="line">            td &#123; +person.age &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ex&gt; 영속성 프레임워크 (exposed 프레임워크)</span></span><br><span class="line">  <span class="keyword">object</span> CountryTable : IdTable() &#123;</span><br><span class="line">      <span class="keyword">val</span> name = varchar(<span class="string">"name"</span>, <span class="number">250</span>).uniqueIndex()</span><br><span class="line">      <span class="keyword">val</span> iso = varchar(<span class="string">"iso"</span>, <span class="number">2</span>).uniqueIndex()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Country</span></span>(id : EntityID) : Entity(id) &#123;</span><br><span class="line">      <span class="keyword">var</span> name = String <span class="keyword">by</span> CountryTable.name</span><br><span class="line">      <span class="keyword">var</span> iso = String <span class="keyword">by</span> CountryTable.iso</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> russia = Country.find &#123;</span><br><span class="line">      CountryTable.iso.eq(<span class="string">"ru"</span>)</span><br><span class="line">  &#125;.first()</span><br><span class="line"></span><br><span class="line">  println(russia.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<h4 id="1-3-2-코틀린-안드로이드-프로그래밍"><a href="#1-3-2-코틀린-안드로이드-프로그래밍" class="headerlink" title="1.3.2 코틀린 안드로이드 프로그래밍"></a>1.3.2 코틀린 안드로이드 프로그래밍</h4><ul>
-<li><p>android에 적합한 kotlin과 anko 라이브러리 활용 가능</p>
+<li><p><strong>3. Event Loop</strong><br> Callback Queue 의 작업들을 javascript 엔진(call stack) 으로 보내기 위해 사용하는 장치<br> 동시성(비동기 처리) 지원</p>
 <blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">verticalLayout &#123;</span><br><span class="line">    nal name = editText()</span><br><span class="line">    button(<span class="string">"say Hello"</span>)&#123;</span><br><span class="line">        onClick &#123; toast (<span class="string">"Hello, %&#123;name.text&#125;!"</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ex&gt; Node.js의 <strong>libuv</strong>, 브라우저의 <strong>웹 워커</strong> 등</p>
 </blockquote>
 </li>
-<li><p>Null Safety 처리를 통한 ANR 확률 줄임</p>
+</ul>
+<p>위 3개의 부속 + javascript Engine이 어우러져 비동기처리가 가능해진 것이다.</p>
+<blockquote>
+<div style="font-size:24px;">참고</div>  
+
+<p>CPU 작업(Bound)</p>
+<ul>
+<li>CPU 자원을 사용하는 Task</li>
+<li>Javascript V8 Engine에서 처리</li>
+<li>작업 속도가 빠른 편</li>
+<li>I/O Bound를 제외한 대부분의 javascript 코드와 연산들이 이에 해당한다.</li>
+</ul>
+<p>I/O 작업(Bound)</p>
+<ul>
+<li>Disk, Network, Database와 관련된 Task (입 출력 작업)</li>
+<li>Event Queue에 Message 형식으로 쌓임</li>
+<li>Event Loop에서 처리</li>
+<li>작업 속도가 느린 편</li>
+</ul>
+</blockquote>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><ul>
+<li>V8 Engine이 단일 호출스택을 사용하기 때문에 javascript 내 처리는 단일 쓰레드 방식이라 할 수 있다.</li>
+<li>javascript 기반 환경 (Node.js 등) 에서는 V8 Engine과 상호작용하기 위한 부가장치들이 존재한다.</li>
+</ul>
+<p><strong>그러므로</strong> javascript 기반 환경 자체가 단일 쓰레드 기반이라고 생각하는 건 심히 위태롭다.</p>
+<h2 id="참고링크"><a href="#참고링크" class="headerlink" title="참고링크"></a>참고링크</h2><ul>
+<li>자바스크립트의 동작원리: 엔진, 런타임, 호출 스택<br><a href="https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/" target="_blank" rel="noopener">https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/</a></li>
+<li>자바스크립트와 이벤트 루프<br><a href="https://meetup.toast.com/posts/89" target="_blank" rel="noopener">https://meetup.toast.com/posts/89</a></li>
+<li>[자바스크립트] js엔진은 어떻게 동시처리를 하는가? 이벤트루프<br><a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a></li>
+<li>호출 스택과 이벤트 루프<br><a href="https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2" target="_blank" rel="noopener">https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2</a></li>
+<li>loupe<br><a href="https://youtu.be/8aGhZQkoFbQ" target="_blank" rel="noopener">https://youtu.be/8aGhZQkoFbQ</a><br><a href="https://bit.ly/1Btu0Iy" target="_blank" rel="noopener">https://bit.ly/1Btu0Iy</a>  </li>
+<li>개인 github / github 내 참조 링크   <ul>
+<li>Node.js의 내부 아키텍쳐 이해 (<a href="http://sjh836.tistory.com/79" target="_blank" rel="noopener">http://sjh836.tistory.com/79</a>)</li>
+<li>Node.js의 이벤트 루프 이해 (<a href="http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html" target="_blank" rel="noopener">http://la-stranger.blogspot.kr/2014/02/nodejs-nodejs.html</a>)</li>
+<li>Node.js의 이벤트 처리 과정 (<a href="https://goo.gl/YJX9pM" target="_blank" rel="noopener">https://goo.gl/YJX9pM</a>)</li>
+<li>Blocking과 NonBlocking의 이해 (<a href="http://ozt88.tistory.com/20" target="_blank" rel="noopener">http://ozt88.tistory.com/20</a>)</li>
+<li>Node.js의 비동기적 특성 (<a href="https://qkraudghgh.github.io/node/2016/10/23/node-async.html" target="_blank" rel="noopener">https://qkraudghgh.github.io/node/2016/10/23/node-async.html</a>)</li>
+<li>Javascript 엔진에 대한 이해 (<a href="http://jinbroing.tistory.com/98" target="_blank" rel="noopener">http://jinbroing.tistory.com/98</a>)</li>
+</ul>
 </li>
-<li>인라인 등을 활용한 성능상의 차이를 없앰</li>
-</ul>
-<h3 id="1-4-코틀린의-철학"><a href="#1-4-코틀린의-철학" class="headerlink" title="1.4. 코틀린의 철학"></a>1.4. 코틀린의 철학</h3><ul>
-<li>코틀린은 자바와의 상호 운용성에 초점을 맞춘 실용적이고 간결하며 안전한 언어이다.</li>
-</ul>
-<h4 id="1-4-1-실용성"><a href="#1-4-1-실용성" class="headerlink" title="1.4.1 실용성"></a>1.4.1 실용성</h4><ul>
-<li>개발자의 니즈를 최대한 반영한 언어</li>
-</ul>
-<h4 id="1-4-2-간결성"><a href="#1-4-2-간결성" class="headerlink" title="1.4.2 간결성"></a>1.4.2 간결성</h4><ul>
-<li>작성이 번거로운 코드를 묵시적으로 제공, 람다를 통한 코드 라인 줄이기를 최대한 반영한 언어</li>
-</ul>
-<h4 id="1-4-3-안전성"><a href="#1-4-3-안전성" class="headerlink" title="1.4.3 안전성"></a>1.4.3 안전성</h4><ul>
-<li>Null Safety &amp; 타입 추론 등을 통한 안전성을 추구한 언어</li>
-</ul>
-<h4 id="1-4-4-상호운용성"><a href="#1-4-4-상호운용성" class="headerlink" title="1.4.4 상호운용성"></a>1.4.4 상호운용성</h4><ul>
-<li>자바의 기존 라이브러리를 계승할 수 있고, 상호운용성에 힘을 실은 언어</li>
-</ul>
-<h3 id="1-5-코틀린-도구-사용"><a href="#1-5-코틀린-도구-사용" class="headerlink" title="1.5. 코틀린 도구 사용"></a>1.5. 코틀린 도구 사용</h3><p>자신의 컴파일러 설정 방법을 확인하고 싶을 시 <a href="http://kotlinlang.org/docs/tutorials" target="_blank" rel="noopener">http://kotlinlang.org/docs/tutorials</a> 참고</p>
-<h4 id="1-5-1-코틀린-코드-컴파일"><a href="#1-5-1-코틀린-코드-컴파일" class="headerlink" title="1.5.1 코틀린 코드 컴파일"></a>1.5.1 코틀린 코드 컴파일</h4><p><img src="" alt="image"></p>
-<h4 id="1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인"><a href="#1-5-2-인텔리J-아이디어와-안드로이드-스튜디오의-코틀린-플러그인" class="headerlink" title="1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인"></a>1.5.2 인텔리J 아이디어와 안드로이드 스튜디오의 코틀린 플러그인</h4><ul>
-<li>안드로이드 스튜디오, IntelliJ에서 코틀린 사용 가능<h4 id="1-5-3-대화형-셀"><a href="#1-5-3-대화형-셀" class="headerlink" title="1.5.3 대화형 셀"></a>1.5.3 대화형 셀</h4></li>
-<li>REPL을 통해 간단한 코틀린 코드 테스트 가능 (정규식 등)<h4 id="1-5-4-이클립스-플러그인"><a href="#1-5-4-이클립스-플러그인" class="headerlink" title="1.5.4 이클립스 플러그인"></a>1.5.4 이클립스 플러그인</h4></li>
-<li>이클립스 마켓플레이스에서 선택 가능<h4 id="1-5-5-온라인-놀이터"><a href="#1-5-5-온라인-놀이터" class="headerlink" title="1.5.5 온라인 놀이터"></a>1.5.5 온라인 놀이터</h4></li>
-<li><a href="http://try.kotl.in/" target="_blank" rel="noopener">http://try.kotl.in/</a> 을 통한 진행 가능<h4 id="1-5-6-자바-코틀린-변환기"><a href="#1-5-6-자바-코틀린-변환기" class="headerlink" title="1.5.6 자바-코틀린 변환기"></a>1.5.6 자바-코틀린 변환기</h4></li>
-<li>Code -&gt; Convert Java File to Kotlin File 을 통해 JAVA와의 100%(를 자랑하지만 99%) 호환 가능</li>
 </ul>
 
 
@@ -356,7 +238,7 @@
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/kotlin/">kotlin</a>
+        <a href="/tags/javascript/">javascript</a>
       
 	  </div>
     
