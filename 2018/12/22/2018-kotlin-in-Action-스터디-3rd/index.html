@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2018/12 | ridickle한 일상</title>
+  <title>2018 Kotlin in Action 3rd | ridickle한 일상</title>
   <meta name="description" content="때로는 우스꽝스럽게, 하지만 재미있게" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,16 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="ridickle한 일상">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="때로는 우스꽝스럽게, 하지만 재미있게">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ridickle한 일상">
-<meta property="og:url" content="https://ridickle7.github.io/archives/2018/12/index.html">
+  <meta name="description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
+<meta name="keywords" content="kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018 Kotlin in Action 3rd">
+<meta property="og:url" content="https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-3rd/index.html">
 <meta property="og:site_name" content="ridickle한 일상">
-<meta property="og:description" content="때로는 우스꽝스럽게, 하지만 재미있게">
+<meta property="og:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
 <meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-01-31T10:02:21.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ridickle한 일상">
-<meta name="twitter:description" content="때로는 우스꽝스럽게, 하지만 재미있게">
+<meta name="twitter:title" content="2018 Kotlin in Action 3rd">
+<meta name="twitter:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -132,372 +134,31 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-2018-kotlin-in-Action-스터디-3rd"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/12/22/2018-kotlin-in-Action-스터디-3rd/">
+    	2018 Kotlin in Action 3rd
+    </a>
+  </h2>
+	<time>
+	  12월 22, 2018
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2018.12'}
-  </script>
+    
+    <div class='cats'>
+        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+    </div>
 
-<section class="post-list">
+	</section>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/23/RecyclerView/">
-        1. RecyclerView 기초
-      </a>
-    </h2>
-    
-    <time>
-      12월 23, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/android/">android</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="5-RecyclerView"><a href="#5-RecyclerView" class="headerlink" title="5. RecyclerView"></a>5. RecyclerView</h1><p><strong>A flexible view for providing a limited window into a large data set</strong><br><strong>거대한 데이터 set을 제한된 화면에 보여줄 수 있는 유현한 View</strong></p>
-<p>기본 Document 는 <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView" target="_blank" rel="noopener">이 링크</a> 참고  </p>
-<h2 id="RecyclerView-이전"><a href="#RecyclerView-이전" class="headerlink" title="RecyclerView 이전"></a>RecyclerView 이전</h2><h3 id="내장-라이브러리"><a href="#내장-라이브러리" class="headerlink" title="내장 라이브러리"></a>내장 라이브러리</h3><ul>
-<li>ListView</li>
-<li>GridView</li>
-</ul>
-<p>위의 두 위젯을 활용하여 List 형식으로 데이터 표현!</p>
-<p>한계  </p>
-<ol>
-<li>ViewHolder를 강제하지 않음  </li>
-<li>내장 버그 존재 (ex&gt; GridView position 0 bug)  </li>
-<li>기타 편의성<blockquote>
-<p>example</p>
-<ol>
-<li>아이템 추가/제거 시 적용할 수 있는 애니메이션이 없음</li>
-<li>카드뷰 형태 및 디자인 효과 등</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<!-- example Code : [https://www.naver.com](https://www.naver.com) -->
-<!-- ![Image](http://cfile30.uf.tistory.com/image/2261D04D56BF3EA7169034) -->
-<h2 id="RecyclerView-소개"><a href="#RecyclerView-소개" class="headerlink" title="RecyclerView 소개"></a>RecyclerView 소개</h2><ul>
-<li>위의 ListView, GridView 를 보완한 위젯</li>
-<li>Android 5.0 Lollipop 과 같이 처음 소개<blockquote>
-<p>RecyclerView 는? </p>
-<ul>
-<li>어노테이션을 통한 가독성 증가 (@GET, @POST)  </li>
-<li>서버 연동을 위한 기능 선택 가능 (HttpClient, OkHttp 등)  </li>
-<li>response 메시지에 대해 파싱방식 설정 가능 (GSON, XML 등)  </li>
-<li>RXJava 지원  </li>
-<li>속도가 타 라이브러리와 기능과 비교하여 제일 빠르다 (아래 사진 참고)  </li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<p>========================== 이렇게 된 이상 Retrofit 으로 간다. ==========================</p>
-<h2 id="Retrofit-가이드라인"><a href="#Retrofit-가이드라인" class="headerlink" title="Retrofit 가이드라인"></a>Retrofit 가이드라인</h2><h3 id="1-app-gradle의-dependency에-두-줄을-추가한다"><a href="#1-app-gradle의-dependency에-두-줄을-추가한다" class="headerlink" title="1. app.gradle의 dependency에 두 줄을 추가한다."></a>1. app.gradle의 dependency에 두 줄을 추가한다.</h3><pre><code>// app.gradle
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    // ...
-
-    // retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-}</code></pre>
-
-<h3 id="2-매니페스트에-INTERNET-퍼미션-추가"><a href="#2-매니페스트에-INTERNET-퍼미션-추가" class="headerlink" title="2. 매니페스트에 INTERNET 퍼미션 추가"></a>2. 매니페스트에 INTERNET 퍼미션 추가</h3><pre><code>// manifest.xml
-< uses-permission android:name="android.permission.INTERNET" />
-</code></pre>
-
-<h3 id="3-GSON-활용으로-얻어낼-JSON-데이터-클래스를-만듬"><a href="#3-GSON-활용으로-얻어낼-JSON-데이터-클래스를-만듬" class="headerlink" title="3. GSON 활용으로 얻어낼 JSON 데이터 클래스를 만듬"></a>3. GSON 활용으로 얻어낼 JSON 데이터 클래스를 만듬</h3><p>주의 사항<br>해당 데이터 클래스의 형식이, 가져올 JSON 데이터 형식과 매치되어야 한다.<br>즉, <strong>변수(이름)!!!!!!!!</strong> 을 맞춰줘야 한다.</p>
-<pre><code> // User.java
-public class User {
-    String id;
-    String passowrd;
-
-    public String getId() { return id; }
-
-    public String getPassowrd() {
-        return passowrd;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setPassowrd(String passowrd) {
-        this.passowrd = passowrd;
-    }
-}</code></pre>
-
-
-<h3 id="4-Service-Interface-객체-생성-및-활성화"><a href="#4-Service-Interface-객체-생성-및-활성화" class="headerlink" title="4. Service Interface 객체 생성 및 활성화"></a>4. Service Interface 객체 생성 및 활성화</h3><pre><code>// NetworkService.java
-public interface NetworkService {
-    @GET("/users/login")
-    Call< User> get_userLogin(@Query("id") String id, @Query("password") String password);
-}</code></pre>
-
-<h3 id="5-Retrofit과-Service-객체-연결"><a href="#5-Retrofit과-Service-객체-연결" class="headerlink" title="5. Retrofit과 Service 객체 연결"></a>5. Retrofit과 Service 객체 연결</h3><pre><code>// NetworkPresenter.java
-// Retrofit 객체 생성
-retrofit = new Retrofit.Builder()
-    .baseUrl(baseURL)
-    .client(getRequestHeader())
-    .addConverterFactory(GsonConverterFactory.create()) // GSON Parser 추가
-    .build();
-
-// interface 활성화
-service = retrofit.create(NetworkInterface.class);  // 인터페이스 연결
-
-//...
-
-// 로그 출력 기능을 retrofit에 추가하기
-private static OkHttpClient getRequestHeader() {
-    HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-    OkHttpClient client = new OkHttpClient.Builder()
-        .addInterceptor(interceptor).build();
-
-    return client;
-}</code></pre>
-
-<h3 id="6-Call-을-통해-서버와-통신"><a href="#6-Call-을-통해-서버와-통신" class="headerlink" title="6. Call 을 통해 서버와 통신"></a>6. Call 을 통해 서버와 통신</h3><pre><code>// MainActivity.java
-Call< User> get_userLogin = service.get_userLogin("id", "pw");
-post_userLogin.enqueue(new Callback< User>() {
-    @Override
-    public void onResponse(Call< User> call, Response< User> response) {
-        // 
-    }
-
-    @Override
-    public void onFailure(Call< User> call, Throwable t) {
-        // 
-    }
-});</code></pre>  
-
-<h2 id="3-Retrofit-구성"><a href="#3-Retrofit-구성" class="headerlink" title="3. Retrofit 구성"></a>3. Retrofit 구성</h2><h3 id="1-Service-Interface-객체"><a href="#1-Service-Interface-객체" class="headerlink" title="1. Service Interface 객체"></a>1. Service Interface 객체</h3><p>각 URI에 매핑된 Call 객체 저장소<br>어노테이션을 활용하며, 각 매핑된 이벤트는 모두 Call 객체를 통해 만들고 활용하는 것이 가능  </p>
-<pre><code>// NetworkService.java
-public interface NetworkService {
-    @GET("/users/login")
-    public Call< User> get_userLogin(@Query("id") String id, @Query("password") String password);
-}</code></pre>
-
-<h3 id="2-Retrofit-객체"><a href="#2-Retrofit-객체" class="headerlink" title="2. Retrofit 객체"></a>2. Retrofit 객체</h3><p>retrofit 객체를 통해 앞서 만든 Call 객체 저장소를 활성화<br>(이를 진행 안할 시 Interface 객체는 그냥 저장소가 될 뿐…)</p>
-<pre><code>// NetworkPresenter.java
-Retrofit retrofit = new Retrofit.Builder()
-    .baseUrl("https://api.github.com")
-    .build();
-
-NetworkService service = retrofit.create(NetworkService.class);</code></pre>
-
-<p>Retrofit 객체 설정 시 header 및 클라이언트 설정, parser 설정이 가능합니다.  </p>
-<pre><code>// NetworkPresenter.java
-retrofit = new Retrofit.Builder()
-    .baseUrl(baseURL)
-    .client(getRequestHeader())
-    .addConverterFactory(GsonConverterFactory.create()) // GSON Parser 추가
-    .build();
-
-service = retrofit.create(NetworkInterface.class);  // 인터페이스 연결</code></pre>  
-> #### GSON  
->   JSON 파싱을 쉽고 간단하게 할 수 있도록 도와주는 외부 라이브러리  
-> ###### 기존 JSON은
->   1. JSONException 에 대해 일일히 try/catch 문을 적용시켜주어야 한다.
->   2. 중간 DAO 객체 내에 값을 넣어주는 과정을 거쳐야 한다.  
-> 
-> ##### 하지만!! GSON을 아래와 같이 활용함으로써!! (아래 작업으로 GSON 라이브러리가 바로 적용 됨)
-> <pre><code>// Retrofit 객체 Code 에서 발췌
-> 
-> // ....
-> .addConverterFactory(GsonConverterFactory.create()) //Json Parser 추가
-> // ....</code></pre>
->  
-> ##### 아래의 과정을 없애줄 수 있다.
-> <pre><code>// Call 객체 Code 에서 발췌
-> 
-> // response json 파싱하는 가정 필요
-> // ...
-> </code></pre>
-
-<h3 id="3-Call-객체"><a href="#3-Call-객체" class="headerlink" title="3. Call 객체"></a>3. Call 객체</h3><p>각각의 Call 객체는 Service Interface 객체를 통해 HTTP 요청을 원격 웹서버로 보낼 수 있습니다.</p>
-<pre><code>// MainActivity.java
-Call< User> get_userLogin = service.get_userLogin("id", "pw");
-post_userLogin.enqueue(new Callback< User>() {
-    @Override
-    public void onResponse(Call< User> call, Response< User> response) {
-        // GSON을 활용하지 않는 경우 response json 파싱하는 과정 필요
-        Log.d("Login getId : ", response.body().getId());
-        Toast.makeText(getApplicationContext(), "비밀번호는 " + response.body().getPassowrd(), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onFailure(Call< User> call, Throwable t) {
-        Toast.makeText(getApplicationContext(), "실패 : " + t, Toast.LENGTH_SHORT).show();
-    }
-});</code></pre>
-
-
-<h2 id="4-여담"><a href="#4-여담" class="headerlink" title="4. 여담"></a>4. 여담</h2><h3 id="1-URI는-동적으로-치환이-가능하게-작성할-수-있다"><a href="#1-URI는-동적으로-치환이-가능하게-작성할-수-있다" class="headerlink" title="1. URI는 동적으로 치환이 가능하게 작성할 수 있다."></a>1. URI는 동적으로 치환이 가능하게 작성할 수 있다.</h3><pre><code>// example
-// 영문/숫자로 이루어진 문자열을 '{' 와 '}' 로 감싸 정의합니다.
-// 매치되는 인수는 '@Path' 로 정의합니다.
-@GET("/group/{id}/users")
-Call< List< User>> groupList(@Path("id") int groupId);
-</code></pre>
-
-<blockquote>
-<p>파리미터 어노테이션 종류<br>@QueryMap : 쿼리를 맵 형태로 보냄     (ex&gt; @QueryMap Map&lt;String, String&gt; options)<br>@Body : Body 형태로 request를 보냄 (ex&gt; Call&lt; User&gt; createUser(@Body User user); )<br>@Field : FormUrlEncoded 형식으로 보낼 시 설정 </p>
-<pre><code> // example
-@FormUrlEncoded
-@POST("/user/edit")
-Call< User> updateUser(@Field("first_name") String first, @Field("last_name") String last);</code></pre>
- @Part : MultiPart 방식으로 보낼 시 선택
-<pre><code> // example
-@Multipart
-@PUT("/user/photo")
-Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") RequestBody description);</code></pre>
-</blockquote>
-<p>참고</p>
-<ul>
-<li>Retrofit 의 우수성 : <a href="http://iw90.tistory.com/123" target="_blank" rel="noopener">http://iw90.tistory.com/123</a></li>
-<li>OkHttp 와 Retrofit2 : <a href="https://tacademy.sktechx.com/front/community/mentoring/viewMentoring.action?seq=1163" target="_blank" rel="noopener">https://tacademy.sktechx.com/front/community/mentoring/viewMentoring.action?seq=1163</a></li>
-<li>URL / URI : <a href="https://blog.lael.be/post/61" target="_blank" rel="noopener">https://blog.lael.be/post/61</a></li>
-<li>GSON 설명 : <a href="http://newy.tistory.com/entry/post-2" target="_blank" rel="noopener">http://newy.tistory.com/entry/post-2</a></li>
-<li>전체적인 설명 및 가이드라인 : <a href="http://flymogi.tistory.com/entry/Retrofit%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90-v202" target="_blank" rel="noopener">http://flymogi.tistory.com/entry/Retrofit%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90-v202</a></li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/android/">android</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/">
-        2018 Kotlin in Action study 11th
-      </a>
-    </h2>
-    
-    <time>
-      12월 22, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="Part2-코틀린답게-사용하기"><a href="#Part2-코틀린답게-사용하기" class="headerlink" title="Part2 코틀린답게 사용하기"></a>Part2 코틀린답게 사용하기</h1><p>이제 마무리 단계이다.</p>
-<p><br></p>
-<h2 id="11장-DSL-만들기"><a href="#11장-DSL-만들기" class="headerlink" title="11장. DSL 만들기"></a>11장. DSL 만들기</h2><p><br></p>
-<h3 id="API에서-DSL로"><a href="#API에서-DSL로" class="headerlink" title="API에서 DSL로"></a>API에서 DSL로</h3><p>코딩의 목적 : 코드의 가독성 높이기, 유지 보수성 높이기<br>not only <strong>개별 클래스 집중</strong> but also <strong>타 클래스와 상호작용하는 연결지점 (인터페이스)</strong> 확인 필요  </p>
-<p><strong>API가 clean 하다.</strong><br> = 사용자가 읽기 좋은 것 (name 과 concept 을 잘 잡는 것)<br> = 의미없는 syntax 를 뺀 최소한의 코드로 code 가 읽기 좋은 것  </p>
-<p><strong>example</strong><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> number = <span class="number">0</span></span><br><span class="line">   <span class="keyword">var</span> string = StringBuilder()</span><br><span class="line">   <span class="meta">@JvmStatic</span></span><br><span class="line">   <span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">      <span class="comment">// 1. 확장 함수</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(StringUtils.capitalize(<span class="string">"abcd"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="string">"abcd"</span>.capitalize())</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 2. 중위 호출</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1.</span>to(<span class="string">"one"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1</span> to <span class="string">"one"</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 3. 연산자 오버로딩</span></span><br><span class="line">      number = number + <span class="number">2</span></span><br><span class="line">      number += <span class="number">2</span></span><br><span class="line">            </span><br><span class="line">      <span class="comment">// 4. 람다를 괄호 밖으로 빼냄</span></span><br><span class="line">      <span class="keyword">var</span> runnable1 = Runnable ( &#123; System.<span class="keyword">out</span>.println(<span class="string">"prev"</span>) &#125; )</span><br><span class="line">      <span class="keyword">var</span> runnable2 = Runnable   &#123; System.<span class="keyword">out</span>.println(<span class="string">"next"</span>) &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 5. 수신 객체 지정 람다</span></span><br><span class="line">      string.append(<span class="string">"yes"</span>)</span><br><span class="line">      with(string)&#123;</span><br><span class="line">         append(<span class="string">"yes"</span>)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="영역-특화-언어라는-개념"><a href="#영역-특화-언어라는-개념" class="headerlink" title="영역 특화 언어라는 개념"></a>영역 특화 언어라는 개념</h4><p>DSL</p>
-<ul>
-<li>영역 특화 언어</li>
-<li><strong>특정 영역</strong>에서 사용하는 어휘, 문법, 의미론을 사용</li>
-<li>예전부터 있던 개념이나, 도메인 특화 모델링의 수요증가로 더 알려짐<br><br></li>
-<li>DSL example : SQL(데이터베이스), 정규식(문자열)</li>
-<li>클래스나 함수 선언의 필요 없이 즉시 활용 가능 (압축적인 문법)</li>
-<li><strong>선언적</strong>인 언어<blockquote>
-<p>원하는 결과를 기술만 하고, 실질적 동작은 엔진에게 맡김<br></p>
-<ul>
-<li>(참고) <strong>명령적</strong>인 언어<br>어떤 연산을 완수하기 위해 각 단계를 순서대로 정확히 기술</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/kotlin/">kotlin</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/">
-        2018 Kotlin in Action 2nd
-      </a>
-    </h2>
-    
-    <time>
-      12월 22, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 찾아야겠다.</p>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/kotlin/">kotlin</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-3rd/">
-        2018 Kotlin in Action 3rd
-      </a>
-    </h2>
-    
-    <time>
-      12월 22, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><h2 id="지난주에-다루었던-내용"><a href="#지난주에-다루었던-내용" class="headerlink" title="지난주에 다루었던 내용"></a>지난주에 다루었던 내용</h2><ol>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Part1-코틀린-소개"><span class="toc-number">1.</span> <span class="toc-text">Part1 코틀린 소개</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#지난주에-다루었던-내용"><span class="toc-number">1.1.</span> <span class="toc-text">지난주에 다루었던 내용</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-코틀린에서-컬렉션-만들기"><span class="toc-number">1.2.</span> <span class="toc-text">3.1 코틀린에서 컬렉션 만들기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#코틀린에서의-컬렉션"><span class="toc-number">1.2.1.</span> <span class="toc-text">코틀린에서의 컬렉션</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-함수를-호출하기-쉽게-만들기"><span class="toc-number">1.3.</span> <span class="toc-text">3.2 함수를 호출하기 쉽게 만들기</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><h2 id="지난주에-다루었던-내용"><a href="#지난주에-다루었던-내용" class="headerlink" title="지난주에 다루었던 내용"></a>지난주에 다루었던 내용</h2><ol>
 <li>기본 변수 체계</li>
 <li>기본 함수 체계</li>
 <li>문자열 템플릿</li>
@@ -549,59 +210,42 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 </ul>
 </blockquote>
 
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/kotlin/">kotlin</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/10/2018-kotlin-in-Action-스터디-10th/">
-        2018 Kotlin in Action study 10th
-      </a>
-    </h2>
-    
-    <time>
-      12월 10, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
+  	</div>
 	  
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+	  <div class="article-tags tags">
       
         <a href="/tags/kotlin/">kotlin</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/" rel="prev"  title="2018 Kotlin in Action 2nd">
+						2018 Kotlin in Action 2nd 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2018/12/10/2018-kotlin-in-Action-스터디-10th/" rel="next"  title="2018 Kotlin in Action study 10th">
+						2018 Kotlin in Action study 10th
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
 </article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: '2018 Kotlin in Action 3rd',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
@@ -688,11 +332,13 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 <script>
   var disqus_shortname = 'ridickle';
   
+  var disqus_url = 'https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-3rd/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
