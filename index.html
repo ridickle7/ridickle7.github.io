@@ -538,10 +538,17 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 </li>
 </ul>
 <blockquote>
-<p>참고<br><strong>@JvmOverloads</strong>  </p>
+<p>참고  </p>
+<p><strong>@JvmOverloads</strong>  </p>
 <ul>
-<li>Kotlin에서 지원하는 디폴트를 Java에서도 유연하게 쓰기 위해 제공</li>
+<li>Kotlin에서 지원하는 디폴트를 Java에서도 유연하게 쓰기 위해 제공<blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DefaultSample</span> <span class="keyword">constructor</span></span>(</span><br><span class="line">       <span class="keyword">val</span> name: String,</span><br><span class="line">       <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">0</span>,</span><br><span class="line">       <span class="keyword">val</span> birthday: String = <span class="string">"2000-01-01"</span>) &#123;</span><br><span class="line">   init &#123;</span><br><span class="line">       println(<span class="string">"name <span class="variable">$name</span> age <span class="variable">$age</span> birthday <span class="variable">$birthday</span>"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JmvOverloadsSample</span> <span class="meta">@JvmOverloads</span> <span class="keyword">constructor</span></span>(</span><br><span class="line">       <span class="keyword">val</span> name: String,</span><br><span class="line">       <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">0</span>,</span><br><span class="line">       <span class="keyword">val</span> birthday: String = <span class="string">"2000-01-01"</span>) &#123;</span><br><span class="line"></span><br><span class="line">   init &#123;</span><br><span class="line">       println(<span class="string">"name <span class="variable">$name</span> age <span class="variable">$age</span> birthday <span class="variable">$birthday</span>"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
 </ul>
+</blockquote>
+<blockquote>
+<p>결과<br><img src="" alt="image"></p>
 </blockquote>
 
 
