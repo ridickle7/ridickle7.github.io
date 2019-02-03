@@ -20,12 +20,19 @@
 <meta property="og:site_name" content="ridickle한 일상">
 <meta property="og:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter2/jvmOverload.png?raw=true">
-<meta property="og:updated_time" content="2019-02-03T12:21:14.107Z">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/extension_key3.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/gujobunhae.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/dudumchit.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_output.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex1.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex2.png?raw=true">
+<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_throws.png?raw=true">
+<meta property="og:updated_time" content="2019-02-03T12:31:23.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018 Kotlin in Action 3rd">
 <meta name="twitter:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
-<meta name="twitter:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter2/jvmOverload.png?raw=true">
+<meta name="twitter:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -217,7 +224,7 @@
 </ul>
 </blockquote>
 <blockquote>
-<p><strong>결과</strong><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter2/jvmOverload.png?raw=true" alt="image"></p>
+<p><strong>결과</strong><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true" alt="image"></p>
 </blockquote>
 <h3 id="정적인-유틸리티-클래스-없애기"><a href="#정적인-유틸리티-클래스-없애기" class="headerlink" title="정적인 유틸리티 클래스 없애기"></a>정적인 유틸리티 클래스 없애기</h3><p>  우리는 주로 개발할 때, 다양한 정적 메소드를 모아두는 Util class를 만든다. (ex&gt; PhotoUtil, NetworkUtil)<br>  특별한 상태, 인스턴스를 가지지 않는 class를 주로 만들게 된다.<br>  Kotlin에서는 굳이 클래스를 생성하지 않고, 패키지를 통해 아래와 같은 util class를 만들 수 있다. </p>
 <blockquote>
@@ -249,7 +256,7 @@
 </blockquote>
 <h5 id="확장함수-역시-scope-범위-를-가진다"><a href="#확장함수-역시-scope-범위-를-가진다" class="headerlink" title="확장함수 역시 scope(범위)를 가진다"></a>확장함수 역시 scope(범위)를 가진다</h5><ul>
 <li>클래스 내 확장함수 선언 : 해당 클래스 내에서만 사용 가능</li>
-<li>클래스 외부에 확장함수 선언 : 모든 범위에서 사용 가능</li>
+<li>클래스 외부에 확장함수 선언 : 모든 범위에서 사용 가능<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/extension_key3.png?raw=true" alt="image"></li>
 <li>scope로 인해 this가 혼동될 경우, this@”target” 을 통해 직관적으로 처리 가능<blockquote>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ex</span></span><br><span class="line"><span class="keyword">this</span><span class="symbol">@MainActivity</span>   <span class="comment">// 메인액티비티를 가리킴</span></span><br><span class="line"><span class="keyword">this</span><span class="symbol">@Person</span>         <span class="comment">// Person 객체를 가리킴</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </blockquote>
@@ -303,7 +310,7 @@
 <blockquote>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 사용 예 1</span></span><br><span class="line"><span class="keyword">val</span> (a, b) = <span class="string">"efg"</span> to <span class="number">3</span></span><br><span class="line">println(<span class="string">"<span class="variable">$a</span> , <span class="variable">$b</span>"</span>)      	<span class="comment">// efg , 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 사용 예 2</span></span><br><span class="line"><span class="keyword">var</span> collection = arrayListOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> ((index, element) <span class="keyword">in</span> collection.withIndex()) &#123;</span><br><span class="line">   println(<span class="string">"index <span class="variable">$index</span>'s value is <span class="variable">$element</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index 0's value is 1</span></span><br><span class="line"><span class="comment">// index 1's value is 2</span></span><br><span class="line"><span class="comment">// index 2's value is 3</span></span><br><span class="line"><span class="comment">// index 3's value is 4</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p><img src="" alt="image"></p>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/gujobunhae.png?raw=true" alt="image"></p>
 </li>
 </ul>
 <h2 id="3-5-문자열과-정규식"><a href="#3-5-문자열과-정규식" class="headerlink" title="3.5 문자열과 정규식"></a>3.5 문자열과 정규식</h2><h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><ul>
@@ -361,7 +368,7 @@
 </ul>
 </blockquote>
 <blockquote>
-<p>   <img src="" alt="image"></p>
+<p>   <img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/dudumchit.png?raw=true" alt="image"></p>
 </blockquote>
 <h2 id="3-6-로컬함수의-확장"><a href="#3-6-로컬함수의-확장" class="headerlink" title="3.6 로컬함수의 확장"></a>3.6 로컬함수의 확장</h2><h3 id="DRY한-코드"><a href="#DRY한-코드" class="headerlink" title="DRY한 코드"></a>DRY한 코드</h3><ul>
 <li>Don’t Repeat YourSelf (/<em>똑같은 코드를</em>/ 반복하지 말라)</li>
@@ -423,12 +430,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 +</span><br><span class="line">4 -</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p><strong>출력</strong> : 기본적인 구구단 포맷 출력<br><img src="" alt="image"></p>
+<li><p><strong>출력</strong> : 기본적인 구구단 포맷 출력<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_output.png?raw=true" alt="image"></p>
 </li>
-<li><p><strong>예외처리</strong> (아래 3개의 ex만 처리하면 되며 아래와 똑같이 출력될 필요 없음)<br>ex&gt; 첫 번째 인자가 정수가 아닌경우<br><img src="" alt="image"><br>ex&gt; 두 번째 인자가 사칙연산 기호가 아닌 경우<br><img src="" alt="image"><br>ex&gt; 나누는 숫자가 0인 경우, 0이 나오도록 처리<br><img src="" alt="image"></p>
-</li>
-</ul>
+<li><p><strong>예외처리</strong> (아래 3개의 ex만 처리하면 되며 아래와 똑같이 출력될 필요 없음)<br>ex&gt; 첫 번째 인자가 정수가 아닌경우<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex1.png?raw=true" alt="image"><br>ex&gt; 두 번째 인자가 사칙연산 기호가 아닌 경우<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex2.png?raw=true" alt="image"><br>ex&gt; 나누는 숫자가 0인 경우</p>
 <ul>
+<li>0이 나오도록 처리</li>
+</ul>
+</li>
 <li><p><strong>must use</strong></p>
 <ul>
 <li>중위함수(infix) + 확장함수</li>
@@ -444,7 +452,7 @@
 <li><p><strong>참고</strong>        </p>
 <ul>
 <li><strong>is문 (ex&gt; a is Int)</strong><br>변수 a가 Int인지 확인 (Boolean 데이터 return)</li>
-<li><strong>Throws</strong><br>kotlin에서는 아래와 같이 throws 처리 (나머지는 Java와 같음)<br><img src="" alt="image"></li>
+<li><strong>Throws</strong><br>kotlin에서는 아래와 같이 throws 처리 (나머지는 Java와 같음)<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_throws.png?raw=true" alt="image"></li>
 </ul>
 </li>
 </ul>
@@ -461,13 +469,13 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/" rel="prev"  title="2018 Kotlin in Action 2nd">
-						2018 Kotlin in Action 2nd 
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/" rel="prev"  title="2018 Kotlin in Action study 11th">
+						2018 Kotlin in Action study 11th 
 					</a></span>
 				
 				
-					<span class="art-item-right">next：<a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/" rel="next"  title="2018 Kotlin in Action study 11th">
-						2018 Kotlin in Action study 11th
+					<span class="art-item-right">next：<a href="/2018/12/10/2018-kotlin-in-Action-스터디-10th/" rel="next"  title="2018 Kotlin in Action study 10th">
+						2018 Kotlin in Action study 10th
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>

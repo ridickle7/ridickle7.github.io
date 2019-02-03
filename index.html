@@ -419,6 +419,63 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/">
+        2018 Kotlin in Action study 11th
+      </a>
+    </h2>
+    
+    <time>
+      12월 22, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h1 id="Part2-코틀린답게-사용하기"><a href="#Part2-코틀린답게-사용하기" class="headerlink" title="Part2 코틀린답게 사용하기"></a>Part2 코틀린답게 사용하기</h1><p>이제 마무리 단계이다.</p>
+<p><br></p>
+<h2 id="11장-DSL-만들기"><a href="#11장-DSL-만들기" class="headerlink" title="11장. DSL 만들기"></a>11장. DSL 만들기</h2><p><br></p>
+<h3 id="API에서-DSL로"><a href="#API에서-DSL로" class="headerlink" title="API에서 DSL로"></a>API에서 DSL로</h3><p>코딩의 목적 : 코드의 가독성 높이기, 유지 보수성 높이기<br>not only <strong>개별 클래스 집중</strong> but also <strong>타 클래스와 상호작용하는 연결지점 (인터페이스)</strong> 확인 필요  </p>
+<p><strong>API가 clean 하다.</strong><br> = 사용자가 읽기 좋은 것 (name 과 concept 을 잘 잡는 것)<br> = 의미없는 syntax 를 뺀 최소한의 코드로 code 가 읽기 좋은 것  </p>
+<p><strong>example</strong><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> number = <span class="number">0</span></span><br><span class="line">   <span class="keyword">var</span> string = StringBuilder()</span><br><span class="line">   <span class="meta">@JvmStatic</span></span><br><span class="line">   <span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">      <span class="comment">// 1. 확장 함수</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(StringUtils.capitalize(<span class="string">"abcd"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="string">"abcd"</span>.capitalize())</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 2. 중위 호출</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1.</span>to(<span class="string">"one"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1</span> to <span class="string">"one"</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 3. 연산자 오버로딩</span></span><br><span class="line">      number = number + <span class="number">2</span></span><br><span class="line">      number += <span class="number">2</span></span><br><span class="line">            </span><br><span class="line">      <span class="comment">// 4. 람다를 괄호 밖으로 빼냄</span></span><br><span class="line">      <span class="keyword">var</span> runnable1 = Runnable ( &#123; System.<span class="keyword">out</span>.println(<span class="string">"prev"</span>) &#125; )</span><br><span class="line">      <span class="keyword">var</span> runnable2 = Runnable   &#123; System.<span class="keyword">out</span>.println(<span class="string">"next"</span>) &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 5. 수신 객체 지정 람다</span></span><br><span class="line">      string.append(<span class="string">"yes"</span>)</span><br><span class="line">      with(string)&#123;</span><br><span class="line">         append(<span class="string">"yes"</span>)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="영역-특화-언어라는-개념"><a href="#영역-특화-언어라는-개념" class="headerlink" title="영역 특화 언어라는 개념"></a>영역 특화 언어라는 개념</h4><p>DSL</p>
+<ul>
+<li>영역 특화 언어</li>
+<li><strong>특정 영역</strong>에서 사용하는 어휘, 문법, 의미론을 사용</li>
+<li>예전부터 있던 개념이나, 도메인 특화 모델링의 수요증가로 더 알려짐<br><br></li>
+<li>DSL example : SQL(데이터베이스), 정규식(문자열)</li>
+<li>클래스나 함수 선언의 필요 없이 즉시 활용 가능 (압축적인 문법)</li>
+<li><strong>선언적</strong>인 언어<blockquote>
+<p>원하는 결과를 기술만 하고, 실질적 동작은 엔진에게 맡김<br></p>
+<ul>
+<li>(참고) <strong>명령적</strong>인 언어<br>어떤 연산을 완수하기 위해 각 단계를 순서대로 정확히 기술</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/kotlin/">kotlin</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2018/12/22/2018-kotlin-in-Action-스터디-3rd/">
         2018 Kotlin in Action 3rd
       </a>
@@ -492,7 +549,7 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 </ul>
 </blockquote>
 <blockquote>
-<p><strong>결과</strong><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter2/jvmOverload.png?raw=true" alt="image"></p>
+<p><strong>결과</strong><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true" alt="image"></p>
 </blockquote>
 <h3 id="정적인-유틸리티-클래스-없애기"><a href="#정적인-유틸리티-클래스-없애기" class="headerlink" title="정적인 유틸리티 클래스 없애기"></a>정적인 유틸리티 클래스 없애기</h3><p>  우리는 주로 개발할 때, 다양한 정적 메소드를 모아두는 Util class를 만든다. (ex&gt; PhotoUtil, NetworkUtil)<br>  특별한 상태, 인스턴스를 가지지 않는 class를 주로 만들게 된다.<br>  Kotlin에서는 굳이 클래스를 생성하지 않고, 패키지를 통해 아래와 같은 util class를 만들 수 있다. </p>
 <blockquote>
@@ -524,7 +581,7 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 </blockquote>
 <h5 id="확장함수-역시-scope-범위-를-가진다"><a href="#확장함수-역시-scope-범위-를-가진다" class="headerlink" title="확장함수 역시 scope(범위)를 가진다"></a>확장함수 역시 scope(범위)를 가진다</h5><ul>
 <li>클래스 내 확장함수 선언 : 해당 클래스 내에서만 사용 가능</li>
-<li>클래스 외부에 확장함수 선언 : 모든 범위에서 사용 가능</li>
+<li>클래스 외부에 확장함수 선언 : 모든 범위에서 사용 가능<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/extension_key3.png?raw=true" alt="image"></li>
 <li>scope로 인해 this가 혼동될 경우, this@”target” 을 통해 직관적으로 처리 가능<blockquote>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ex</span></span><br><span class="line"><span class="keyword">this</span><span class="symbol">@MainActivity</span>   <span class="comment">// 메인액티비티를 가리킴</span></span><br><span class="line"><span class="keyword">this</span><span class="symbol">@Person</span>         <span class="comment">// Person 객체를 가리킴</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </blockquote>
@@ -578,7 +635,7 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 <blockquote>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 사용 예 1</span></span><br><span class="line"><span class="keyword">val</span> (a, b) = <span class="string">"efg"</span> to <span class="number">3</span></span><br><span class="line">println(<span class="string">"<span class="variable">$a</span> , <span class="variable">$b</span>"</span>)      	<span class="comment">// efg , 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 사용 예 2</span></span><br><span class="line"><span class="keyword">var</span> collection = arrayListOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="keyword">for</span> ((index, element) <span class="keyword">in</span> collection.withIndex()) &#123;</span><br><span class="line">   println(<span class="string">"index <span class="variable">$index</span>'s value is <span class="variable">$element</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index 0's value is 1</span></span><br><span class="line"><span class="comment">// index 1's value is 2</span></span><br><span class="line"><span class="comment">// index 2's value is 3</span></span><br><span class="line"><span class="comment">// index 3's value is 4</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p><img src="" alt="image"></p>
+<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/gujobunhae.png?raw=true" alt="image"></p>
 </li>
 </ul>
 <h2 id="3-5-문자열과-정규식"><a href="#3-5-문자열과-정규식" class="headerlink" title="3.5 문자열과 정규식"></a>3.5 문자열과 정규식</h2><h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><ul>
@@ -636,7 +693,7 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 </ul>
 </blockquote>
 <blockquote>
-<p>   <img src="" alt="image"></p>
+<p>   <img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/dudumchit.png?raw=true" alt="image"></p>
 </blockquote>
 <h2 id="3-6-로컬함수의-확장"><a href="#3-6-로컬함수의-확장" class="headerlink" title="3.6 로컬함수의 확장"></a>3.6 로컬함수의 확장</h2><h3 id="DRY한-코드"><a href="#DRY한-코드" class="headerlink" title="DRY한 코드"></a>DRY한 코드</h3><ul>
 <li>Don’t Repeat YourSelf (/<em>똑같은 코드를</em>/ 반복하지 말라)</li>
@@ -698,12 +755,13 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 +</span><br><span class="line">4 -</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p><strong>출력</strong> : 기본적인 구구단 포맷 출력<br><img src="" alt="image"></p>
+<li><p><strong>출력</strong> : 기본적인 구구단 포맷 출력<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_output.png?raw=true" alt="image"></p>
 </li>
-<li><p><strong>예외처리</strong> (아래 3개의 ex만 처리하면 되며 아래와 똑같이 출력될 필요 없음)<br>ex&gt; 첫 번째 인자가 정수가 아닌경우<br><img src="" alt="image"><br>ex&gt; 두 번째 인자가 사칙연산 기호가 아닌 경우<br><img src="" alt="image"><br>ex&gt; 나누는 숫자가 0인 경우, 0이 나오도록 처리<br><img src="" alt="image"></p>
-</li>
-</ul>
+<li><p><strong>예외처리</strong> (아래 3개의 ex만 처리하면 되며 아래와 똑같이 출력될 필요 없음)<br>ex&gt; 첫 번째 인자가 정수가 아닌경우<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex1.png?raw=true" alt="image"><br>ex&gt; 두 번째 인자가 사칙연산 기호가 아닌 경우<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex2.png?raw=true" alt="image"><br>ex&gt; 나누는 숫자가 0인 경우</p>
 <ul>
+<li>0이 나오도록 처리</li>
+</ul>
+</li>
 <li><p><strong>must use</strong></p>
 <ul>
 <li>중위함수(infix) + 확장함수</li>
@@ -719,65 +777,8 @@ Call< User> updateUser(@Part("photo") RequestBody photo, @Part("description") Re
 <li><p><strong>참고</strong>        </p>
 <ul>
 <li><strong>is문 (ex&gt; a is Int)</strong><br>변수 a가 Int인지 확인 (Boolean 데이터 return)</li>
-<li><strong>Throws</strong><br>kotlin에서는 아래와 같이 throws 처리 (나머지는 Java와 같음)<br><img src="" alt="image"></li>
+<li><strong>Throws</strong><br>kotlin에서는 아래와 같이 throws 처리 (나머지는 Java와 같음)<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_throws.png?raw=true" alt="image"></li>
 </ul>
-</li>
-</ul>
-
-
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/kotlin/">kotlin</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/">
-        2018 Kotlin in Action study 11th
-      </a>
-    </h2>
-    
-    <time>
-      12월 22, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="Part2-코틀린답게-사용하기"><a href="#Part2-코틀린답게-사용하기" class="headerlink" title="Part2 코틀린답게 사용하기"></a>Part2 코틀린답게 사용하기</h1><p>이제 마무리 단계이다.</p>
-<p><br></p>
-<h2 id="11장-DSL-만들기"><a href="#11장-DSL-만들기" class="headerlink" title="11장. DSL 만들기"></a>11장. DSL 만들기</h2><p><br></p>
-<h3 id="API에서-DSL로"><a href="#API에서-DSL로" class="headerlink" title="API에서 DSL로"></a>API에서 DSL로</h3><p>코딩의 목적 : 코드의 가독성 높이기, 유지 보수성 높이기<br>not only <strong>개별 클래스 집중</strong> but also <strong>타 클래스와 상호작용하는 연결지점 (인터페이스)</strong> 확인 필요  </p>
-<p><strong>API가 clean 하다.</strong><br> = 사용자가 읽기 좋은 것 (name 과 concept 을 잘 잡는 것)<br> = 의미없는 syntax 를 뺀 최소한의 코드로 code 가 읽기 좋은 것  </p>
-<p><strong>example</strong><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> number = <span class="number">0</span></span><br><span class="line">   <span class="keyword">var</span> string = StringBuilder()</span><br><span class="line">   <span class="meta">@JvmStatic</span></span><br><span class="line">   <span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">      <span class="comment">// 1. 확장 함수</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(StringUtils.capitalize(<span class="string">"abcd"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="string">"abcd"</span>.capitalize())</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 2. 중위 호출</span></span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1.</span>to(<span class="string">"one"</span>))</span><br><span class="line">      System.<span class="keyword">out</span>.println(<span class="number">1</span> to <span class="string">"one"</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 3. 연산자 오버로딩</span></span><br><span class="line">      number = number + <span class="number">2</span></span><br><span class="line">      number += <span class="number">2</span></span><br><span class="line">            </span><br><span class="line">      <span class="comment">// 4. 람다를 괄호 밖으로 빼냄</span></span><br><span class="line">      <span class="keyword">var</span> runnable1 = Runnable ( &#123; System.<span class="keyword">out</span>.println(<span class="string">"prev"</span>) &#125; )</span><br><span class="line">      <span class="keyword">var</span> runnable2 = Runnable   &#123; System.<span class="keyword">out</span>.println(<span class="string">"next"</span>) &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 5. 수신 객체 지정 람다</span></span><br><span class="line">      string.append(<span class="string">"yes"</span>)</span><br><span class="line">      with(string)&#123;</span><br><span class="line">         append(<span class="string">"yes"</span>)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="영역-특화-언어라는-개념"><a href="#영역-특화-언어라는-개념" class="headerlink" title="영역 특화 언어라는 개념"></a>영역 특화 언어라는 개념</h4><p>DSL</p>
-<ul>
-<li>영역 특화 언어</li>
-<li><strong>특정 영역</strong>에서 사용하는 어휘, 문법, 의미론을 사용</li>
-<li>예전부터 있던 개념이나, 도메인 특화 모델링의 수요증가로 더 알려짐<br><br></li>
-<li>DSL example : SQL(데이터베이스), 정규식(문자열)</li>
-<li>클래스나 함수 선언의 필요 없이 즉시 활용 가능 (압축적인 문법)</li>
-<li><strong>선언적</strong>인 언어<blockquote>
-<p>원하는 결과를 기술만 하고, 실질적 동작은 엔진에게 맡김<br></p>
-<ul>
-<li>(참고) <strong>명령적</strong>인 언어<br>어떤 연산을 완수하기 위해 각 단계를 순서대로 정확히 기술</li>
-</ul>
-</blockquote>
 </li>
 </ul>
 
