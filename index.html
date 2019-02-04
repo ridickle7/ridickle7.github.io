@@ -185,6 +185,46 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/">
+        2018 Kotlin in Action 2nd
+      </a>
+    </h2>
+    
+    <time>
+      12월 22, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 찾아야겠다.</p>
+
+    
+	  <div class="readmore">
+      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/kotlin/">kotlin</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/">
         2018 Kotlin in Action study 11th
       </a>
@@ -209,46 +249,6 @@
     
 	  <div class="readmore">
       <a href="/2018/12/22/2018-kotlin-in-Action-스터디-11th/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/kotlin/">kotlin</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/">
-        2018 Kotlin in Action 2nd
-      </a>
-    </h2>
-    
-    <time>
-      12월 22, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/2018-Kotlin-in-Action/">2018 Kotlin in Action</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <h1 id="Part1-코틀린-소개"><a href="#Part1-코틀린-소개" class="headerlink" title="Part1 코틀린 소개"></a>Part1 코틀린 소개</h1><p>첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.<br><a href="https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788966262137&amp;orderClick=JAj" target="_blank" rel="noopener">커니님께서 작성한 코틀린 책</a>을 읽었으나 내용을 다 잊어버렸는데(…)<br>이번 장을 보고 기억을 찾아야겠다.</p>
-
-    
-	  <div class="readmore">
-      <a href="/2018/12/22/2018-kotlin-in-Action-스터디-2nd/">Read More</a>
     </div>
     
     
@@ -420,334 +420,11 @@
   <section class="article typo">
 	  <h1 id="Part1-Data-Uni-Directional-Architecture-in-Android-B"><a href="#Part1-Data-Uni-Directional-Architecture-in-Android-B" class="headerlink" title="Part1 Data Uni-Directional Architecture in Android (B)"></a>Part1 Data Uni-Directional Architecture in Android (B)</h1><p>시간 : 13:45 ~ 14:25&nbsp;&nbsp;|&nbsp;&nbsp;발표자 : 이승민</p>
 <p>#MVI? #MVVM에이은또다른녀석? #웹프론트패러다임을Android에inject</p>
-<h2 id="사례로-들어보는-현-안드로이드-구조의-문제점"><a href="#사례로-들어보는-현-안드로이드-구조의-문제점" class="headerlink" title="사례로 들어보는 현 안드로이드 구조의 문제점"></a>사례로 들어보는 현 안드로이드 구조의 문제점</h2><blockquote>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/2nd/1_1%20request.png?raw=true" alt="image"></p>
-<ul>
-<li>View에 영향을 주는 State의 변화가 여러 곳에서 발생 (새 댓글 | 알림 클릭)</li>
-<li>비동기로 일어나는 State 변화 시점을 예상할 수 없음</li>
-<li>모델에서 결정되는 State 를 뷰에서 넘겨받아 따로 관리하기 때문에 격차가 생김</li>
-</ul>
-</blockquote>
-<div style="font-size:24px; text-align:center;"><span style=""><strong>solution : UDA</strong></span></div>  
 
-<h2 id="Data-Uni-Directional-Architecture"><a href="#Data-Uni-Directional-Architecture" class="headerlink" title="Data Uni-Directional Architecture"></a>Data Uni-Directional Architecture</h2><h3 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h3><ol>
-<li><strong>단방향</strong><br>View 에 영향을 주는 State 는 한 방향으로만 수정 </li>
-<li><strong>동기</strong><br>앞의 세션이 끝나지 않으면 뒤 액션을 실행하지 않음</li>
-<li><strong>View와 State 분리</strong><br>View는 State 참조만 진행 (Model 에서 State 수정)</li>
-</ol>
-<h3 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h3><h4 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h4><p>Facebook에서 만든 단방향 Architecture<br><a href="http://bestalign.github.io/2015/10/06/cartoon-guide-to-flux/" target="_blank" rel="noopener">참조 링크</a></p>
-<h5 id="구성-요소"><a href="#구성-요소" class="headerlink" title="구성 요소"></a>구성 요소</h5><ol>
-<li>Action Creator<blockquote>
-<p>액션 생성 담당 (액션 : 애플리케이션 상태 변경, 뷰 업데이트 등을 할 수 있게 만드는 Event)<br>타입(type)과 페이로드(payload)를 포함한 액션을 생성</p>
-</blockquote>
-</li>
-<li>Dispatcher<blockquote>
-<p> 콜백이 등록되어 있는 곳<br> Action Creator으로부터 액션을 받고 타입에 따라 연계된 각각 스토어에 보냄</p>
-</blockquote>
-</li>
-<li>Store<blockquote>
-<p>‘현재 애플리케이션 상태’, ‘상태 변환을 위한 로직’ 을 가지고 있는 저장소<br>스토어의 상태 변경 후 Controller View에 상태값이 바뀌었다는 이벤트를 내보냄</p>
-</blockquote>
-</li>
-<li>Controller View &amp; View<blockquote>
-<p>Controller View : 자신의 아래에 있는 View에게 변경된 상태값을 넘김<br>View : 상태 값을 받아와, 사용자에게 보여줄 화면을 렌더링</p>
-</blockquote>
-</li>
-</ol>
-<h5 id="흐름"><a href="#흐름" class="headerlink" title="흐름"></a>흐름</h5><ol>
-<li>View<blockquote>
-<p>사용자로부터 이벤트 받음</p>
-</blockquote>
-</li>
-<li>View -&gt; Action Creator<blockquote>
-<p>받은 이벤트에 맞는 Action 생성 지시</p>
-</blockquote>
-</li>
-<li>Action Creator -&gt; Dispatcher<blockquote>
-<p>Action을 만들어 Dispatcher에게 넘김</p>
-</blockquote>
-</li>
-<li>Dispatcher -&gt; Store<blockquote>
-<p>Action 이 순서에 따라 알맞은 Store 로 보냄</p>
-</blockquote>
-</li>
-<li>Store -&gt; Controller View<blockquote>
-<p>자신을 구독(subscribe)하고 있는 Controller View에게 알림</p>
-</blockquote>
-</li>
-<li>Controller View -&gt; View<blockquote>
-<p>자신의 하위 View에게 새로운 상태에 맞게 렌더링 지시</p>
-</blockquote>
-</li>
-</ol>
-<h5 id="특징-1"><a href="#특징-1" class="headerlink" title="특징"></a>특징</h5><ol>
-<li>여러개의 Store</li>
-<li>Store = </li>
-</ol>
-<h5 id="한계"><a href="#한계" class="headerlink" title="한계"></a>한계</h5><ol>
-<li>스토어의 코드는 애플리케이션의 상테를 삭제하지 않고는 리로딩이 불가능함</li>
-<li></li>
-</ol>
-<p>Redux : Flux 에서 발전한 라이브러리</p>
-<blockquote>
-<ol>
-<li>뷰에서 dispatch 직접 호출 </li>
-<li>ActionCreator 에서 Action 생성만 수행</li>
-<li>Store에서 새로운 Store 생성</li>
-<li>Reducer가 비즈니스 로직 실행</li>
-<li></li>
-</ol>
-</blockquote>
-<p>Flux는 Dispatcher가 있다 (PPT 오타)</p>
-<h1 id="Part2-함수형-프로그래밍과-안드로이드-테스팅-B"><a href="#Part2-함수형-프로그래밍과-안드로이드-테스팅-B" class="headerlink" title="Part2 함수형 프로그래밍과 안드로이드 테스팅 (B)"></a>Part2 함수형 프로그래밍과 안드로이드 테스팅 (B)</h1><p>시간 : 14:40 ~ 15:20&nbsp;&nbsp;|&nbsp;&nbsp;박미륵  </p>
-<p>#나도이제테스트할수있다. </p>
-<p>Android Test</p>
-<ul>
-<li>Local Test : Java compiler 위에서 실행 (Unit Test)</li>
-<li>Instrument Text : 기기나 emulator 위에서 실행 (UI Test 등)</li>
-</ul>
-<p>Locat Test</p>
-<ul>
-<li>기반 지식 : JUnit 라이브러리</li>
-</ul>
-<p>테스팅이 힘든 이유</p>
-<ul>
-<li>어떻게 작성하는지 모르겠다.</li>
-<li>예제 코드가 아닌 실제 코드는 작성하기 어렵다.</li>
-</ul>
-<p>Method not mocked</p>
-<ul>
-<li>Local Test에서 사용되는 android jar은 실제 코드를 가지고 있지 않음</li>
-<li>실제 디바이스의 시스템 이미지를 통해 제공</li>
-<li>모든 함수들이 exception을 발생</li>
-<li>그러므로 안드 플랫폼에 의존하는 코드가 있으면 안됨</li>
-</ul>
-<p>그럼 어떻게?</p>
-<ol>
-<li>exception이 발생하지 않게 하거나</li>
-</ol>
-<ul>
-<li>getWindow 함수를 mocking (Mock : 실제 object의 행위를 모방)</li>
-<li>mockito, roboinjectic 라이브러리를 통해 더 쉽게 가능</li>
-</ul>
-<ol start="2">
-<li>exception이 발생하는 함수를 호출하지 않는다.</li>
-</ol>
-<ul>
-<li>테스트 가능한 코드와 불가능한 코드를 구분</li>
-<li>테스트 코드 작성이 어려운 다른 경우에 적합</li>
-<li><strong>테스트 가능한 로직을 불가능한 로직에서 분리</strong>하는 게 주요 key point</li>
-</ul>
-<p>key point 전략</p>
-<ul>
-<li><ol>
-<li>테스트 불가능한 코드는 View에 작성</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>View 는 최대한 passive하게 작성 (View를 최대한 간단하게 작성)</li>
-</ol>
-</li>
-</ul>
-<p>함수형 프로그래밍은 테스트에 용이하다</p>
-<ul>
-<li>그러면 Kotlin을 사용하면 테스트가 쉬워질까? (X)</li>
-<li>순수 함수가 테스트하기 용이하다</li>
-</ul>
-<blockquote>
-<p>순수 함수?  </p>
-<ol>
-<li>함수의 output이 input의 영향만을 받음</li>
-<li>input을 변경하거나, 외부 다른 변수의 상태를 변경하지 않음 (No Side Effect)</li>
-<li>함수내부에서 테스트 외부 변수의 사용을 최대한 줄인다.</li>
-<li>함수는 input에 대해 항상 특정한 return 값을 가진다.</li>
-</ol>
-</blockquote>
-<p>함수의 테스트 독립성</p>
-<ul>
-<li>3 <em> 3 </em> 3 이 아닌 3 + 3 + 3 으로 테스트 확인이 가능하다.</li>
-</ul>
-<p>TDD 방식으로 명세 작성이 필요하다면 작성한다.<br>테스트 커버리지에는 크게 의미를 두지 않는다.</p>
-<p>함수형 프로그래밍을 하게 되면 클래스가 내부 변수를 가지고 있으면 안된다. (순수 함수를 벗어나게 된다.)<br>class는 데이터의 구조만을 가지고 있는게 이상적</p>
-<h1 id="Part3-Tensorflow-기반-Hand-Body-Pose-Estimation과-Tensorflow-Lite-기반-모바일-경량화-A"><a href="#Part3-Tensorflow-기반-Hand-Body-Pose-Estimation과-Tensorflow-Lite-기반-모바일-경량화-A" class="headerlink" title="Part3 Tensorflow 기반 Hand/Body Pose Estimation과 Tensorflow Lite 기반 모바일 경량화 (A)"></a>Part3 Tensorflow 기반 Hand/Body Pose Estimation과 Tensorflow Lite 기반 모바일 경량화 (A)</h1><p>시간 : 15:35 ~ 16:15&nbsp;&nbsp;|&nbsp;&nbsp;양동석  </p>
-<p>Pose Estimation 정의</p>
-<ul>
-<li>신체의 부분을 </li>
-</ul>
-<p>Pose Estimation는 그리 녹녹히 쉬운 것이 아니다.</p>
-<ul>
-<li>Local evidence is weak</li>
-<li>part context is strong clue</li>
-</ul>
-<p>Heat Map</p>
-<p>Efficient Network</p>
-<ul>
-<li>얼마나 효율적으로 압축할 수 있는가?</li>
-<li>IoT, 모바일, 웨어러블에는 딥러닝 반영이 어려움</li>
-</ul>
-<p>효율적인 기법을 통한 새로운 네트워크 만들기</p>
-<ul>
-<li>대부분 증명된 네트워크 사용 (VGG, 레그넷 등)</li>
-<li>모듈을 줄이는 게 아니라 커널을 먼저 줄이는 것이 진정한 경량화<br>압축! 양자화</li>
-<li>FP32 -&gt; INT8 or Binary(비추) (비례식 활용)</li>
-<li>버릴 건 버리고 취할 건 취한다.</li>
-<li>인식률의 변화가 거의 변하지 않는다. (오히려 올라갈수도 있다)<br>하드웨어 지원….</li>
-</ul>
-<p>Tensorflow Lite!!</p>
-<ul>
-<li>정식 릴리즈 버전이 아님 -&gt; 레퍼런스 부족</li>
-<li>발전이 굉장히 빠르다.</li>
-<li>다른 lite보다 안정적</li>
-<li>GPU 사용이 어려움</li>
-<li>OpenGL (3D 렌더링 및 정규화에 도움)</li>
-<li>기본 Tensorflow에 비해 지원되는 것이 적음 (친절하지도 않음)</li>
-</ul>
-<h1 id="Part4-Android-DataBinding-for-Modularization-ViewModel-and-Testing-A"><a href="#Part4-Android-DataBinding-for-Modularization-ViewModel-and-Testing-A" class="headerlink" title="Part4 Android DataBinding for Modularization, ViewModel and Testing (A)"></a>Part4 Android DataBinding for Modularization, ViewModel and Testing (A)</h1><p>시간 : 16:35 ~ 17:15&nbsp;&nbsp;|&nbsp;&nbsp;김용준  </p>
-<p>MVP 기반 진행<br>Why Databinding</p>
-<ul>
-<li>Glue Code (재사용이 많음)</li>
-<li>Base에 따라 하위 데이터들이 다 바뀜 (강한 결합)</li>
-</ul>
-<p>어케 동작?</p>
-<blockquote>
-<p>사용하기 위해<br>setContentView -&gt; DatabindingUtil.setContentView<br>(라이브데이터가 있는 경우 setLifecycleData 도 진행)<br>xml -&gt; layout을 상위 레이아웃으로</p>
-</blockquote>
-<p>InverseMethod       ()<br>BindingConversion   (as like BindAdapter)<br>BindingAdapter</p>
-<blockquote>
-<p>value (String[])<br>requireAll (Boolean) - default true</p>
-<ul>
-<li>여러개의 value 설정 가능</li>
-</ul>
-</blockquote>
-<p>Two-way Binding<br>data에 의해 화면의 호출이 바뀜</p>
-<p>InverseBindingAdapter<br>textAttrChanged : text가 바뀔시 실행되는 listener</p>
-<p>DirtyFlag<br>mapping</p>
-<ul>
-<li>flag 0(1) : vm.authCode</li>
-<li>flag 1(2) : vm</li>
-<li>flag 2(4) : initialized</li>
-</ul>
-<p>dirtyFlags에 따라 매핑된 함수를 실행</p>
-<p>흐름별 로직</p>
-<ul>
-<li>setContentView 진행 시 DirtyFlag = 4</li>
-<li>dirtyFlag 4 | 2 -&gt; 6</li>
-<li>….</li>
-</ul>
-<p>한번씩 숫자를 입력할때마다 binding 진행</p>
-<p>UI 모듈화 방법</p>
-<ul>
-<li>item을 위한 xml 작성</li>
-<li>binding 작업 진행</li>
-<li>recyclerviewHolder 관리 cost가 줄 수 있다는 점이 큰 장점</li>
-</ul>
-<p>UI Unit Test<br>(사진)</p>
-<h1 id="Part5-Android-Oreo-amp-Pie-업데이트-하기-A"><a href="#Part5-Android-Oreo-amp-Pie-업데이트-하기-A" class="headerlink" title="Part5 Android Oreo &amp; Pie 업데이트 하기 (A)"></a>Part5 Android Oreo &amp; Pie 업데이트 하기 (A)</h1><p>시간 : 17:30 ~ 18:10&nbsp;&nbsp;|&nbsp;&nbsp;정현지  </p>
-<p>O(2017.8) P(2018.8)</p>
-<h2 id="Oreo-API-26"><a href="#Oreo-API-26" class="headerlink" title="Oreo (API 26)"></a>Oreo (API 26)</h2><ul>
-<li>3.0% -&gt; 14.0%</li>
-<li>모든 API를 타겟으로 하는 앱 변경 사항</li>
-<li>Android 8.0을 타겟으로 하는 앱 변경 사항</li>
-</ul>
-<p>알림 (Notification)</p>
-<ul>
-<li>channel 등장 <blockquote>
-<p>(26 아래) 채널 설정 안할 시 알람 안 옴<br>중요도, 우선순위<br>ex&gt; 중요한 것들은 잠금 화면에서 나타날 수 있고, 다른 알람은 그렇게 안함</p>
-</blockquote>
-</li>
-<li>alwaysOn 단말기<blockquote>
-<p>foreground 작업들이 많음<br>icon 투명처리</p>
-</blockquote>
-</li>
-</ul>
-<p>Picture In Picture(PIP) 모드 (다중 창 모드)</p>
-<ul>
-<li>lifecycle에 신경써야함</li>
-</ul>
-<p>Autosizing TextViews</p>
-<ul>
-<li>autoSizeTextType with xml &amp; Java<blockquote>
-<p>uniform : enabled<br>none : disabled</p>
-</blockquote>
-</li>
-<li>resource를 통해 관리</li>
-</ul>
-<p>WebView API</p>
-<ul>
-<li>Version API | SafeBrowsing API (with 사진) | Terminate API</li>
-</ul>
-<p>권한</p>
-<ul>
-<li>명시적으로 요청한 권한만 요청</li>
-<li>런타임 권한 실행 시 같은 그룸의 퍼미션도 같이 허용을 하도록 변경해야함<blockquote>
-<p>ex&gt; read 요청 시 write 도 같이 자동으로 허용 -&gt; 이제는 따로따로 다 요청해야함</p>
-</blockquote>
-</li>
-</ul>
-<p>background 실행 제한</p>
-<ul>
-<li>oreo 대상 앱만 적용됨</li>
-<li>사용자가 제한 설정 가능</li>
-</ul>
-<p>Job Scheduler updated</p>
-<ul>
-<li>작업에 필요한 조건 및 인자 변경 또는 해당 조건의 동작 등록하여 백그라운드 제어 기능</li>
-<li>사용자가 앱을 사용하지 않는 시점에도 앱이 돌아감</li>
-<li>매니페스트에 적어야 함 </li>
-</ul>
-<p>암시적 브로드캐스트 인텐트 제한</p>
-<ul>
-<li>특정 앱을 대상으로 하지 않는 암시적 브로드캐스트 인텐트</li>
-<li>등록 자체에 제한을 걸음 (Oreo)</li>
-</ul>
-<p>Android background 위치 제한</p>
-<ul>
-<li>사용자의 위치 검색의 빈도를 줄임</li>
-</ul>
-<h2 id="Oreo-8-1-Go-edition"><a href="#Oreo-8-1-Go-edition" class="headerlink" title="Oreo 8.1 (Go edition)"></a>Oreo 8.1 (Go edition)</h2><p>효율적인 알림 (ex&gt; 푸시 알람 50개가 동시에 올 시 진동이 1번만 울림)</p>
-<h2 id="Pie-API-26"><a href="#Pie-API-26" class="headerlink" title="Pie (API 26)"></a>Pie (API 26)</h2><blockquote>
-<p>LG-V40 | 삼성-S10 지원 예정<br>전원 관리</p>
-<ul>
-<li>앱 대기 버킷<br>포그라운드 서비스가 돌아가는 시간, 앱 사용도 등에 따라 우선순위 부여 (4개의 등급)<br>사용성에 따라 재할당<br>포그라운드 서비스 사용 시 Manifest에 permission 등록 필요</li>
-</ul>
-</blockquote>
-<ul>
-<li>배터리 세이버 개선<blockquote>
-<p>앱이 유휴 상태가 되기를 기다리지 않고 적극적으로 앱 대기 모드로 둠</p>
-</blockquote>
-</li>
-</ul>
-<p>백그라운드에서 센서 엑세스 제한</p>
-<ul>
-<li>앱이 마이크나 카메라에 엑세스할 수 없음</li>
-<li>가속도계, 자이로스코프를 사용하는 센서는 이벤트 수신 불가</li>
-</ul>
-<p>통화 로그 / 전화번호 엑세스 제한</p>
-<ul>
-<li>Manifest에서 READ_CALL_LOG 권한 허용해야함</li>
-</ul>
-<p>wifi 엑세스 제한</p>
-<ul>
-<li>wifi ssid 연결정보 등을 제공 받을 수 없음</li>
-<li>필요 시, wifiManager을 통해 데이터를 받아야함</li>
-</ul>
-<p>FLAG_ACTIVITY_NEW_TASK 요구사항 적용</p>
-<ul>
-<li>적용 안할 시, LogCat을 통해 에러를 송출</li>
-</ul>
-<p>화면 회전<br>개인정보 &amp; 권한 변경<br>비 SDK 인터페이스 사용 제한  </p>
-<p>스마트 리플</p>
-<p>디스플레이 컷아웃 지원</p>
-<p>ImageDecoder 지원</p>
-<ul>
-<li>BitmapFactory 지원 중단</li>
-</ul>
-<p>최적화된 Kotlin</p>
-<ul>
-<li>컴파일러 최적화</li>
-</ul>
-
-
+    
+	  <div class="readmore">
+      <a href="/2018/11/11/2018 DevFest/">Read More</a>
+    </div>
     
     
     
@@ -827,8 +504,13 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="add-Read-more"><a href="#add-Read-more" class="headerlink" title="add Read more"></a>add Read more</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add &lt;!-- more --&gt; <span class="keyword">in</span> .md File</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://jeyolog.github.io/2018/08/13/index-summary/" target="_blank" rel="noopener">Read more</a></p>
 
-
+    
+	  <div class="readmore">
+      <a href="/2018/10/12/hello-world/">Read More</a>
+    </div>
     
     
     
@@ -858,74 +540,11 @@
   </section>
   <section class="article typo">
 	  <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>웹을 정말 돌같이 생각했던 내가 프론트앤드 스터디 참여한 주 이유는 이렇다.</p>
-<p><strong>1. 웹송합니다를 벗어나기 위한 노력</strong><br>나는 웹 프론트앤드 지식이 부족하다..<br>회사에서 맡은 주력 업무는 모바일과 백앤드 개발이지만, 회사는 웹 프론트앤드 또한 관리하고 있다.<br>그래서 웹 프론트와 관련하여 피드백을 줄 수 있어야 하기 때문에.. 웹알못 탈피가 필수가 되었다.<br>이게 프론트앤드 스터디에 참여한 첫번째 이유이다.</p>
-<p><strong>2. javascript 복습</strong><br>비교적 간단하다. 최근 서버 개발자로 프로젝트를 진행하면서 javascript 기초의 부족함을 느껴 개념을 다시 다뤄보고 싶었다.<br>프론트앤드 스터디에 참여한 두 번째 이유!</p>
-<p><strong>3. 동반자겸 사수</strong><br>공부는 물론 스스로 하는거지만, 익숙치 않은 분야를 다루는 만큼 방향성을 잡아주고 사수와 같은 동료들이 있으면 좋겠다고 생각했다.<br>마침 관련 스타트업에서 활동하고 있는 아는 형님의 연락이 있었고, 웹 프론트앤드 경험이 많은 친구도 (꼬셔서) 같이 하게 되었다.<br>웹 프론트앤드 경험자(이자 나를 다잡아줄 사수)와 함께하면 시너지가 확실할 것 같았다.</p>
-<p>이런 이유와 마음가짐을 가지고 프론트앤드 스터디에 참여하게 되었다.</p>
-<hr>
-<h1 id="1주차"><a href="#1주차" class="headerlink" title="1주차"></a>1주차</h1><p>일시 : 2018.09.08 (토)<br>장소 : 할리스커피 신논현역점<br>시간 : 10:00 ~ 14:30<br>참석자 : 동현, 상우, 원호  </p>
-<p>진행 내용  </p>
-<ul>
-<li>초기 방향 정하기</li>
-<li>javascript 개념 talk</li>
-</ul>
-<h2 id="1-javascript의-this"><a href="#1-javascript의-this" class="headerlink" title="1. javascript의 this"></a>1. javascript의 this</h2><p>java에서의 this는 클래스로부터 생성되는 독립적인 인스턴스 객체를 의미한다. (그래서 클래스 밖에서는 this사용이 불가능하다.)<br>하지만 javascript는 함수의 현재 실행 문맥이다. 실행문맥 종류만 4가지가 있다.</p>
-<ul>
-<li>함수 실행 : alert(‘Hello World!’)</li>
-<li>메소드 실행 : console.log(‘Hello World!’)</li>
-<li>생성자 실행 : new RegExp(‘\d’)</li>
-<li>간접 실행 : alert.call(undefined, ‘Hello World!’)</li>
-</ul>
-<p>참고로 위 4가지는 각각의 다른 실행 문맥을 가진다. 사례를 통해 확인해보자.</p>
-<p><br></p>
-<h3 id="1-1-‘함수-실행’-에서의-this"><a href="#1-1-‘함수-실행’-에서의-this" class="headerlink" title="1-1. ‘함수 실행’ 에서의 this"></a>1-1. ‘함수 실행’ 에서의 this</h3><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_1_function_execute.png?raw=true" alt="텍스트"> </p>
-<p>A : 전역 객체이다.  </p>
-<p>이는 실행환경에 따라 전역 객체가 다른데<br>나는 node 상에서 실행시켰으므로 ‘global’ 이 this가 된다.<br>(웹 브라우저상에서는 ‘window’ 가 this가 될 것이다.)    </p>
-<p><br></p>
-<h3 id="1-2-‘메소드-실행’-에서의-this"><a href="#1-2-‘메소드-실행’-에서의-this" class="headerlink" title="1-2. ‘메소드 실행’ 에서의 this"></a>1-2. ‘메소드 실행’ 에서의 this</h3><p>먼저 메소드의 의미를 알아야 될 것 같다. 메소드는 객체 내부의 함수 property 를 말한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var myObject = &#123;   </span><br><span class="line">    helloFunction: <span class="function"><span class="title">function</span></span>() &#123;     // helloFunction is a method </span><br><span class="line">        <span class="built_in">return</span> <span class="string">'Hello World!'</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var message = myObject.helloFunction()</span><br></pre></td></tr></table></figure>
-<p>이 위의 코드에서 helloFunction이 <strong>메소드</strong>라 할 수 있다.<br>속성 접근방식을 통해 호출할 수 있다.<br>그러면 메소드 내에서의 this는 무엇일까?</p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute.png?raw=true" alt="텍스트"> </p>
-<p>A : 해당 메소드를 소유하고 있는 객체이다.</p>
-<p>그래서 this.value를 선언해도, 문제없이 obj 내부의 value를 호출해줄 수 있다. </p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_class.png?raw=true" alt="텍스트"> </p>
-<p>class의 경우, class를 통해 만들어진 인스턴스를 this에 바인딩한다.</p>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_2_method_execute_caution.png?raw=true" alt="텍스트"> </p>
-<p>단 메소드를 파라미터 형식으로 사용 시, this는 피호출 함수가 된다.<br>여기서 helper 뒤에 bind(‘any data’) 를 덧붙이면, any data 자체가 this에 바인딩된다.</p>
-<p><br></p>
-<h3 id="1-3-‘생성자-실행’-에서의-this"><a href="#1-3-‘생성자-실행’-에서의-this" class="headerlink" title="1-3. ‘생성자 실행’ 에서의 this"></a>1-3. ‘생성자 실행’ 에서의 this</h3><p>생성자 실행은 앞에 new 라는 키워드가 붙었을 때, 함수 객체로 계산되어 수행된다. 생성자 실행 시 this는 무슨 값을 가리키게 될까? </p>
-<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute.png?raw=true"></p>
-<p>A : 새롭게 생성된 객체(인스턴스) 이다.<br>위 캡처를 참고하여 정확한 생성자 내의 로직을 설명하면 아래와 같다.</p>
-<blockquote>
-<ol>
-<li>빈 객체 생성 후, this와 연결(바인딩)</li>
-<li>생성자 내의 로직 실행</li>
-<li>로직이 반영된 인스턴스를 반환</li>
-</ol>
-</blockquote>
-<p><img width="100%" src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_3_constructor_execute_class.png?raw=true"></p>
-<p>이는 ES6의 class 개념에서도 동일하게 활용된다!</p>
-<p><br></p>
-<h3 id="1-4-‘간접-실행’-에서의-this"><a href="#1-4-‘간접-실행’-에서의-this" class="headerlink" title="1-4. ‘간접 실행’ 에서의 this"></a>1-4. ‘간접 실행’ 에서의 this</h3><p>간접실행은 함수가 .call()이나 .apply(), bind() 메소드와 함께 호출될 때 수행된다.<br>지금까지의 방식이 this에 대해 별다른 언급이 없는 암묵적 this 바인딩이라고 한다면 이 방식은 this를 <strong><em>특정 객체에 명시적으로 바인딩</em></strong>하는 방식이라고 볼 수 있다.  </p>
-<p>첫번째 파라미터에 함수 내부의 this에 바인딩될 객체 인스턴스가 들어가고<br>두번째 파라미터에 함수에 전달할 argument 정보가 들어간다</p>
-<div><br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/frontend_study/1st/1_4_indirect_execute.png?raw=true" alt="텍스트"><br></div>
 
-<p>A : 이미 정답은 예정되어 있었지만 언급하면 첫번째 파라미터 (객체) 이다.<br>8, 9번째 줄을 보면 이해가 될 것이다! 첫번째 파라미터에 따라 this가 달라지는 모습을 볼 수 있다.</p>
-<p>참조</p>
-<ol>
-<li><p>javascript this<br><a href="https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this" target="_blank" rel="noopener">https://github.com/DongHyunKims/javascript-notes/tree/master/notes/this</a></p>
-</li>
-<li><p>poiemaWeb<br><a href="https://poiemaweb.com/js-this" target="_blank" rel="noopener">https://poiemaweb.com/js-this</a></p>
-</li>
-<li><p>javascript this 정리<br><a href="https://hyunseob.github.io/2016/03/10/javascript-this/" target="_blank" rel="noopener">https://hyunseob.github.io/2016/03/10/javascript-this/</a></p>
-</li>
-<li><p>자바스크립트에서 사용되는 this에 대한 설명 1<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/#tocAnchor-1-11</a></p>
-</li>
-<li><p>자바스크립트에서 사용되는 this에 대한 설명 2<br><a href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/" target="_blank" rel="noopener">http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-2/</a></p>
-</li>
-</ol>
-
-
+    
+	  <div class="readmore">
+      <a href="/2018/09/15/2018 프론트앤드 스터디 1주차/">Read More</a>
+    </div>
     
     
     
