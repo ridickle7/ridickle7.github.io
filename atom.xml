@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ridickle7.github.io/"/>
-  <updated>2018-12-24T04:59:17.477Z</updated>
+  <updated>2019-02-04T09:25:13.386Z</updated>
   <id>https://ridickle7.github.io/</id>
   
   <author>
@@ -21,14 +21,16 @@
     <link href="https://ridickle7.github.io/2018/12/23/RecyclerView/"/>
     <id>https://ridickle7.github.io/2018/12/23/RecyclerView/</id>
     <published>2018-12-23T02:00:25.000Z</published>
-    <updated>2018-12-24T04:59:17.477Z</updated>
+    <updated>2019-02-04T09:25:13.386Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;5-RecyclerView&quot;&gt;&lt;a href=&quot;#5-RecyclerView&quot; class=&quot;headerlink&quot; title=&quot;5. RecyclerView&quot;&gt;&lt;/a&gt;5. RecyclerView&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;A flexible v
-      
+      &lt;h1 id=&quot;5-RecyclerView&quot;&gt;&lt;a href=&quot;#5-RecyclerView&quot; class=&quot;headerlink&quot; title=&quot;5. RecyclerView&quot;&gt;&lt;/a&gt;5. RecyclerView&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;A flexible view for providing a limited window into a large data set&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;거대한 데이터 set을 제한된 화면에 보여줄 수 있는 유현한 View&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;기본 Document 는 &lt;a href=&quot;https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;이 링크&lt;/a&gt; 참고  &lt;/p&gt;
+&lt;h2 id=&quot;RecyclerView-이전&quot;&gt;&lt;a href=&quot;#RecyclerView-이전&quot; class=&quot;headerlink&quot; title=&quot;RecyclerView 이전&quot;&gt;&lt;/a&gt;RecyclerView 이전&lt;/h2&gt;&lt;h3 id=&quot;내장-라이브러리&quot;&gt;&lt;a href=&quot;#내장-라이브러리&quot; class=&quot;headerlink&quot; title=&quot;내장 라이브러리&quot;&gt;&lt;/a&gt;내장 라이브러리&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ListView&lt;/li&gt;
+&lt;li&gt;GridView&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -44,14 +46,14 @@
     <link href="https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-11th/"/>
     <id>https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-11th/</id>
     <published>2018-12-22T08:30:21.000Z</published>
-    <updated>2019-01-31T09:38:00.307Z</updated>
+    <updated>2019-02-04T09:25:24.139Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part2-코틀린답게-사용하기&quot;&gt;&lt;a href=&quot;#Part2-코틀린답게-사용하기&quot; class=&quot;headerlink&quot; title=&quot;Part2 코틀린답게 사용하기&quot;&gt;&lt;/a&gt;Part2 코틀린답게 사용하기&lt;/h1&gt;&lt;p&gt;이제 마무리 단계이다.&lt;/
-      
+      &lt;h1 id=&quot;Part2-코틀린답게-사용하기&quot;&gt;&lt;a href=&quot;#Part2-코틀린답게-사용하기&quot; class=&quot;headerlink&quot; title=&quot;Part2 코틀린답게 사용하기&quot;&gt;&lt;/a&gt;Part2 코틀린답게 사용하기&lt;/h1&gt;&lt;p&gt;이제 마무리 단계이다.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;11장-DSL-만들기&quot;&gt;&lt;a href=&quot;#11장-DSL-만들기&quot; class=&quot;headerlink&quot; title=&quot;11장. DSL 만들기&quot;&gt;&lt;/a&gt;11장. DSL 만들기&lt;/h2&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;API에서-DSL로&quot;&gt;&lt;a href=&quot;#API에서-DSL로&quot; class=&quot;headerlink&quot; title=&quot;API에서 DSL로&quot;&gt;&lt;/a&gt;API에서 DSL로&lt;/h3&gt;&lt;p&gt;코딩의 목적 : 코드의 가독성 높이기, 유지 보수성 높이기&lt;br&gt;not only &lt;strong&gt;개별 클래스 집중&lt;/strong&gt; but also &lt;strong&gt;타 클래스와 상호작용하는 연결지점 (인터페이스)&lt;/strong&gt; 확인 필요  &lt;/p&gt;
     
     </summary>
     
@@ -67,14 +69,11 @@
     <link href="https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-2nd/"/>
     <id>https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-2nd/</id>
     <published>2018-12-22T08:30:21.000Z</published>
-    <updated>2019-01-31T09:43:52.031Z</updated>
+    <updated>2019-02-04T09:25:27.507Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.
-      
+      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.&lt;br&gt;&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788966262137&amp;amp;orderClick=JAj&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;커니님께서 작성한 코틀린 책&lt;/a&gt;을 읽었으나 내용을 다 잊어버렸는데(…)&lt;br&gt;이번 장을 보고 기억을 찾아야겠다.&lt;/p&gt;
     
     </summary>
     
@@ -90,14 +89,19 @@
     <link href="https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-3rd/"/>
     <id>https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-3rd/</id>
     <published>2018-12-22T08:30:21.000Z</published>
-    <updated>2019-02-03T12:40:35.215Z</updated>
+    <updated>2019-02-04T09:25:25.209Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;h2 id=&quot;지난주에-다루었던-내용&quot;&gt;&lt;a href=&quot;#지
-      
+      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;h2 id=&quot;지난주에-다루었던-내용&quot;&gt;&lt;a href=&quot;#지난주에-다루었던-내용&quot; class=&quot;headerlink&quot; title=&quot;지난주에 다루었던 내용&quot;&gt;&lt;/a&gt;지난주에 다루었던 내용&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;기본 변수 체계&lt;/li&gt;
+&lt;li&gt;기본 함수 체계&lt;/li&gt;
+&lt;li&gt;문자열 템플릿&lt;/li&gt;
+&lt;li&gt;클래스와 프로퍼티&lt;/li&gt;
+&lt;li&gt;enum &amp;amp; when&lt;/li&gt;
+&lt;li&gt;반복문 (while, for)&lt;/li&gt;
+&lt;li&gt;예외 처리&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -131,14 +135,21 @@
     <link href="https://ridickle7.github.io/2018/11/11/2018-Kotlin-in-Action-study-6th/"/>
     <id>https://ridickle7.github.io/2018/11/11/2018-Kotlin-in-Action-study-6th/</id>
     <published>2018-11-11T03:34:25.000Z</published>
-    <updated>2018-12-10T08:50:30.146Z</updated>
+    <updated>2019-02-04T09:24:57.471Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;h2 id=&quot;6장-코틀린-타입-시스템&quot;&gt;&lt;a href=&quot;#
-      
+      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;h2 id=&quot;6장-코틀린-타입-시스템&quot;&gt;&lt;a href=&quot;#6장-코틀린-타입-시스템&quot; class=&quot;headerlink&quot; title=&quot;6장. 코틀린 타입 시스템&quot;&gt;&lt;/a&gt;6장. 코틀린 타입 시스템&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;코틀린만의 두드러진 특성&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;nullable Type&lt;/li&gt;
+&lt;li&gt;readonly collection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Nullability&quot;&gt;&lt;a href=&quot;#Nullability&quot; class=&quot;headerlink&quot; title=&quot;Nullability&quot;&gt;&lt;/a&gt;Nullability&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;![image]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NullpointerException 회피를 돕는 특성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -177,14 +188,12 @@
     <link href="https://ridickle7.github.io/2018/11/01/draft/"/>
     <id>https://ridickle7.github.io/2018/11/01/draft/</id>
     <published>2018-11-01T02:00:25.000Z</published>
-    <updated>2018-11-07T03:09:20.193Z</updated>
+    <updated>2019-02-04T09:25:19.075Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part1-Android-DataBinding-기초에서-고급까지&quot;&gt;&lt;a href=&quot;#Part1-Android-DataBinding-기초에서-고급까지&quot; class=&quot;headerlink&quot; title=&quot;Part1 Android DataBind
-      
+      &lt;h1 id=&quot;Part1-Android-DataBinding-기초에서-고급까지&quot;&gt;&lt;a href=&quot;#Part1-Android-DataBinding-기초에서-고급까지&quot; class=&quot;headerlink&quot; title=&quot;Part1 Android DataBinding (기초에서 고급까지)&quot;&gt;&lt;/a&gt;Part1 Android DataBinding (기초에서 고급까지)&lt;/h1&gt;&lt;p&gt;시간 : 10:10 ~ 11:10&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;발표자 : 송유섭 (네이버)&lt;/p&gt;
+&lt;p&gt;#데이터바인딩 #BindAdapter #&lt;/p&gt;
     
     </summary>
     
@@ -200,7 +209,7 @@
     <link href="https://ridickle7.github.io/2018/10/12/hello-world/"/>
     <id>https://ridickle7.github.io/2018/10/12/hello-world/</id>
     <published>2018-10-12T04:47:34.649Z</published>
-    <updated>2018-10-12T04:47:34.649Z</updated>
+    <updated>2019-02-04T09:25:17.225Z</updated>
     
     <summary type="html">
     
@@ -289,14 +298,11 @@
     <link href="https://ridickle7.github.io/2018/09/15/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-1st/"/>
     <id>https://ridickle7.github.io/2018/09/15/2018-kotlin-in-Action-스터디-1st/</id>
     <published>2018-09-15T11:24:25.000Z</published>
-    <updated>2019-01-31T09:40:59.661Z</updated>
+    <updated>2019-02-04T09:25:30.289Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.
-      
+      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.&lt;br&gt;&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788966262137&amp;amp;orderClick=JAj&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;커니님께서 작성한 코틀린 책&lt;/a&gt;을 읽었으나 내용을 다 잊어버렸는데(…)&lt;br&gt;이번 장을 보고 기억을 찾아야겠다.&lt;/p&gt;
     
     </summary>
     

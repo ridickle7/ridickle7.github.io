@@ -12,13 +12,13 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="ridickle한 일상">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
+  <meta name="description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리">
 <meta name="keywords" content="kotlin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018 Kotlin in Action 3rd">
 <meta property="og:url" content="https://ridickle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-3rd/index.html">
 <meta property="og:site_name" content="ridickle한 일상">
-<meta property="og:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
+<meta property="og:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true">
 <meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/extension_key3.png?raw=true">
@@ -28,10 +28,10 @@
 <meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex1.png?raw=true">
 <meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_ex2.png?raw=true">
 <meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/hw1_throw.png?raw=true">
-<meta property="og:updated_time" content="2019-02-03T12:40:35.215Z">
+<meta property="og:updated_time" content="2019-02-04T09:25:25.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018 Kotlin in Action 3rd">
-<meta name="twitter:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리  3.1 코틀린에서 컬렉션 만들기코틀린에서의 컬렉션 데이터를 저장하는 기본 자료구조 집합 프레임워크 (not library) 관련링크 자바 컬렉션과 내용 동일 (코틀린 자체 컬렉션">
+<meta name="twitter:description" content="Part1 코틀린 소개지난주에 다루었던 내용 기본 변수 체계 기본 함수 체계 문자열 템플릿 클래스와 프로퍼티 enum &amp;amp; when 반복문 (while, for) 예외 처리">
 <meta name="twitter:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/kotlin%20in%20action/chapter3/jvmOverload.png?raw=true">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -176,6 +176,7 @@
 <li>반복문 (while, for)</li>
 <li>예외 처리</li>
 </ol>
+<a id="more"></a>
 <h2 id="3-1-코틀린에서-컬렉션-만들기"><a href="#3-1-코틀린에서-컬렉션-만들기" class="headerlink" title="3.1 코틀린에서 컬렉션 만들기"></a>3.1 코틀린에서 컬렉션 만들기</h2><h3 id="코틀린에서의-컬렉션"><a href="#코틀린에서의-컬렉션" class="headerlink" title="코틀린에서의 컬렉션"></a><strong>코틀린에서의 컬렉션</strong></h3><ul>
 <li>데이터를 저장하는 기본 자료구조 집합</li>
 <li>프레임워크 (not library) <a href="https://coderanch.com/t/534486/java/collection-API-called-framework" target="_blank" rel="noopener">관련링크</a></li>
