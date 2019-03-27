@@ -249,6 +249,32 @@
   </entry>
   
   <entry>
+    <title>2018 프론트앤드 스터디 2주차</title>
+    <link href="https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8/"/>
+    <id>https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 2주차/</id>
+    <published>2018-09-15T11:24:25.000Z</published>
+    <updated>2019-02-04T09:34:12.272Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2주차&quot;&gt;&lt;a href=&quot;#2주차&quot; class=&quot;headerlink&quot; title=&quot;2주차&quot;&gt;&lt;/a&gt;2주차&lt;/h1&gt;&lt;p&gt;일시 : 2018.09.22 (토)&lt;br&gt;장소 : 할리스커피 신논현역점&lt;br&gt;시간 : 10:00 ~ 12:00&lt;br&gt;참석자 : 동현, 상우, 원호, 승현(new)&lt;/p&gt;
+&lt;p&gt;주 진행내용&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;자기소개 (승현)&lt;/li&gt;
+&lt;li&gt;javascript crawling&lt;/li&gt;
+&lt;li&gt;실행 Context / scope&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="2018 프론트앤드 스터디" scheme="https://ridickle7.github.io/categories/2018-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C-%EC%8A%A4%ED%84%B0%EB%94%94/"/>
+    
+    
+      <category term="javascript" scheme="https://ridickle7.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>1. javascript 이해</title>
     <link href="https://ridickle7.github.io/2018/09/15/%5B1%5D%20javascript%20%EC%9D%B4%ED%95%B4/"/>
     <id>https://ridickle7.github.io/2018/09/15/[1] javascript 이해/</id>
@@ -288,32 +314,6 @@
     
     
       <category term="kotlin" scheme="https://ridickle7.github.io/tags/kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018 프론트앤드 스터디 2주차</title>
-    <link href="https://ridickle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8/"/>
-    <id>https://ridickle7.github.io/2018/09/15/2018 프론트앤드 스터디 2주차/</id>
-    <published>2018-09-15T11:24:25.000Z</published>
-    <updated>2019-02-04T09:34:12.272Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;2주차&quot;&gt;&lt;a href=&quot;#2주차&quot; class=&quot;headerlink&quot; title=&quot;2주차&quot;&gt;&lt;/a&gt;2주차&lt;/h1&gt;&lt;p&gt;일시 : 2018.09.22 (토)&lt;br&gt;장소 : 할리스커피 신논현역점&lt;br&gt;시간 : 10:00 ~ 12:00&lt;br&gt;참석자 : 동현, 상우, 원호, 승현(new)&lt;/p&gt;
-&lt;p&gt;주 진행내용&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;자기소개 (승현)&lt;/li&gt;
-&lt;li&gt;javascript crawling&lt;/li&gt;
-&lt;li&gt;실행 Context / scope&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="2018 프론트앤드 스터디" scheme="https://ridickle7.github.io/categories/2018-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C-%EC%8A%A4%ED%84%B0%EB%94%94/"/>
-    
-    
-      <category term="javascript" scheme="https://ridickle7.github.io/tags/javascript/"/>
     
   </entry>
   
