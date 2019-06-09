@@ -4,30 +4,30 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>1. javascript 이해 | ridickle한 일상</title>
+  <title>1. javascript 이해 | riflow 한 일상</title>
   <meta name="description" content="때로는 우스꽝스럽게, 하지만 재미있게" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
-  <link rel="alternate" href="/atom.xml" title="ridickle한 일상">
+  <link rel="alternate" href="/atom.xml" title="riflow 한 일상">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="javascript의 이해javascript의 특징 단일 Thread 기반 Callback Queue 사용">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1. javascript 이해">
-<meta property="og:url" content="https://ridickle7.github.io/2018/09/15/[1] javascript 이해/index.html">
-<meta property="og:site_name" content="ridickle한 일상">
+<meta property="og:url" content="https://riflockle7.github.io/2018/09/15/[1] javascript 이해/index.html">
+<meta property="og:site_name" content="riflow 한 일상">
 <meta property="og:description" content="javascript의 이해javascript의 특징 단일 Thread 기반 Callback Queue 사용">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true">
-<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true">
-<meta property="og:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true">
-<meta property="og:updated_time" content="2019-02-04T09:34:00.864Z">
+<meta property="og:image" content="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true">
+<meta property="og:image" content="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true">
+<meta property="og:image" content="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true">
+<meta property="og:updated_time" content="2019-06-09T14:27:15.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1. javascript 이해">
 <meta name="twitter:description" content="javascript의 이해javascript의 특징 단일 Thread 기반 Callback Queue 사용">
-<meta name="twitter:image" content="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true">
+<meta name="twitter:image" content="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -51,7 +51,7 @@
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href='/' >
-				ridickle한 일상
+				riflow 한 일상
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
@@ -69,7 +69,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-gallery' href='https://github.com/ridickle7'>
+							<a class='flat-box nav-gallery' href='https://github.com/riflockle7'>
 								Gallery
 							</a>
 						</li>
@@ -123,7 +123,7 @@
 				Archives
 			</a>
 		
-			<a href="https://github.com/ridickle7" class="nav-gallery nav">
+			<a href="https://github.com/riflockle7" class="nav-gallery nav">
 				Gallery
 			</a>
 		
@@ -167,7 +167,7 @@
 <li>Callback Queue 사용</li>
 </ul>
 <a id="more"></a>
-<h2 id="javascript의-Engine-Google-V8-Engine"><a href="#javascript의-Engine-Google-V8-Engine" class="headerlink" title="javascript의 Engine (Google V8 Engine)"></a>javascript의 Engine (Google V8 Engine)</h2><p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true" alt="image"></p>
+<h2 id="javascript의-Engine-Google-V8-Engine"><a href="#javascript의-Engine-Google-V8-Engine" class="headerlink" title="javascript의 Engine (Google V8 Engine)"></a>javascript의 Engine (Google V8 Engine)</h2><p><img src="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/Google_V8_Engine_architecture.png?raw=true" alt="image"></p>
 <h3 id="Google-V8-Engine-구조"><a href="#Google-V8-Engine-구조" class="headerlink" title="Google V8 Engine 구조"></a>Google V8 Engine 구조</h3><ul>
 <li>Memory Heap : 메모리 할당 진행</li>
 <li>Call Stack : 코드 실행에 따른 (CPU 작업 단위) 호출 스택이 쌓이는 곳<div style="color:#CCCCCC"><span style="">(밑줄친 단어에 대한 상세 설명은 참고에서 확인)</span></div>
@@ -176,12 +176,12 @@
 </ul>
 <p>위의 Engine을 통해 javascript는 <strong>단일 쓰레드처럼(!!)</strong> 작업을 처리할 수 있다.</p>
 <blockquote>
-<p><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true" alt="image"><br>위와 같이… 말이다. 이렇게 짜면 서버는 죽겠…지</p>
+<p><img src="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/eternal_loop.png?raw=true" alt="image"><br>위와 같이… 말이다. 이렇게 짜면 서버는 죽겠…지</p>
 </blockquote>
 <p><strong>하!! 지!! 만!!</strong>  </p>
 <p>위의 ‘V8 Engine’ 만으로는 Node.js 또는 브라우저의 이벤트 동시 처리를 설명할 수 없다.<br>V8 Engine 개념만으로 생각하면 여러개의 작업이 순차적으로 하나씩 처리될 것이기 때문이다.<br>그러면 자연스럽게 동시에 여러 작업은 할 수 없게 된다.  </p>
 <p>위 개념대로라면 <strong>파일 다운로드를 실행하면, 요청을 받기전까지 웹페이지가 먹통이 되어야</strong> 하는데 웹은 절대 그러지 않는다.<br>그럼 이벤트 동시 처리는 어떻게 설명할 수 있을까?<br>정답을 먼저 이야기하면  </p>
-<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/ridickle7/ridickle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
+<p><div style="font-size:24px; text-align:center;"><span style=""><strong>Node.js 나 브라우저에는 V8 Engine 만 있는 게 아니다.</strong></span></div><br>브라우저 렌더링 엔진을 예로 들어, 구조를 해부하면 아래와 같다.<br><img src="https://github.com/riflockle7/riflockle7.github.io/blob/master/images/javascript/1/browser_rendering_architecture.png?raw=true" alt="image"></p>
 <ul>
 <li><p><strong>1. Web API (Background)</strong><br> 브라우저에서 제공하는 API (ex&gt; DOM, Ajax, setTimeout) 보유 및 실행</p>
 </li>
@@ -278,7 +278,7 @@
 
 <img class='avatar waves-image' src='/images/avatar.png' />
 
-<div class='header'>ridickle</div>
+<div class='header'>riflockle7</div>
 <div class='content'>
 <div class='desc'>때로는 우스꽝스럽게<br>하지만 재미있게</div>
 </div>
@@ -333,7 +333,7 @@
 	<div class="social-wrapper">
   	
       
-        <a href="https://github.com/ridickle7" class="social github"
+        <a href="https://github.com/riflockle7" class="social github"
           target="_blank" rel="external">
           <span class="icon icon-github"></span>
         </a>
@@ -354,9 +354,9 @@
   <script>setLoadingBarProgress(80);</script>
   
 <script>
-  var disqus_shortname = 'ridickle';
+  var disqus_shortname = 'riflockle7';
   
-  var disqus_url = 'https://ridickle7.github.io/2018/09/15/[1] javascript 이해/';
+  var disqus_url = 'https://riflockle7.github.io/2018/09/15/[1] javascript 이해/';
   
   (function(){
     var dsq = document.createElement('script');
