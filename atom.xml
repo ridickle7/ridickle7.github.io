@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://riflockle7.github.io/"/>
-  <updated>2019-02-04T09:25:13.386Z</updated>
+  <updated>2019-06-15T09:57:43.004Z</updated>
   <id>https://riflockle7.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>인프라와 데브옵스 사이 [코무합니다만]</title>
+    <link href="https://riflockle7.github.io/2019/06/15/devops/"/>
+    <id>https://riflockle7.github.io/2019/06/15/devops/</id>
+    <published>2019-06-15T09:58:02.000Z</published>
+    <updated>2019-06-15T09:57:43.004Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://festa.io/events/311&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://festa.io/events/311&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Part1-에자일-방법론과-DevOps&quot;&gt;&lt;a href=&quot;#Part1-에자일-방법론과-DevOps&quot; class=&quot;headerlink&quot; title=&quot;Part1 에자일 방법론과 DevOps&quot;&gt;&lt;/a&gt;Part1 에자일 방법론과 DevOps&lt;/h1&gt;&lt;p&gt;시간 : 14:10 ~ 14:50&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;발표자 : 배준현&lt;/p&gt;
+&lt;p&gt;#cloudInfra #BlueGreenDeploy #DevOps #AzureDevops&lt;/p&gt;
+&lt;p&gt;DevOps = Develop(개발) + Operation (운영)&lt;br&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*CSZxfOMlVsKsrMkqTxFiMQ.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="seminar" scheme="https://riflockle7.github.io/categories/seminar/"/>
+    
+    
+      <category term="devops" scheme="https://riflockle7.github.io/tags/devops/"/>
+    
+  </entry>
   
   <entry>
     <title>1. RecyclerView 기초</title>
@@ -249,29 +272,6 @@
   </entry>
   
   <entry>
-    <title>1. javascript 이해</title>
-    <link href="https://riflockle7.github.io/2018/09/15/%5B1%5D%20javascript%20%EC%9D%B4%ED%95%B4/"/>
-    <id>https://riflockle7.github.io/2018/09/15/[1] javascript 이해/</id>
-    <published>2018-09-15T11:24:25.000Z</published>
-    <updated>2019-06-09T14:27:15.713Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;javascript의-이해&quot;&gt;&lt;a href=&quot;#javascript의-이해&quot; class=&quot;headerlink&quot; title=&quot;javascript의 이해&quot;&gt;&lt;/a&gt;javascript의 이해&lt;/h1&gt;&lt;h2 id=&quot;javascript의-특징&quot;&gt;&lt;a href=&quot;#javascript의-특징&quot; class=&quot;headerlink&quot; title=&quot;javascript의 특징&quot;&gt;&lt;/a&gt;javascript의 특징&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;단일 Thread 기반&lt;/li&gt;
-&lt;li&gt;Callback Queue 사용&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://riflockle7.github.io/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://riflockle7.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>2018 프론트앤드 스터디 2주차</title>
     <link href="https://riflockle7.github.io/2018/09/15/2018%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C%20%EC%8A%A4%ED%84%B0%EB%94%94%202%EC%A3%BC%EC%B0%A8/"/>
     <id>https://riflockle7.github.io/2018/09/15/2018 프론트앤드 스터디 2주차/</id>
@@ -291,6 +291,29 @@
     </summary>
     
       <category term="2018 프론트앤드 스터디" scheme="https://riflockle7.github.io/categories/2018-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%95%A4%EB%93%9C-%EC%8A%A4%ED%84%B0%EB%94%94/"/>
+    
+    
+      <category term="javascript" scheme="https://riflockle7.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1. javascript 이해</title>
+    <link href="https://riflockle7.github.io/2018/09/15/%5B1%5D%20javascript%20%EC%9D%B4%ED%95%B4/"/>
+    <id>https://riflockle7.github.io/2018/09/15/[1] javascript 이해/</id>
+    <published>2018-09-15T11:24:25.000Z</published>
+    <updated>2019-06-09T14:27:15.713Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;javascript의-이해&quot;&gt;&lt;a href=&quot;#javascript의-이해&quot; class=&quot;headerlink&quot; title=&quot;javascript의 이해&quot;&gt;&lt;/a&gt;javascript의 이해&lt;/h1&gt;&lt;h2 id=&quot;javascript의-특징&quot;&gt;&lt;a href=&quot;#javascript의-특징&quot; class=&quot;headerlink&quot; title=&quot;javascript의 특징&quot;&gt;&lt;/a&gt;javascript의 특징&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;단일 Thread 기반&lt;/li&gt;
+&lt;li&gt;Callback Queue 사용&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://riflockle7.github.io/categories/javascript/"/>
     
     
       <category term="javascript" scheme="https://riflockle7.github.io/tags/javascript/"/>
