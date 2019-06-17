@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://riflockle7.github.io/"/>
-  <updated>2019-06-15T09:57:43.004Z</updated>
+  <updated>2019-06-17T16:03:36.146Z</updated>
   <id>https://riflockle7.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm 개인공부 1일차</title>
+    <link href="https://riflockle7.github.io/2019/06/17/Algorithm-%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80-1%EC%9D%BC%EC%B0%A8/"/>
+    <id>https://riflockle7.github.io/2019/06/17/Algorithm-개인공부-1일차/</id>
+    <published>2019-06-17T13:38:41.000Z</published>
+    <updated>2019-06-17T16:03:36.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-서론&quot;&gt;&lt;a href=&quot;#1-서론&quot; class=&quot;headerlink&quot; title=&quot;1. 서론&quot;&gt;&lt;/a&gt;1. 서론&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;뭐 말할게 있나… 잊어버리지 않기 위해 포스팅한다 :)&lt;/li&gt;
+&lt;li&gt;curricurum은 나동
+      
+    
+    </summary>
+    
+      <category term="study" scheme="https://riflockle7.github.io/categories/study/"/>
+    
+    
+      <category term="algorithm" scheme="https://riflockle7.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>인프라와 데브옵스 사이 [코무합니다만]</title>
@@ -65,6 +90,26 @@
   </entry>
   
   <entry>
+    <title>2018 Kotlin in Action 2nd</title>
+    <link href="https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-2nd/"/>
+    <id>https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-2nd/</id>
+    <published>2018-12-22T08:30:21.000Z</published>
+    <updated>2019-02-04T09:25:27.507Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.&lt;br&gt;&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788966262137&amp;amp;orderClick=JAj&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;커니님께서 작성한 코틀린 책&lt;/a&gt;을 읽었으나 내용을 다 잊어버렸는데(…)&lt;br&gt;이번 장을 보고 기억을 찾아야겠다.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="2018 Kotlin in Action" scheme="https://riflockle7.github.io/categories/2018-Kotlin-in-Action/"/>
+    
+    
+      <category term="kotlin" scheme="https://riflockle7.github.io/tags/kotlin/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2018 Kotlin in Action study 11th</title>
     <link href="https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-11th/"/>
     <id>https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-11th/</id>
@@ -77,26 +122,6 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&quot;11장-DSL-만들기&quot;&gt;&lt;a href=&quot;#11장-DSL-만들기&quot; class=&quot;headerlink&quot; title=&quot;11장. DSL 만들기&quot;&gt;&lt;/a&gt;11장. DSL 만들기&lt;/h2&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&quot;API에서-DSL로&quot;&gt;&lt;a href=&quot;#API에서-DSL로&quot; class=&quot;headerlink&quot; title=&quot;API에서 DSL로&quot;&gt;&lt;/a&gt;API에서 DSL로&lt;/h3&gt;&lt;p&gt;코딩의 목적 : 코드의 가독성 높이기, 유지 보수성 높이기&lt;br&gt;not only &lt;strong&gt;개별 클래스 집중&lt;/strong&gt; but also &lt;strong&gt;타 클래스와 상호작용하는 연결지점 (인터페이스)&lt;/strong&gt; 확인 필요  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="2018 Kotlin in Action" scheme="https://riflockle7.github.io/categories/2018-Kotlin-in-Action/"/>
-    
-    
-      <category term="kotlin" scheme="https://riflockle7.github.io/tags/kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018 Kotlin in Action 2nd</title>
-    <link href="https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-%EC%8A%A4%ED%84%B0%EB%94%94-2nd/"/>
-    <id>https://riflockle7.github.io/2018/12/22/2018-kotlin-in-Action-스터디-2nd/</id>
-    <published>2018-12-22T08:30:21.000Z</published>
-    <updated>2019-02-04T09:25:27.507Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Part1-코틀린-소개&quot;&gt;&lt;a href=&quot;#Part1-코틀린-소개&quot; class=&quot;headerlink&quot; title=&quot;Part1 코틀린 소개&quot;&gt;&lt;/a&gt;Part1 코틀린 소개&lt;/h1&gt;&lt;p&gt;첫 장에서는 코틀린의 일반적인 특성을 설명한다고 한다.&lt;br&gt;&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788966262137&amp;amp;orderClick=JAj&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;커니님께서 작성한 코틀린 책&lt;/a&gt;을 읽었으나 내용을 다 잊어버렸는데(…)&lt;br&gt;이번 장을 보고 기억을 찾아야겠다.&lt;/p&gt;
     
     </summary>
     
